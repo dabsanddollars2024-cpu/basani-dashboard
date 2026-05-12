@@ -1143,7 +1143,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
     </div>
 
     <div class="vip-divider"></div>
-    <div class="vip-tagline">Institutional-grade intelligence Â· Invite only</div>
+    <div class="vip-tagline">Institutional-grade intelligence · Invite only</div>
 
     <div class="vip-input-wrap">
       <input id="vip-input" type="password" placeholder="Enter access code"
@@ -1277,7 +1277,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
     </div>
     <!-- TradingView chart â rendered once, persists across data reloads -->
     <div class="tv-chart-section">
-      <div class="section-label" style="margin-top:24px">Live Chart <span>SPY Â· QQQ Â· any symbol â switchable</span></div>
+      <div class="section-label" style="margin-top:24px">Live Chart <span>SPY · QQQ · any symbol â switchable</span></div>
       <div class="tv-chart-box" id="tv-overview-chart"></div>
     </div>
   </div>
@@ -1317,7 +1317,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
 
     <!-- Legend -->
     <div style="display:flex;gap:16px;padding:8px 20px;background:#fff;border-bottom:1px solid #f0f0f0;font-size:11px;color:#666;flex-wrap:wrap">
-      <span><span style="color:#1a6bcc;font-weight:700">â </span> Earnings &nbsp;Â·&nbsp; <span style="color:#c0392b;font-weight:700">â </span> High-Impact Econ &nbsp;Â·&nbsp; <span style="color:#e67e22;font-weight:700">â </span> Medium Econ &nbsp;Â·&nbsp; <span style="color:#8e44ad;font-weight:700">â </span> FDA &nbsp;Â·&nbsp; <span style="color:#16a085;font-weight:700">â </span> IPO</span>
+      <span><span style="color:#1a6bcc;font-weight:700">â </span> Earnings &nbsp;·&nbsp; <span style="color:#c0392b;font-weight:700">â </span> High-Impact Econ &nbsp;·&nbsp; <span style="color:#e67e22;font-weight:700">â </span> Medium Econ &nbsp;·&nbsp; <span style="color:#8e44ad;font-weight:700">â </span> FDA &nbsp;·&nbsp; <span style="color:#16a085;font-weight:700">â </span> IPO</span>
       <span style="margin-left:auto;color:#aaa">Click any day to see full details</span>
     </div>
 
@@ -1349,7 +1349,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
   <!-- âââ TAB: TWEETS âââ -->
   <div class="tab-panel" id="tab-intel">
     <div class="section">
-      <div class="section-label">Market Posts â X Â· Stocktwits Â· Truth Social</div>
+      <div class="section-label">Market Posts â X · Stocktwits · Truth Social</div>
       <div id="intelContent"><div class="loading">Loading posts...</div></div>
     </div>
     <div class="disclaimer">For educational purposes only. Not financial advice. &copy; BASANI 2026.</div>
@@ -1390,19 +1390,19 @@ body { background: var(--bg) !important; color: var(--text) !important; }
       <div class="plays-grid">
         <div class="plays-col" id="scalpsCol">
           <div class="plays-col-header">
-            ï¿½ Scalp Plays
-            <span class="col-sub">010 DTE ï¿½ Fast moves ï¿½ Earnings plays</span>
+            › Scalp Plays
+            <span class="col-sub">010 DTE › Fast moves › Earnings plays</span>
           </div>
         </div>
         <div class="plays-col" id="swingsCol">
           <div class="plays-col-header">
-            =ï¿½ Swing Plays
-            <span class="col-sub">1430 DTE ï¿½ Trend trades ï¿½ Catalyst driven</span>
+            =› Swing Plays
+            <span class="col-sub">1430 DTE › Trend trades › Catalyst driven</span>
           </div>
         </div>
         <div class="plays-sidebar" id="playsSidebar">
           <div class="plays-col-header" style="background:#0d0d0d">
-            =ï¿½ Futures + UW Flow
+            =› Futures + UW Flow
             <span class="col-sub">Live</span>
           </div>
           <div id="playsSidebarContent" style="padding:0">
@@ -1449,7 +1449,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
   <!-- âââ TAB: FUTURES âââ -->
   <div class="tab-panel" id="tab-futures">
     <div class="section">
-      <div class="section-label">Futures Plays â Directional Bias <span>CME contracts Â· Intraday + Swing setups</span></div>
+      <div class="section-label">Futures Plays â Directional Bias <span>CME contracts · Intraday + Swing setups</span></div>
       <div id="futuresContent"></div>
     </div>
   </div>
@@ -1583,24 +1583,24 @@ const SCAN = {
 };
 
 const CATALYSTS = [
-  { color: "#2e8b57", title: "AMD Earnings Monster Beat", body: "AMD reported Q1 2026 on May 5 after hours  data center revenue crushed expectations. Stock gapped from ~$200 to $413+. Smart money responding: $2M sweep on 420C today. AI chip demand is not slowing.", action: "ï¿½ AMD 420C May 8 ï¿½ NVDA 215C May 22", actionColor: "#2e8b57" },
-  { color: "#2e8b57", title: "NVDA Earnings May 21", body: "The biggest catalyst remaining this season. $575B in hyperscaler capex all flows through Nvidia. Blackwell ramp accelerating. Call flow accumulating  $255K on 205C this week. Close short-dated calls before the print.", action: "ï¿½ NVDA 215C May 22 ï¿½ Close before 5/21", actionColor: "#2e8b57" },
-  { color: "#c0392b", title: "Trump-Xi Summit May 1415", body: "High-stakes trade summit in Beijing. 50% additional China tariffs on the table. Binary risk event  AAPL and AMD most exposed. Markets could gap 35% either direction on news.", action: "ï¿½ Reduce size before May 10 weekend", actionColor: "#b8860b" },
-  { color: "#b8860b", title: "Google I/O  May 1920", body: "Googles annual developer conference is a major AI product catalyst. New Gemini models, AI search, and cloud tools expected. GOOGL at P/E 15 is deeply undervalued vs peers.", action: "ï¿½ GOOGL 400C June 20", actionColor: "#2e8b57" },
-  { color: "#b8860b", title: "Fed Held ï¿½ Warsh Era Begins", body: "Rates at 3.53.75%. Powell exits May 15, replaced by Warsh who signals cutting bias. Transition volatility possible  good for tech and gold long-term.", action: "ï¿½ Watch TLT ï¿½ Vol spike risk ~May 15", actionColor: "#b8860b" },
+  { color: "#2e8b57", title: "AMD Earnings Monster Beat", body: "AMD reported Q1 2026 on May 5 after hours  data center revenue crushed expectations. Stock gapped from ~$200 to $413+. Smart money responding: $2M sweep on 420C today. AI chip demand is not slowing.", action: "› AMD 420C May 8 › NVDA 215C May 22", actionColor: "#2e8b57" },
+  { color: "#2e8b57", title: "NVDA Earnings May 21", body: "The biggest catalyst remaining this season. $575B in hyperscaler capex all flows through Nvidia. Blackwell ramp accelerating. Call flow accumulating  $255K on 205C this week. Close short-dated calls before the print.", action: "› NVDA 215C May 22 › Close before 5/21", actionColor: "#2e8b57" },
+  { color: "#c0392b", title: "Trump-Xi Summit May 1415", body: "High-stakes trade summit in Beijing. 50% additional China tariffs on the table. Binary risk event  AAPL and AMD most exposed. Markets could gap 35% either direction on news.", action: "› Reduce size before May 10 weekend", actionColor: "#b8860b" },
+  { color: "#b8860b", title: "Google I/O  May 1920", body: "Googles annual developer conference is a major AI product catalyst. New Gemini models, AI search, and cloud tools expected. GOOGL at P/E 15 is deeply undervalued vs peers.", action: "› GOOGL 400C June 20", actionColor: "#2e8b57" },
+  { color: "#b8860b", title: "Fed Held › Warsh Era Begins", body: "Rates at 3.53.75%. Powell exits May 15, replaced by Warsh who signals cutting bias. Transition volatility possible  good for tech and gold long-term.", action: "› Watch TLT › Vol spike risk ~May 15", actionColor: "#b8860b" },
 ];
 
 const STOCKS = [
-  { ticker:"AMD",   price:413.97, chg:+1.36, score:95, dir:"BULLISH", color:"#2e8b57", reason:"Monster earnings beat May 5 ï¿½ Stock doubled post-earnings ï¿½ $2M call sweep today ï¿½ AI chip demand exploding" },
-  { ticker:"NVDA",  price:204.97, chg:+2.56, score:90, dir:"BULLISH", color:"#2e8b57", reason:"Earnings May 21 ï¿½ $575B hyperscaler capex ï¿½ $255K call flow today ï¿½ AI king" },
-  { ticker:"TSLA",  price:395.26, chg:+2.47, score:82, dir:"BULLISH", color:"#2e8b57", reason:"$1.4M call sweep today ï¿½ ATM 395C heavy flow ï¿½ Momentum intact ï¿½ FSD + Robotaxi catalyst" },
-  { ticker:"META",  price:613.73, chg:+2.07, score:75, dir:"BULLISH", color:"#2e8b57", reason:"Recovery from earnings dip ï¿½ AI infra investment paying off ï¿½ Strong engagement data" },
-  { ticker:"MSFT",  price:415.68, chg:+1.92, score:72, dir:"BULLISH", color:"#4a7fa5", reason:"Pentagon AI ï¿½ Azure +40% ï¿½ AI commercial ARR $37B" },
-  { ticker:"AAPL",  price:285.30, chg:+1.20, score:70, dir:"BULLISH", color:"#b8860b", reason:"Q2 beat ï¿½ $100B buyback ï¿½ WWDC June catalyst ï¿½ India manufacturing ramp" },
-  { ticker:"QQQ",   price:691.77, chg:+0.59, score:78, dir:"BULLISH", color:"#2e8b57", reason:"$890K call flow at 692C ï¿½ Tech leadership intact ï¿½ Breaking new highs" },
-  { ticker:"TQQQ",  price:69.00,  chg:+1.8,  score:78, dir:"BULLISH", color:"#4a7fa5", reason:"$1.3M sweep on 69C May 8 ï¿½ Leveraged QQQ play ï¿½ Heavy institutional conviction" },
-  { ticker:"SPY",   price:731.49, chg:+0.47, score:68, dir:"BULLISH", color:"#b8860b", reason:"Broad market grinding higher ï¿½ 7350 SPX calls targeted Jan 2027 ($2.75M)" },
-  { ticker:"GOOGL", price:390.00, chg:+1.1,  score:85, dir:"BULLISH", color:"#2e8b57", reason:"Cloud +63% ï¿½ Pentagon AI ï¿½ Google I/O May 1920 ï¿½ P/E only 15" },
+  { ticker:"AMD",   price:413.97, chg:+1.36, score:95, dir:"BULLISH", color:"#2e8b57", reason:"Monster earnings beat May 5 › Stock doubled post-earnings › $2M call sweep today › AI chip demand exploding" },
+  { ticker:"NVDA",  price:204.97, chg:+2.56, score:90, dir:"BULLISH", color:"#2e8b57", reason:"Earnings May 21 › $575B hyperscaler capex › $255K call flow today › AI king" },
+  { ticker:"TSLA",  price:395.26, chg:+2.47, score:82, dir:"BULLISH", color:"#2e8b57", reason:"$1.4M call sweep today › ATM 395C heavy flow › Momentum intact › FSD + Robotaxi catalyst" },
+  { ticker:"META",  price:613.73, chg:+2.07, score:75, dir:"BULLISH", color:"#2e8b57", reason:"Recovery from earnings dip › AI infra investment paying off › Strong engagement data" },
+  { ticker:"MSFT",  price:415.68, chg:+1.92, score:72, dir:"BULLISH", color:"#4a7fa5", reason:"Pentagon AI › Azure +40% › AI commercial ARR $37B" },
+  { ticker:"AAPL",  price:285.30, chg:+1.20, score:70, dir:"BULLISH", color:"#b8860b", reason:"Q2 beat › $100B buyback › WWDC June catalyst › India manufacturing ramp" },
+  { ticker:"QQQ",   price:691.77, chg:+0.59, score:78, dir:"BULLISH", color:"#2e8b57", reason:"$890K call flow at 692C › Tech leadership intact › Breaking new highs" },
+  { ticker:"TQQQ",  price:69.00,  chg:+1.8,  score:78, dir:"BULLISH", color:"#4a7fa5", reason:"$1.3M sweep on 69C May 8 › Leveraged QQQ play › Heavy institutional conviction" },
+  { ticker:"SPY",   price:731.49, chg:+0.47, score:68, dir:"BULLISH", color:"#b8860b", reason:"Broad market grinding higher › 7350 SPX calls targeted Jan 2027 ($2.75M)" },
+  { ticker:"GOOGL", price:390.00, chg:+1.1,  score:85, dir:"BULLISH", color:"#2e8b57", reason:"Cloud +63% › Pentagon AI › Google I/O May 1920 › P/E only 15" },
 ];
 
 const SCALPS = [
@@ -1669,28 +1669,28 @@ const RISKS = [
     title:"Trump-Xi Summit  May 1415 Beijing",
     body:"50% additional China tariffs threatened. AMD, AAPL, and TSLA all heavily exposed to China supply chain.",
     digest:"The summit is 8 days away and is the most significant binary risk event on the calendar. If the summit goes well (trade deal, tariff pause), expect a 35% tech gap up that would make every call on the dashboard profitable. If tariffs escalate, AAPL (China manufacturing), AMD (chip supply chain), and any company with significant China revenue could drop 1020% in a single session. Strategy: take profits on the short-dated weeklies (AMD 420C, TSLA 395C) before the weekend of May 10. Reduce any swing positions from full to half by May 9. Hold NVDA 215C and GOOGL 400C through the summit  these have less China exposure.",
-    action:"ï¿½ May 8 positions are closed. Cut any remaining swings to half if summit fails"
+    action:"› May 8 positions are closed. Cut any remaining swings to half if summit fails"
   },
   {
     color:"#b8860b", level:"MEDIUM",
     title:"NVDA Earnings May 21  Hold vs Close Dilemma",
     body:"UW-007 (NVDA $215C May 22) expires just 1 day after NVDA reports earnings.",
     digest:"NVIDIA earnings on May 21 is the biggest single-stock event remaining this season. The May 22 call expires the day after  meaning if NVDA gaps down on earnings, there's virtually no time to recover. The bull case is strong: $575B in hyperscaler capex, Blackwell ramp accelerating, data center demand insatiable. But export restrictions to China or any guidance miss will be punished violently. Approach: if NVDA is up 5%+ by May 19 (Monday), consider closing UW-007 for profit and rolling to June 20 expiry. If it's flat, hold through earnings with the understanding that this is a binary event with a defined risk of full loss.",
-    action:"ï¿½ Close UW-007 if profitable by May 19 ï¿½ Roll to June 20 or accept binary risk"
+    action:"› Close UW-007 if profitable by May 19 › Roll to June 20 or accept binary risk"
   },
   {
     color:"#4a7fa5", level:"INFO",
     title:"Uw Flow Is 90% Calls  Market Is Positioned Long",
     body:"Today's Unusual Whales data shows overwhelming call dominance. Crowded positioning = snapback risk.",
     digest:"When the entire market is positioned the same way (long calls), the risk is a short squeeze reversal. Every bullish signal you see today  AMD 420C, TSLA 395C, TQQQ 69C  means there are a lot of people who need to exit if the market turns. A flash crash or macro shock (China tariff news, hot CPI print, Fed surprise) would trigger a cascade of call unwinds and panic selling. The solution isn't to avoid the calls  the flow is real and the bias is valid  but to keep position sizes manageable and have a clear exit plan. If QQQ drops below $685 on any single day, take that as a signal to reduce all call exposure by 50%.",
-    action:"ï¿½ Keep positions sized for 50% loss tolerance ï¿½ QQQ $685 = reduce all calls"
+    action:"› Keep positions sized for 50% loss tolerance › QQQ $685 = reduce all calls"
   },
   {
     color:"#b8860b", level:"MEDIUM",
     title:"Fed Chair Warsh Transition  May 15",
     body:"Powell exits May 15. Warsh signals cutting bias but transition creates uncertainty.",
     digest:"Market transitions are inherently volatile. Even if Warsh is dovish (cutting bias = good for stocks), the first few weeks of a new Fed Chair bring policy uncertainty. Bonds, gold, and the dollar could all spike in the days around May 15 as traders position for the new regime. If you're holding options through May 15, make sure those positions have enough premium to survive a 23% broad market pullback. Short-dated calls expiring the week of May 15 are particularly vulnerable to this volatility.",
-    action:"ï¿½ Use June/July expiries around May 15 ï¿½ Avoid weeklies that week"
+    action:"› Use June/July expiries around May 15 › Avoid weeklies that week"
   },
 ];
 
@@ -1794,7 +1794,7 @@ function renderPlay(p) {
       <span class="play-id">${p.id}</span>
     </div>
     <div class="play-instrument">
-      <span>${p.ticker} ${p.strike} ${p.type} Â· ${p.expiry}</span>
+      <span>${p.ticker} ${p.strike} ${p.type} · ${p.expiry}</span>
       <span class="play-cost">${p.cost} / contract</span>
     </div>
     <div class="play-why">${p.why}</div>
@@ -1805,7 +1805,7 @@ function renderPlay(p) {
       ${ivChip}${oiChip}
       <div style="display:flex;flex-direction:column;gap:1px;align-items:center">
         <span style="font-size:8px;color:#aaa;letter-spacing:.12em;text-transform:uppercase">Expires</span>
-        <span style="font-family:'Courier New',monospace;font-size:11px;color:${dteColor};font-weight:700">${p.dte}d Â· ${p.expiry}</span>
+        <span style="font-family:'Courier New',monospace;font-size:11px;color:${dteColor};font-weight:700">${p.dte}d · ${p.expiry}</span>
       </div>
     </div>` : ''}
 
@@ -2042,7 +2042,7 @@ function buildOverview(scanData, newsData) {
         const bear = tickers.filter(t=>t.direction==='BEARISH').length;
         const tot  = tickers.length || 1;
         const bullPct = Math.round(bull/tot*100);
-        return `<div style="font-size:11px;color:#555">${bull} Bullish Â· ${bear} Bearish Â· ${tot-bull-bear} Neutral</div>
+        return `<div style="font-size:11px;color:#555">${bull} Bullish · ${bear} Bearish · ${tot-bull-bear} Neutral</div>
         <div style="height:4px;background:#f0f0f0;margin-top:6px;border-radius:2px">
           <div style="height:100%;width:${bullPct}%;background:#2e8b57;border-radius:2px"></div>
         </div>
@@ -2090,7 +2090,7 @@ function buildOverview(scanData, newsData) {
       const entry  = t.entry  || t.entry_zone || '';
       const target = t.target || t.price_target || '';
       const stop   = t.stop   || t.invalidation || '';
-      const reason = (t.signals||[]).join(' Â· ') || t.reason || '';
+      const reason = (t.signals||[]).join(' · ') || t.reason || '';
       return `
       <div class="setup-card" onclick="openStockDetail('${t.ticker}')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
@@ -2167,7 +2167,7 @@ function buildOverview(scanData, newsData) {
         const hh = Math.round((cnt/max)*28);
         return '<div style="display:flex;flex-direction:column;align-items:center;gap:1px"><div style="font-size:7px;color:'+(gradeColors[g]||'#888')+'">'+cnt+'</div><div style="width:14px;height:'+Math.max(hh,cnt>0?2:0)+'px;background:'+(gradeColors[g]||'#888')+'"></div><div style="font-size:7px;color:#aaa">'+g+'</div></div>';
       }).join('');
-      return '<div class="briefing-card" style="background:#0a0a0a;color:#fff"><div class="bc-header" style="color:#fff;border-bottom-color:#222">BASANI Score</div><div style="display:flex;justify-content:space-between;margin-bottom:10px"><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Win Rate</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+wrClr+'">'+wr+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Avg Return</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+(loc.avgPnl>=0?'#2e8b57':'#c0392b')+'">'+avg+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">UW Win%</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:#3a9e6e">'+uwWr+'</div></div></div><div style="display:flex;align-items:flex-end;gap:5px;height:38px;margin-bottom:8px">'+gradeBar+'</div><div style="font-size:9px;color:#444">'+loc.closed.length+' closed ï¿½ '+loc.open.length+' open</div><div style="font-size:8px;color:#2e8b57;margin-top:4px;cursor:pointer" onclick="switchTab(\'log\')">View full backtest ï¿½</div></div>';
+      return '<div class="briefing-card" style="background:#0a0a0a;color:#fff"><div class="bc-header" style="color:#fff;border-bottom-color:#222">BASANI Score</div><div style="display:flex;justify-content:space-between;margin-bottom:10px"><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Win Rate</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+wrClr+'">'+wr+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Avg Return</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+(loc.avgPnl>=0?'#2e8b57':'#c0392b')+'">'+avg+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">UW Win%</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:#3a9e6e">'+uwWr+'</div></div></div><div style="display:flex;align-items:flex-end;gap:5px;height:38px;margin-bottom:8px">'+gradeBar+'</div><div style="font-size:9px;color:#444">'+loc.closed.length+' closed › '+loc.open.length+' open</div><div style="font-size:8px;color:#2e8b57;margin-top:4px;cursor:pointer" onclick="switchTab(\'log\')">View full backtest ›</div></div>';
     } catch(e) { return '<div class="briefing-card"></div>'; }
   })();
 
@@ -2234,7 +2234,7 @@ function buildLiveFeed(newsData) {
   const absTime = (ts) => {
     if (!ts) return '';
     const d = new Date(ts);
-    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' Â· ' +
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' · ' +
            d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   };
 
@@ -2284,7 +2284,7 @@ function buildLiveFeed(newsData) {
     const breaking  = isBreaking(item);
     const headline  = (item.title || '').trim();
     const summary   = (item.body || item.description || '').trim();
-    const link      = item.url ? ` Â· <a href="${item.url}" target="_blank" style="color:var(--gold,#e8b84b)">Read â</a>` : '';
+    const link      = item.url ? ` · <a href="${item.url}" target="_blank" style="color:var(--gold,#e8b84b)">Read â</a>` : '';
     const impact    = impactCls(item.impact_level);
     const tickers   = tickerTags(item.tickers || []);
     const ts        = item.timestamp || item.time || '';
@@ -2301,7 +2301,7 @@ function buildLiveFeed(newsData) {
           <a href="${item.url||'#'}" target="_blank" style="color:inherit;text-decoration:none">${headline}</a>
         </div>` : ''}
         ${summary ? `<div class="news-text" style="margin-top:4px">${summary}</div>` : ''}
-        <div class="news-time"><span>${relTime(ts)}</span> &nbsp;Â·&nbsp; <span style="opacity:.6">${absTime(item._ts)}</span>${link}</div>
+        <div class="news-time"><span>${relTime(ts)}</span> &nbsp;·&nbsp; <span style="opacity:.6">${absTime(item._ts)}</span>${link}</div>
       </div>
     </div>`;
   }).join('');
@@ -2377,7 +2377,7 @@ function buildCalendar(newsData) {
     const info = EVENT_KB[ev.event] || null;
     const evTime = new Date(ev.time || 0);
     const timeStr = !isNaN(evTime)
-      ? evTime.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) + ' Â· ' +
+      ? evTime.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) + ' · ' +
         evTime.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})
       : ev.time || '';
 
@@ -2559,9 +2559,9 @@ function buildMarketIntel(newsData) {
     <div style="padding:10px 16px 8px;border-bottom:1px solid var(--border,#e5e5e5);background:var(--bg2,#f5f5f5)">
       <div style="font-size:8px;letter-spacing:0.2em;color:var(--text3,#aaa);text-transform:uppercase;margin-bottom:6px">
         Signal Layer â ${socialItems.length} posts
-        ${xApiCount ? `&nbsp;Â·&nbsp; <span style="color:#fff;background:#000;padding:1px 6px;border-radius:2px;font-size:8px">X: ${xApiCount}</span>` : ''}
-        ${stCount   ? `&nbsp;Â·&nbsp; <span style="color:#fff;background:#1d9bf0;padding:1px 6px;border-radius:2px;font-size:8px">ST: ${stCount}</span>` : ''}
-        ${trumpCount? `&nbsp;Â·&nbsp; <span style="color:#fff;background:#c0392b;padding:1px 6px;border-radius:2px;font-size:8px">TRUMP: ${trumpCount}</span>` : ''}
+        ${xApiCount ? `&nbsp;·&nbsp; <span style="color:#fff;background:#000;padding:1px 6px;border-radius:2px;font-size:8px">X: ${xApiCount}</span>` : ''}
+        ${stCount   ? `&nbsp;·&nbsp; <span style="color:#fff;background:#1d9bf0;padding:1px 6px;border-radius:2px;font-size:8px">ST: ${stCount}</span>` : ''}
+        ${trumpCount? `&nbsp;·&nbsp; <span style="color:#fff;background:#c0392b;padding:1px 6px;border-radius:2px;font-size:8px">TRUMP: ${trumpCount}</span>` : ''}
       </div>
       <div style="display:flex;gap:5px;flex-wrap:wrap">
         ${trumpCount ? `<span style="font-family:'Courier New',monospace;font-size:10px;background:#c0392b;color:#fff;padding:2px 8px">@realDonaldTrump <span style="opacity:.75">${trumpCount}</span></span>` : ''}
@@ -2840,7 +2840,7 @@ function buildBlubberFeed(uwData, calData) {
       var premFmt = d.premNum >= 1e6 ? '$' + (d.premNum/1e6).toFixed(1) + 'M' : d.premNum >= 1e3 ? '$' + (d.premNum/1e3).toFixed(0) + 'K' : d.premNum > 0 ? '$' + d.premNum.toFixed(0) : (d.premStr || 'â');
       var ratio   = (d.calls || d.puts) ? d.calls + 'C / ' + d.puts + 'P' : d.neutral + ' neutral';
       var watchTx = bias === 'BULLISH' ? 'Call flow dominant â smart money leaning long. Watch for momentum continuation.' : bias === 'BEARISH' ? 'Put flow dominant â hedging or directional short. Watch key support levels.' : 'Mixed flow â no clear directional edge yet. Wait for confirmation.';
-      html.push('<div class="blubber-item blubber-whale"><div class="bl-row-top"><span class="uw-tag">' + sym + '</span><span style="font-size:11px;font-weight:700;color:' + biasClr + '">' + bias + '</span><span class="bl-prem">' + premFmt + ' &nbsp;Â· ' + ratio + '</span></div><div class="bl-watch">' + watchTx + '</div></div>');
+      html.push('<div class="blubber-item blubber-whale"><div class="bl-row-top"><span class="uw-tag">' + sym + '</span><span style="font-size:11px;font-weight:700;color:' + biasClr + '">' + bias + '</span><span class="bl-prem">' + premFmt + ' &nbsp;· ' + ratio + '</span></div><div class="bl-watch">' + watchTx + '</div></div>');
     });
   }
 
@@ -2852,7 +2852,7 @@ function buildBlubberFeed(uwData, calData) {
   feedEl.innerHTML = html.join('');
   var sig = feedEl.querySelectorAll('.blubber-item').length;
   var ago = (calData && calData.generated) ? Math.round((now - new Date(calData.generated).getTime()) / 60000) + 'm ago' : '';
-  if (statusEl) statusEl.textContent = (ago ? ago + ' Â· ' : '') + sig + ' signals';
+  if (statusEl) statusEl.textContent = (ago ? ago + ' · ' : '') + sig + ' signals';
 }
 
 function applyBadge(regime) {
@@ -2943,7 +2943,7 @@ function applyScanJson(data) {
       rsi: t.rsi, sma20: t.sma20, sma50: t.sma50,
       stop: t.stop, consTarget: t.cons_target, aggTarget: t.agg_target,
       signals: t.signals || [],
-      reason: t.signals.slice(0, 3).join(' Â· ') + (t.rsi ? ` Â· RSI ${t.rsi}` : '')
+      reason: t.signals.slice(0, 3).join(' · ') + (t.rsi ? ` · RSI ${t.rsi}` : '')
     });
   });
 
@@ -3158,7 +3158,7 @@ function showCalDay(dateStr) {
       const impDots = e.importance >= 5 ? 'ð´ð´ð´' : e.importance >= 4 ? 'ð´ð´' : e.importance >= 3 ? 'ð¡' : '';
 
       return `<div class="cal-detail-event" style="border-color:${e.color||'#888'}">
-        <div class="cal-detail-label">${typeLabel} Â· ${e.source||''} ${impDots}</div>
+        <div class="cal-detail-label">${typeLabel} · ${e.source||''} ${impDots}</div>
         <div class="cal-detail-name">${e.ticker ? '<span style="font-size:16px;color:'+e.color+'">'+e.ticker+'</span> â ' : ''}${e.name||''}</div>
         <div class="cal-detail-meta">${meta.map(m=>`<span>${m}</span>`).join('')}</div>
       </div>`;
@@ -3447,7 +3447,7 @@ function uwRender() {
 
   document.getElementById('uwAlertsContent').innerHTML = `
     <div style="padding:8px 16px;background:#f0fff4;border-bottom:1px solid #c3e6cb;font-size:12px;color:#1a7f3c;font-weight:600;display:flex;justify-content:space-between">
-      <span>Showing ${filtered.length} of ${sorted.length} alerts${UW_TICKER ? ' Â· ' + UW_TICKER + ' only <a href="#" onclick="uwTickerFilter(null);return false" style="color:#888;font-size:11px">[clear]</a>' : ''}</span>
+      <span>Showing ${filtered.length} of ${sorted.length} alerts${UW_TICKER ? ' · ' + UW_TICKER + ' only <a href="#" onclick="uwTickerFilter(null);return false" style="color:#888;font-size:11px">[clear]</a>' : ''}</span>
       <span style="color:#aaa;font-weight:400" id="uwRefreshLabel">auto-refreshes</span>
     </div>
     ${header}${rows}
@@ -3490,7 +3490,7 @@ async function loadAll() {
       buildCalendar(_cachedNewsData);
       buildMarketIntel(_cachedNewsData);
       const badge = document.getElementById('lastScanTime');
-      if (badge) { badge.textContent = 'â  Using latest saved scan Â· live data unavailable'; badge.style.color = '#b8860b'; }
+      if (badge) { badge.textContent = 'â  Using latest saved scan · live data unavailable'; badge.style.color = '#b8860b'; }
     } else if (!hasExistingData) {
       oc.innerHTML = '<div class="loading" style="color:var(--red)">â  Could not reach data source â check connection</div>';
     }
@@ -3546,14 +3546,14 @@ async function loadAll() {
         const isPreMarket   = etDay>=1 && etDay<=5 && etHour>=8 && (etHour<9||(etHour===9&&etMin<30));
         const marketStatus  = isMarketHours ? 'ð¢ Market Open' : isPreMarket ? 'ð¡ Pre-Market' : 'ð´ Market Closed';
         const scanAge = !isNaN(dt) ? Math.round((now - dt) / 60000) : null;
-        const ageStr  = scanAge !== null ? (scanAge < 2 ? ' Â· just now' : ` Â· ${scanAge}m ago`) : '';
-        const source  = USE_SUPABASE ? ' Â· Supabase' : ' Â· GitHub';
+        const ageStr  = scanAge !== null ? (scanAge < 2 ? ' · just now' : ` · ${scanAge}m ago`) : '';
+        const source  = USE_SUPABASE ? ' · Supabase' : ' · GitHub';
         // Use ET timestamp from scanner if available, otherwise compute from UTC
         const lastScanLabel = tsEt ? `Last scan: ${tsEt}` : (tsEt || (scanAge !== null ? `Last scan: ${scanAge}m ago` : 'Last scan: unknown'));
         // Staleness colour â amber if >10 min during market hours, red if >20 min
         const badge = document.getElementById("lastScanTime");
         if (badge) {
-          badge.textContent = marketStatus + ageStr + source + ' Â· ' + lastScanLabel + (isMarketHours ? '' : ' Â· next scan 9:30am ET');
+          badge.textContent = marketStatus + ageStr + source + ' · ' + lastScanLabel + (isMarketHours ? '' : ' · next scan 9:30am ET');
           if (isMarketHours && scanAge !== null) {
             badge.style.color = scanAge > 20 ? '#c0392b' : scanAge > 10 ? '#b8860b' : '#999';
           } else {
@@ -3624,7 +3624,7 @@ async function loadAll() {
         applyAll({ scan: _cachedScanData, plays: null, news: _cachedNewsData, whales: null, calendar: null });
         loaded = true;
         const badge = document.getElementById('lastScanTime');
-        if (badge) { badge.textContent = 'â  Using latest saved scan Â· live sources unavailable'; badge.style.color = '#b8860b'; }
+        if (badge) { badge.textContent = 'â  Using latest saved scan · live sources unavailable'; badge.style.color = '#b8860b'; }
       }
     } catch(e) {
       console.warn('GitHub fallback failed:', e);
@@ -3859,7 +3859,7 @@ async function loadBasaniScore() {
   }).join('') : '<div style="color:#555;font-size:11px;padding:8px">No closed trades yet</div>';
   const bestStr  = loc.bestPlay  ? loc.bestPlay.ticker+' '+loc.bestPlay.type+' '+(loc.bestPlay.contract||'')+' '+(loc.bestPlay.pnl!=null?(loc.bestPlay.pnl>0?'+':'')+loc.bestPlay.pnl.toFixed(1)+'%':'') : '';
   const worstStr = loc.worstPlay ? loc.worstPlay.ticker+' '+loc.worstPlay.type+' '+(loc.worstPlay.contract||'')+' '+(loc.worstPlay.pnl!=null?(loc.worstPlay.pnl>0?'+':'')+loc.worstPlay.pnl.toFixed(1)+'%':'') : '';
-  el.innerHTML = '<div style="background:#0a0a0a;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #1a1a1a"><div style="font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:#444">BASANI Score Engine ï¿½ Self-Grading Backtest</div><div style="margin-left:auto;font-size:8px;color:#444">'+totalGraded+' trades graded ï¿½ '+loc.open.length+' open</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:#1a1a1a;border-bottom:1px solid #1a1a1a"><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+wrColor+'">'+wr+'%</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.closed.length+' closed plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Avg Return</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+avgClr+'">'+avgStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">per closed trade</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">UW Flow Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+uwWrClr+'">'+uwWrStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.uwClosed.length+' UW-sourced plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Best Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#2e8b57;line-height:1.4">'+bestStr+'</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Worst Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#c0392b;line-height:1.4">'+worstStr+'</div></div></div><div style="display:grid;grid-template-columns:auto 1fr;gap:1px;background:#1a1a1a"><div style="background:#0d0d0d;padding:14px 18px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Grade Distribution</div><div style="display:flex;align-items:flex-end;gap:6px;height:60px">'+gradeBar+'</div></div><div style="background:#0d0d0d;padding:14px 18px;overflow-x:auto"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Daily Win Rate (last 7)</div><div style="display:flex;align-items:flex-end;gap:8px;height:60px">'+sparkHTML+'</div></div></div>';
+  el.innerHTML = '<div style="background:#0a0a0a;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #1a1a1a"><div style="font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:#444">BASANI Score Engine › Self-Grading Backtest</div><div style="margin-left:auto;font-size:8px;color:#444">'+totalGraded+' trades graded › '+loc.open.length+' open</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:#1a1a1a;border-bottom:1px solid #1a1a1a"><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+wrColor+'">'+wr+'%</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.closed.length+' closed plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Avg Return</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+avgClr+'">'+avgStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">per closed trade</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">UW Flow Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+uwWrClr+'">'+uwWrStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.uwClosed.length+' UW-sourced plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Best Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#2e8b57;line-height:1.4">'+bestStr+'</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Worst Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#c0392b;line-height:1.4">'+worstStr+'</div></div></div><div style="display:grid;grid-template-columns:auto 1fr;gap:1px;background:#1a1a1a"><div style="background:#0d0d0d;padding:14px 18px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Grade Distribution</div><div style="display:flex;align-items:flex-end;gap:6px;height:60px">'+gradeBar+'</div></div><div style="background:#0d0d0d;padding:14px 18px;overflow-x:auto"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Daily Win Rate (last 7)</div><div style="display:flex;align-items:flex-end;gap:8px;height:60px">'+sparkHTML+'</div></div></div>';
 }
 
 function renderStocksLivePanel() {
@@ -3956,10 +3956,10 @@ function renderAll() {
 
   // Options
   document.getElementById('scalpsCol').innerHTML = `
-    <div class="plays-col-header">â¡ Scalp Plays <span class="col-sub">0â10 DTE Â· Earnings plays</span></div>
+    <div class="plays-col-header">â¡ Scalp Plays <span class="col-sub">0â10 DTE · Earnings plays</span></div>
     ${SCALPS.map(renderPlay).join('')}`;
   document.getElementById('swingsCol').innerHTML = `
-    <div class="plays-col-header">ð Swing Plays <span class="col-sub">14â30 DTE Â· Catalyst driven</span></div>
+    <div class="plays-col-header">ð Swing Plays <span class="col-sub">14â30 DTE · Catalyst driven</span></div>
     ${SWINGS.map(renderPlay).join('')}`;
 
 
@@ -3993,7 +3993,7 @@ function renderAll() {
       '<span style="font-family:monospace;font-size:12px;font-weight:700;color:#000">'+f.contract+'</span>' +
       '<span style="font-size:8px;letter-spacing:.12em;color:'+(f.bias==='LONG'?'#2e8b57':f.bias==='SHORT'?'#c0392b':'#888')+';border:1px solid '+(f.bias==='LONG'?'#c8e6d6':f.bias==='SHORT'?'#f0b8b8':'#ddd')+';padding:1px 5px">'+f.bias+'</span>' +
       '</div><div style="font-size:9px;color:#555">Entry <span style="font-family:monospace;color:#000;font-size:10px">'+f.entry+'</span></div>' +
-      '<div style="font-size:9px;color:#555">Target <span style="font-family:monospace;color:#2e8b57">'+f.target+'</span> ï¿½ Stop <span style="font-family:monospace;color:#c0392b">'+f.stop+'</span></div></div>'
+      '<div style="font-size:9px;color:#555">Target <span style="font-family:monospace;color:#2e8b57">'+f.target+'</span> › Stop <span style="font-family:monospace;color:#c0392b">'+f.stop+'</span></div></div>'
     ).join('');
     const uwRows = SCALPS.filter(p=>p.flags&&p.flags.some(f=>f.includes('=')||f.includes('SWEEP'))).slice(0,4).map(p =>
       '<div style="padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;display:flex;gap:8px;align-items:center">' +
@@ -4097,7 +4097,7 @@ function initTVStocks(ticker) {
   renderTVWidget('tv-stocks-chart', tvSym(ticker), ['RSI@tv-basicstudies']);
   updateStockPills(ticker);
   const lbl = document.getElementById('tvStockLabel');
-  if (lbl) lbl.textContent = ticker + '  Â·  5-min live';
+  if (lbl) lbl.textContent = ticker + '  ·  5-min live';
 }
 
 function updateStockPills(activeTicker) {
