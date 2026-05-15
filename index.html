@@ -43,24 +43,52 @@ body { background: #f5f4f1; font-family: 'Inter', -apple-system, BlinkMacSystemF
 .last-scan { font-size: 10px; color: #999; font-family: 'Courier New', monospace; }
 
 /* ── BLUBBER FEED ─────────────────────────────────────────────────────────── */
-.blubber-feed      { display: flex; flex-direction: column; gap: 8px; }
-.blubber-item      { background: #fff; border: 1px solid #ebebeb; border-left: 3px solid #ddd; padding: 11px 14px; }
-.blubber-high      { border-left-color: #c0392b; }
-.blubber-med       { border-left-color: #d4870a; }
-.blubber-whale     { border-left-color: #2e6fa8; }
-.blubber-empty     { color: #aaa; font-size: 13px; padding: 24px; text-align: center; }
-.bl-section-header { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; font-family: Georgia, serif; color: #888; padding: 14px 0 8px; border-bottom: 1px solid #eee; margin-bottom: 8px; }
-.bl-row-top        { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
-.bl-event-name     { font-size: 12px; font-weight: 600; color: #111; flex: 1; min-width: 0; }
-.bl-meta           { font-size: 11px; color: #888; margin-bottom: 4px; font-family: 'Courier New', monospace; }
-.bl-watch          { font-size: 11px; color: #555; line-height: 1.5; margin-top: 4px; }
+.blubber-feed       { min-height: 400px; }
+.bl-two-col         { display: flex; gap: 16px; align-items: flex-start; }
+.bl-left            { flex: 1 1 54%; min-width: 0; }
+.bl-right           { flex: 1 1 43%; min-width: 240px; }
+@media (max-width: 720px) { .bl-two-col { flex-direction: column; } .bl-right { min-width: 0; } }
+.blubber-item       { background: #fff; border: 1px solid #ebebeb; border-left: 3px solid #ddd; padding: 10px 13px; margin-bottom: 5px; border-radius: 2px; }
+.blubber-high       { border-left-color: #c0392b; }
+.blubber-med        { border-left-color: #d4870a; }
+.blubber-whale      { border-left-color: #2e6fa8; }
+.blubber-earn       { border-left-color: #1a6bcc; }
+.blubber-news-high  { border-left-color: #c0392b; background: rgba(192,57,43,0.02); }
+.blubber-news-med   { border-left-color: #d4870a; background: rgba(212,135,10,0.02); }
+.blubber-dp         { border-left-color: #999; background: #fafafa; }
+.blubber-empty      { color: #aaa; font-size: 13px; padding: 24px; text-align: center; }
+.bl-section-header  { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; font-family: Georgia, serif; color: #888; padding: 12px 0 7px; border-bottom: 1px solid #eee; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
+.bl-section-count   { background: #f0f0f0; color: #999; font-size: 8px; padding: 1px 6px; border-radius: 10px; font-family: 'Courier New', monospace; letter-spacing: 0; }
+.bl-row-top         { display: flex; align-items: baseline; gap: 7px; margin-bottom: 4px; flex-wrap: wrap; }
+.bl-event-name      { font-size: 12px; font-weight: 600; color: #111; flex: 1; min-width: 0; line-height: 1.4; }
+.bl-meta            { font-size: 10px; color: #aaa; margin-bottom: 3px; font-family: 'Courier New', monospace; }
+.bl-watch           { font-size: 11px; color: #555; line-height: 1.5; margin-top: 4px; }
+.bl-raw             { font-size: 10px; color: #888; font-family: 'Courier New', monospace; margin-top: 3px; }
+.bl-news-title      { font-size: 12px; font-weight: 600; color: #111; line-height: 1.4; margin-bottom: 4px; }
+.bl-news-title a    { color: inherit; text-decoration: none; }
+.bl-news-title a:hover { text-decoration: underline; }
 .bl-cur-tag  { display: inline-block; background: #f0f0f0; color: #555; font-size: 9px; padding: 1px 6px; border-radius: 2px; font-family: 'Courier New', monospace; letter-spacing: 0.05em; flex-shrink: 0; }
-.bl-tag-high { display: inline-block; background: rgba(192,57,43,0.08); color: #c0392b; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.1em; font-family: Georgia, serif; flex-shrink: 0; }
-.bl-tag-med  { display: inline-block; background: rgba(212,135,10,0.08); color: #d4870a; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.1em; font-family: Georgia, serif; flex-shrink: 0; }
-.bl-tag-low  { display: inline-block; background: #f5f5f5; color: #aaa; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.1em; font-family: Georgia, serif; flex-shrink: 0; }
-.bl-tag-earn { display: inline-block; background: rgba(26,107,204,0.08); color: #1a6bcc; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.1em; font-family: Georgia, serif; flex-shrink: 0; }
+.bl-tag-high { display: inline-block; background: rgba(192,57,43,0.09); color: #c0392b; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.09em; font-family: Georgia, serif; flex-shrink: 0; }
+.bl-tag-med  { display: inline-block; background: rgba(212,135,10,0.09); color: #d4870a; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.09em; font-family: Georgia, serif; flex-shrink: 0; }
+.bl-tag-low  { display: inline-block; background: #f5f5f5; color: #bbb; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.09em; font-family: Georgia, serif; flex-shrink: 0; }
+.bl-tag-earn { display: inline-block; background: rgba(26,107,204,0.09); color: #1a6bcc; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.09em; font-family: Georgia, serif; flex-shrink: 0; }
+.bl-tag-dp   { display: inline-block; background: #f0f0f0; color: #666; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.06em; font-family: 'Courier New', monospace; flex-shrink: 0; }
+.bl-tag-uw   { display: inline-block; background: rgba(46,111,168,0.09); color: #2e6fa8; font-size: 8px; padding: 1px 6px; border-radius: 2px; letter-spacing: 0.09em; font-family: Georgia, serif; flex-shrink: 0; }
 .bl-prem     { font-size: 10px; color: #999; margin-left: auto; font-family: 'Courier New', monospace; flex-shrink: 0; }
 .uw-tag      { display: inline-block; background: rgba(46,111,168,0.1); color: #2e6fa8; font-size: 10px; padding: 1px 7px; border-radius: 2px; font-family: 'Courier New', monospace; font-weight: 700; flex-shrink: 0; }
+/* Clickable / expandable calendar events */
+.bl-clickable       { cursor: pointer; transition: background 0.1s; }
+.bl-clickable:hover { background: #f9f9f9; }
+.bl-expand-icon     { font-size: 10px; color: #ccc; margin-left: auto; flex-shrink: 0; transition: transform 0.18s; display: inline-block; }
+.bl-expanded .bl-expand-icon { transform: rotate(180deg); }
+.bl-detail          { display: none; margin-top: 9px; padding-top: 9px; border-top: 1px solid #f0f0f0; }
+.bl-expanded .bl-detail { display: block; }
+.bl-stat-row        { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 7px; }
+.bl-stat            { text-align: center; }
+.bl-stat-val        { font-size: 15px; font-weight: 700; color: #111; font-family: 'Courier New', monospace; }
+.bl-stat-lbl        { font-size: 8px; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+.bl-beat            { color: #2e8b57; }
+.bl-miss            { color: #c0392b; }
 
 /* ── TABS ── */
 .tab-bar {
@@ -227,7 +255,7 @@ body { background: #f5f4f1; font-family: 'Inter', -apple-system, BlinkMacSystemF
 .dte-warn { background: #fffbf0; color: #b8860b; border: 1px solid #f0e0a0; }
 .dte-hot  { background: #fdf0f0; color: #c0392b; border: 1px solid #f0b8b8; }
 
-/* -- PLAYS METRICS HEADER -- */
+/* ── PLAYS METRICS HEADER ── */
 .plays-metrics-bar {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 1px; background: #111; border-bottom: 1px solid #111; margin-bottom: 1px;
@@ -238,6 +266,7 @@ body { background: #f5f4f1; font-family: 'Inter', -apple-system, BlinkMacSystemF
 .plays-metric-label { font-size: 7px; letter-spacing: 0.18em; text-transform: uppercase; color: #444; margin-bottom: 3px; }
 .plays-metric-val   { font-family: 'Courier New', monospace; font-size: 16px; font-weight: 700; }
 
+/* ── RISK RADAR ── */
 .risk-list { background: #fff; border: 1px solid #e5e5e5; }
 .risk-row {
   display: flex; gap: 14px; padding: 14px 18px;
@@ -310,13 +339,13 @@ body { background: #f5f4f1; font-family: 'Inter', -apple-system, BlinkMacSystemF
 
 /* ── NEWS FEED ── */
 .news-strip {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
-  gap: 1px; background: #ddd; border: 1px solid #ddd; margin-bottom: 16px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr));
+  gap: 1px; background: #ddd; border: 1px solid #ddd; margin-bottom: 12px;
 }
-.news-stat { background: #fff; padding: 12px 16px; }
-.news-stat-label { font-size: 9px; letter-spacing: 0.18em; color: #888; text-transform: uppercase; }
-.news-stat-val { font-family: 'Courier New', monospace; font-size: 17px; font-weight: 700; margin-top: 4px; }
-.news-stat-sub { font-size: 11px; color: #777; margin-top: 2px; }
+.news-stat { background: #fff; padding: 9px 13px; }
+.news-stat-label { font-size: 8px; letter-spacing: 0.18em; color: #888; text-transform: uppercase; }
+.news-stat-val { font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; margin-top: 3px; }
+.news-stat-sub { font-size: 10px; color: #777; margin-top: 1px; }
 
 .news-section { margin-bottom: 20px; }
 .news-section-header {
@@ -1143,7 +1172,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
     </div>
 
     <div class="vip-divider"></div>
-    <div class="vip-tagline">Institutional-grade intelligence � Invite only</div>
+    <div class="vip-tagline">Institutional-grade intelligence · Invite only</div>
 
     <div class="vip-input-wrap">
       <input id="vip-input" type="password" placeholder="Enter access code"
@@ -1171,7 +1200,33 @@ body { background: var(--bg) !important; color: var(--text) !important; }
 
   <!-- Scrolling ticker -->
   <div class="vip-footer">
-    <div class="vip-ticker-track"><span class="vip-ticker-item dn">SPY $734.65 -0.06%</span><span class="vip-ticker-item up">QQQ $700.18 +0.48%</span><span class="vip-ticker-item up">NVDA $213.45 +2.49%</span><span class="vip-ticker-item up">TSLA $416.94 +2.29%</span><span class="vip-ticker-item up">AAPL $290.70 +0.52%</span><span class="vip-ticker-item dn">AMD $408.19 -2.19%</span><span class="vip-ticker-item up">META $618.62 +0.67%</span><span class="vip-ticker-item up">MSFT $420.66 +0.13%</span><span class="vip-ticker-item up">= QQQ $710C 6/5  $995K SWEEP</span><span class="vip-ticker-item dn">= SPY $695P 6/18  $867K HEDGE</span><span class="vip-ticker-item up">= ORCL $210C 7/17  $1.35M</span><span class="vip-ticker-item up">= NVDA $230C 6/18  $589K</span><span class="vip-ticker-item dn">SPY $734.65 -0.06%</span><span class="vip-ticker-item up">QQQ $700.18 +0.48%</span><span class="vip-ticker-item up">NVDA $213.45 +2.49%</span><span class="vip-ticker-item up">TSLA $416.94 +2.29%</span><span class="vip-ticker-item up">AAPL $290.70 +0.52%</span><span class="vip-ticker-item dn">AMD $408.19 -2.19%</span><span class="vip-ticker-item up">META $618.62 +0.67%</span><span class="vip-ticker-item up">MSFT $420.66 +0.13%</span><span class="vip-ticker-item up">= QQQ $710C 6/5  $995K SWEEP</span><span class="vip-ticker-item dn">= SPY $695P 6/18  $867K HEDGE</span><span class="vip-ticker-item up">= ORCL $210C 7/17  $1.35M</span><span class="vip-ticker-item up">= NVDA $230C 6/18  $589K</span></div>
+    <div class="vip-ticker-track" id="vipTickerTrack">
+      <span class="vip-ticker-item up">SPY $731.49 +0.47%</span>
+      <span class="vip-ticker-item up">QQQ $691.77 +0.59%</span>
+      <span class="vip-ticker-item up">NVDA $204.97 +2.56%</span>
+      <span class="vip-ticker-item up">TSLA $395.26 +2.47%</span>
+      <span class="vip-ticker-item up">AAPL $285.30 +1.20%</span>
+      <span class="vip-ticker-item up">AMD $413.97 +1.36%</span>
+      <span class="vip-ticker-item up">META $613.73 +2.07%</span>
+      <span class="vip-ticker-item up">MSFT $415.68 +1.92%</span>
+      <span class="vip-ticker-item up">🐋 AMD 420C $2.0M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 TSLA 395C $1.4M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 TQQQ 69C $1.3M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 QQQ 692C $890K FLOW</span>
+      <!-- duplicate for seamless loop -->
+      <span class="vip-ticker-item up">SPY $731.49 +0.47%</span>
+      <span class="vip-ticker-item up">QQQ $691.77 +0.59%</span>
+      <span class="vip-ticker-item up">NVDA $204.97 +2.56%</span>
+      <span class="vip-ticker-item up">TSLA $395.26 +2.47%</span>
+      <span class="vip-ticker-item up">AAPL $285.30 +1.20%</span>
+      <span class="vip-ticker-item up">AMD $413.97 +1.36%</span>
+      <span class="vip-ticker-item up">META $613.73 +2.07%</span>
+      <span class="vip-ticker-item up">MSFT $415.68 +1.92%</span>
+      <span class="vip-ticker-item up">🐋 AMD 420C $2.0M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 TSLA 395C $1.4M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 TQQQ 69C $1.3M SWEEP</span>
+      <span class="vip-ticker-item up">🐋 QQQ 692C $890K FLOW</span>
+    </div>
   </div>
 </div>
 
@@ -1225,11 +1280,11 @@ body { background: var(--bg) !important; color: var(--text) !important; }
     <div class="tab active" onclick="switchTab('overview')">Overview</div>
     <div class="tab" onclick="switchTab('calendar')">Calendar</div>
     <div class="tab" onclick="switchTab('blubber')">🐋 Blubber</div>
+    <div class="tab" id="tab-btn-whales" onclick="switchTab('whales')">🐳 Flow</div>
     <div class="tab" onclick="switchTab('feed')">Live Feed</div>
     <div class="tab" onclick="switchTab('intel')">Tweets</div>
     <div class="tab" onclick="switchTab('options')">Options Plays</div>
     <div class="tab" onclick="switchTab('futures')">Futures</div>
-    <div class="tab" id="tab-btn-whales" onclick="switchTab('whales')">🐳 Flow</div>
     <div class="tab" onclick="switchTab('stocks')">Stocks</div>
     <div class="tab" onclick="switchTab('risks')">Risk Radar</div>
     <div class="tab" onclick="switchTab('log')">Plays Log</div>
@@ -1277,21 +1332,24 @@ body { background: var(--bg) !important; color: var(--text) !important; }
     </div>
     <!-- TradingView chart — rendered once, persists across data reloads -->
     <div class="tv-chart-section">
-      <div class="section-label" style="margin-top:24px">Live Chart <span>SPY � QQQ � any symbol — switchable</span></div>
+      <div class="section-label" style="margin-top:24px">Live Chart <span>SPY · QQQ · any symbol — switchable</span></div>
       <div class="tv-chart-box" id="tv-overview-chart"></div>
     </div>
   </div>
 
   <!-- ═══ TAB: BLUBBER FEED ═══ -->
-  <div class="tab-panel" id="tab-blubber" style="display:none;padding:16px">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+  <div class="tab-panel" id="tab-blubber" style="padding:16px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
       <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;font-family:Georgia,serif;color:#555">
-        🐋 Blubber — UW Flow + Economic Calendar
+        Blubber — News + Calendar | UW Flow
       </div>
-      <span id="blubberStatus" style="font-size:10px;color:#999;font-family:'Courier New',monospace">Loading...</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span id="blubberStatus" style="font-size:10px;color:#999;font-family:'Courier New',monospace">Loading...</span>
+        <button onclick="(function(){var u=window._lastUwData,c=window._lastCalData;if(typeof buildBlubberFeed==='function')buildBlubberFeed(u,c);})()" style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;font-family:Georgia,serif;color:#888;background:none;border:1px solid #ddd;padding:2px 8px;cursor:pointer;border-radius:2px">Refresh</button>
+      </div>
     </div>
     <div id="blubberFeed" class="blubber-feed">
-      <div class="blubber-empty">⏳ Fetching live data...</div>
+      <div class="blubber-empty">Fetching live data...</div>
     </div>
   </div>
 
@@ -1317,7 +1375,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
 
     <!-- Legend -->
     <div style="display:flex;gap:16px;padding:8px 20px;background:#fff;border-bottom:1px solid #f0f0f0;font-size:11px;color:#666;flex-wrap:wrap">
-      <span><span style="color:#1a6bcc;font-weight:700">■</span> Earnings &nbsp;�&nbsp; <span style="color:#c0392b;font-weight:700">■</span> High-Impact Econ &nbsp;�&nbsp; <span style="color:#e67e22;font-weight:700">■</span> Medium Econ &nbsp;�&nbsp; <span style="color:#8e44ad;font-weight:700">■</span> FDA &nbsp;�&nbsp; <span style="color:#16a085;font-weight:700">■</span> IPO</span>
+      <span><span style="color:#1a6bcc;font-weight:700">■</span> Earnings &nbsp;·&nbsp; <span style="color:#c0392b;font-weight:700">■</span> High-Impact Econ &nbsp;·&nbsp; <span style="color:#e67e22;font-weight:700">■</span> Medium Econ &nbsp;·&nbsp; <span style="color:#8e44ad;font-weight:700">■</span> FDA &nbsp;·&nbsp; <span style="color:#16a085;font-weight:700">■</span> IPO</span>
       <span style="margin-left:auto;color:#aaa">Click any day to see full details</span>
     </div>
 
@@ -1349,7 +1407,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
   <!-- ═══ TAB: TWEETS ═══ -->
   <div class="tab-panel" id="tab-intel">
     <div class="section">
-      <div class="section-label">Market Posts — X � Stocktwits � Truth Social</div>
+      <div class="section-label">Market Posts — X · Stocktwits · Truth Social</div>
       <div id="intelContent"><div class="loading">Loading posts...</div></div>
     </div>
     <div class="disclaimer">For educational purposes only. Not financial advice. &copy; BASANI 2026.</div>
@@ -1358,51 +1416,52 @@ body { background: var(--bg) !important; color: var(--text) !important; }
   <!-- ═══ TAB: OPTIONS PLAYS ═══ -->
   <div class="tab-panel" id="tab-options">
     <div class="section">
-      <div class="section-label">Structured Options Plays <span>Score 0100 = BASANI signal strength</span></div>
+      <div class="section-label">Structured Options Plays <span>Score 0–100 = BASANI signal strength</span></div>
       <!-- Live metrics strip -->
       <div class="plays-metrics-bar" id="playsMetricsBar">
         <div class="plays-metric-cell">
           <div class="plays-metric-label">Total Plays</div>
-          <div class="plays-metric-val" id="pmTotalPlays" style="color:#fff">--</div>
+          <div class="plays-metric-val" id="pmTotalPlays" style="color:#fff">—</div>
         </div>
         <div class="plays-metric-cell">
           <div class="plays-metric-label">Win Rate</div>
-          <div class="plays-metric-val" id="pmWinRate" style="color:#2e8b57">--</div>
+          <div class="plays-metric-val" id="pmWinRate" style="color:#2e8b57">—</div>
         </div>
         <div class="plays-metric-cell">
           <div class="plays-metric-label">Avg Return</div>
-          <div class="plays-metric-val" id="pmAvgReturn" style="color:#2e8b57">--</div>
+          <div class="plays-metric-val" id="pmAvgReturn" style="color:#2e8b57">—</div>
         </div>
         <div class="plays-metric-cell">
           <div class="plays-metric-label">Open Positions</div>
-          <div class="plays-metric-val" id="pmOpenPositions" style="color:#b8860b">--</div>
+          <div class="plays-metric-val" id="pmOpenPositions" style="color:#b8860b">—</div>
         </div>
         <div class="plays-metric-cell">
           <div class="plays-metric-label">UW Flow Win %</div>
-          <div class="plays-metric-val" id="pmUwWinRate" style="color:#3a9e6e">--</div>
+          <div class="plays-metric-val" id="pmUwWinRate" style="color:#3a9e6e">—</div>
         </div>
         <div class="plays-metric-cell">
           <div class="plays-metric-label">Best Trade</div>
-          <div class="plays-metric-val" id="pmBestTrade" style="color:#2e8b57;font-size:11px">--</div>
+          <div class="plays-metric-val" id="pmBestTrade" style="color:#2e8b57;font-size:11px">—</div>
         </div>
       </div>
-      <!-- 3-col plays grid -->
+      <!-- 3-col plays grid (scalps | swings | sidebar) -->
       <div class="plays-grid">
         <div class="plays-col" id="scalpsCol">
           <div class="plays-col-header">
-            : Scalp Plays
-            <span class="col-sub">010 DTE : Fast moves : Earnings plays</span>
+            ⚡ Scalp Plays
+            <span class="col-sub">0–10 DTE · Fast moves · Earnings plays</span>
           </div>
         </div>
         <div class="plays-col" id="swingsCol">
           <div class="plays-col-header">
-            =: Swing Plays
-            <span class="col-sub">1430 DTE : Trend trades : Catalyst driven</span>
+            📈 Swing Plays
+            <span class="col-sub">14–30 DTE · Trend trades · Catalyst driven</span>
           </div>
         </div>
+        <!-- Sidebar: Futures snapshot + UW top flow -->
         <div class="plays-sidebar" id="playsSidebar">
           <div class="plays-col-header" style="background:#0d0d0d">
-            =: Futures + UW Flow
+            📊 Futures + UW Flow
             <span class="col-sub">Live</span>
           </div>
           <div id="playsSidebarContent" style="padding:0">
@@ -1449,7 +1508,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
   <!-- ═══ TAB: FUTURES ═══ -->
   <div class="tab-panel" id="tab-futures">
     <div class="section">
-      <div class="section-label">Futures Plays — Directional Bias <span>CME contracts � Intraday + Swing setups</span></div>
+      <div class="section-label">Futures Plays — Directional Bias <span>CME contracts · Intraday + Swing setups</span></div>
       <div id="futuresContent"></div>
     </div>
   </div>
@@ -1556,7 +1615,7 @@ const SUPABASE_ANON = ['sb','publishable','dy77qQrBEFQjC-fQLgHcyA_6iX3krzo'].joi
 
 // ── TAB SWITCHING ────────────────────────────────────────────────────────────
 function switchTab(name) {
-  const panels = ['overview','calendar','feed','intel','options','futures','whales','stocks','risks','log'];
+  const panels = ['overview','calendar','blubber','whales','feed','intel','options','futures','stocks','risks','log'];
   document.querySelectorAll('.tab').forEach((t, i) => {
     t.classList.toggle('active', panels[i] === name);
   });
@@ -1565,159 +1624,148 @@ function switchTab(name) {
   });
   localStorage.setItem('basani_tab', name);
 
-  // Initialize TradingView charts on tab visit
+  // Initialize content on tab visit
   if (name === 'overview') setTimeout(initTVOverview, 50);
   if (name === 'stocks')   setTimeout(() => initTVStocks(_tvActiveStock || (STOCKS[0] && STOCKS[0].ticker) || 'GOOGL'), 50);
   if (name === 'futures')  setTimeout(renderFutures, 50);
+  if (name === 'blubber')  setTimeout(function() {
+    if (typeof buildBlubberFeed === 'function') {
+      buildBlubberFeed(window._lastUwData || [], window._lastCalData || null);
+    }
+  }, 50);
+  if (name === 'whales')   setTimeout(function() {
+    var u = window._lastUwData;
+    if (u && typeof renderUWAlerts === 'function') {
+      renderUWAlerts(Array.isArray(u) ? u : (u.items || []));
+    }
+  }, 50);
 }
 
 // ── STATIC DATA ──────────────────────────────────────────────────────────────
 const SCAN = {
-  time: "Thursday, May 7, 2026 08:00 ET",
-  regime: "RISK-NEUTRAL",
-  qqq: { price: "700.18", chg: "+0.48%" },
-  spy: { price: "734.65", chg: "-0.06%" },
-  vix: "17.07",
-  summary: "QQQ +0.48% / SPY -0.06%  divergent tape favoring tech megacaps. Single-leg call premium led by QQQ $710C 6/5 ($995K) and ORCL $210C 7/17 ($1.35M). Largest put: SPY $695P 6/18 ($867K)  institutional hedge. NVDA earnings 5/20 acting as the next major catalyst; CRWV just cleared earnings. Treat the day as paired-trade: long QQQ/NVDA/GOOGL calls vs SPY put hedge.",
-  hedge: "SPY $695P 6/18  $867K printed ASK-side; pairs cleanly against the long-side calls."
+  time: "2026-05-06 15:50",
+  regime: "BULLISH BIAS",
+  qqq: { price: 691.77, chg: 0.59 },
+  spy: { price: 731.49, chg: 0.47 },
+  vix: 22.0,
+  summary: "Broad market rally continues with all major tech names green. AMD posted a monster earnings beat on May 5 — stock gapped from ~$200 to $413 post-earnings, confirming the AI chip supercycle is real. Smart money is piling in: $2M sweep on AMD 420C expiring Friday, $1.4M on TSLA 395C, $1.3M on TQQQ 69C. Unusual Whales flow is overwhelmingly bullish with institutions buying near-term calls on the move. NVDA earnings on May 21 is the next major catalyst — flow already accumulating there.",
 };
 
 const CATALYSTS = [
-  { color: "#2e8b57", title: "AMD Earnings Monster Beat", body: "AMD reported Q1 2026 on May 5 after hours  data center revenue crushed expectations. Stock gapped from ~$200 to $413+. Smart money responding: $2M sweep on 420C today. AI chip demand is not slowing.", action: ": AMD 420C May 8 : NVDA 215C May 22", actionColor: "#2e8b57" },
-  { color: "#2e8b57", title: "NVDA Earnings May 21", body: "The biggest catalyst remaining this season. $575B in hyperscaler capex all flows through Nvidia. Blackwell ramp accelerating. Call flow accumulating  $255K on 205C this week. Close short-dated calls before the print.", action: ": NVDA 215C May 22 : Close before 5/21", actionColor: "#2e8b57" },
-  { color: "#c0392b", title: "Trump-Xi Summit May 1415", body: "High-stakes trade summit in Beijing. 50% additional China tariffs on the table. Binary risk event  AAPL and AMD most exposed. Markets could gap 35% either direction on news.", action: ": Reduce size before May 10 weekend", actionColor: "#b8860b" },
-  { color: "#b8860b", title: "Google I/O  May 1920", body: "Googles annual developer conference is a major AI product catalyst. New Gemini models, AI search, and cloud tools expected. GOOGL at P/E 15 is deeply undervalued vs peers.", action: ": GOOGL 400C June 20", actionColor: "#2e8b57" },
-  { color: "#b8860b", title: "Fed Held : Warsh Era Begins", body: "Rates at 3.53.75%. Powell exits May 15, replaced by Warsh who signals cutting bias. Transition volatility possible  good for tech and gold long-term.", action: ": Watch TLT : Vol spike risk ~May 15", actionColor: "#b8860b" },
+  { color: "#2e8b57", title: "AMD Earnings Monster Beat", body: "AMD reported Q1 2026 on May 5 after hours — data center revenue crushed expectations. Stock gapped from ~$200 to $413+. Smart money responding: $2M sweep on 420C today. AI chip demand is not slowing.", action: "→ AMD 420C May 8 · NVDA 215C May 22", actionColor: "#2e8b57" },
+  { color: "#2e8b57", title: "NVDA Earnings May 21", body: "The biggest catalyst remaining this season. $575B in hyperscaler capex all flows through Nvidia. Blackwell ramp accelerating. Call flow accumulating — $255K on 205C this week. Close short-dated calls before the print.", action: "→ NVDA 215C May 22 · Close before 5/21", actionColor: "#2e8b57" },
+  { color: "#c0392b", title: "Trump-Xi Summit May 14–15", body: "High-stakes trade summit in Beijing. 50% additional China tariffs on the table. Binary risk event — AAPL and AMD most exposed. Markets could gap 3–5% either direction on news.", action: "→ Reduce size before May 10 weekend", actionColor: "#b8860b" },
+  { color: "#b8860b", title: "Google I/O — May 19–20", body: "Google's annual developer conference is a major AI product catalyst. New Gemini models, AI search, and cloud tools expected. GOOGL at P/E 15 is deeply undervalued vs peers.", action: "→ GOOGL 400C June 20", actionColor: "#2e8b57" },
+  { color: "#b8860b", title: "Fed Held · Warsh Era Begins", body: "Rates at 3.5–3.75%. Powell exits May 15, replaced by Warsh who signals cutting bias. Transition volatility possible — good for tech and gold long-term.", action: "→ Watch TLT · Vol spike risk ~May 15", actionColor: "#b8860b" },
 ];
 
 const STOCKS = [
-  { ticker:"AMD",   price:413.97, chg:+1.36, score:95, dir:"BULLISH", color:"#2e8b57", reason:"Monster earnings beat May 5 : Stock doubled post-earnings : $2M call sweep today : AI chip demand exploding" },
-  { ticker:"NVDA",  price:204.97, chg:+2.56, score:90, dir:"BULLISH", color:"#2e8b57", reason:"Earnings May 21 : $575B hyperscaler capex : $255K call flow today : AI king" },
-  { ticker:"TSLA",  price:395.26, chg:+2.47, score:82, dir:"BULLISH", color:"#2e8b57", reason:"$1.4M call sweep today : ATM 395C heavy flow : Momentum intact : FSD + Robotaxi catalyst" },
-  { ticker:"META",  price:613.73, chg:+2.07, score:75, dir:"BULLISH", color:"#2e8b57", reason:"Recovery from earnings dip : AI infra investment paying off : Strong engagement data" },
-  { ticker:"MSFT",  price:415.68, chg:+1.92, score:72, dir:"BULLISH", color:"#4a7fa5", reason:"Pentagon AI : Azure +40% : AI commercial ARR $37B" },
-  { ticker:"AAPL",  price:285.30, chg:+1.20, score:70, dir:"BULLISH", color:"#b8860b", reason:"Q2 beat : $100B buyback : WWDC June catalyst : India manufacturing ramp" },
-  { ticker:"QQQ",   price:691.77, chg:+0.59, score:78, dir:"BULLISH", color:"#2e8b57", reason:"$890K call flow at 692C : Tech leadership intact : Breaking new highs" },
-  { ticker:"TQQQ",  price:69.00,  chg:+1.8,  score:78, dir:"BULLISH", color:"#4a7fa5", reason:"$1.3M sweep on 69C May 8 : Leveraged QQQ play : Heavy institutional conviction" },
-  { ticker:"SPY",   price:731.49, chg:+0.47, score:68, dir:"BULLISH", color:"#b8860b", reason:"Broad market grinding higher : 7350 SPX calls targeted Jan 2027 ($2.75M)" },
-  { ticker:"GOOGL", price:390.00, chg:+1.1,  score:85, dir:"BULLISH", color:"#2e8b57", reason:"Cloud +63% : Pentagon AI : Google I/O May 1920 : P/E only 15" },
+  { ticker:"AMD",   price:413.97, chg:+1.36, score:95, dir:"BULLISH", color:"#2e8b57", reason:"Monster earnings beat May 5 · Stock doubled post-earnings · $2M call sweep today · AI chip demand exploding" },
+  { ticker:"NVDA",  price:204.97, chg:+2.56, score:90, dir:"BULLISH", color:"#2e8b57", reason:"Earnings May 21 · $575B hyperscaler capex · $255K call flow today · AI king" },
+  { ticker:"TSLA",  price:395.26, chg:+2.47, score:82, dir:"BULLISH", color:"#2e8b57", reason:"$1.4M call sweep today · ATM 395C heavy flow · Momentum intact · FSD + Robotaxi catalyst" },
+  { ticker:"META",  price:613.73, chg:+2.07, score:75, dir:"BULLISH", color:"#2e8b57", reason:"Recovery from earnings dip · AI infra investment paying off · Strong engagement data" },
+  { ticker:"MSFT",  price:415.68, chg:+1.92, score:72, dir:"BULLISH", color:"#4a7fa5", reason:"Pentagon AI · Azure +40% · AI commercial ARR $37B" },
+  { ticker:"AAPL",  price:285.30, chg:+1.20, score:70, dir:"BULLISH", color:"#b8860b", reason:"Q2 beat · $100B buyback · WWDC June catalyst · India manufacturing ramp" },
+  { ticker:"QQQ",   price:691.77, chg:+0.59, score:78, dir:"BULLISH", color:"#2e8b57", reason:"$890K call flow at 692C · Tech leadership intact · Breaking new highs" },
+  { ticker:"TQQQ",  price:69.00,  chg:+1.8,  score:78, dir:"BULLISH", color:"#4a7fa5", reason:"$1.3M sweep on 69C May 8 · Leveraged QQQ play · Heavy institutional conviction" },
+  { ticker:"SPY",   price:731.49, chg:+0.47, score:68, dir:"BULLISH", color:"#b8860b", reason:"Broad market grinding higher · 7350 SPX calls targeted Jan 2027 ($2.75M)" },
+  { ticker:"GOOGL", price:390.00, chg:+1.1,  score:85, dir:"BULLISH", color:"#2e8b57", reason:"Cloud +63% · Pentagon AI · Google I/O May 19-20 · P/E only 15" },
 ];
 
 const SCALPS = [
-  { id:"UW-001", ticker:"TSLA", type:"CALL", strike:"$425", expiry:"May 15", dte:7, cost:"$3.504.20",
-    score:87, confidence:"HIGH", confColor:"#2e8b57", flags:["= $293K","REPEAT HITS","ASK 100%"],
-    why:"<strong>Repeated bullish hits at the $425 strike.</strong> TSLA printed multiple ASK-side fills totaling ~$1.4M across the same contract, with 12.8K volume and 6.3K OI. Spot at $416.94 (+2.29%); strike is just $8 OTM with momentum and 7 DTE.", entry:"$3.504.20", stop:"$1.80", target:"$8.50", size:"HALF" },
-  { id:"UW-002", ticker:"NVDA", type:"CALL", strike:"$205", expiry:"May 13", dte:5, cost:"$10.0011.50",
-    score:84, confidence:"HIGH", confColor:"#2e8b57", flags:["= $246K","ITM","EARN 5/20"],
-    why:"<strong>ITM call buy ahead of earnings.</strong> $205 strike vs $213.45 spot (+2.49%)  already $8 in the money with 5 DTE. 1.96K volume vs 1.5K OI (vol/OI 1.30) and ASK 100%. Pre-earnings positioning signal.", entry:"$10.0011.50", stop:"$6.50", target:"$18.00", size:"HALF" },
-  { id:"UW-003", ticker:"SNDK", type:"CALL", strike:"$1400", expiry:"May 15", dte:7, cost:"$2228",
-    score:78, confidence:"MEDIUM", confColor:"#b8860b", flags:["= $292K","ASK 100%","NAND CYCLE"],
-    why:"<strong>OTM call buy on memory leader SNDK.</strong> $292K premium with 1075 contracts at $1400 strike vs $1337.74 spot. ASK 100% confirms institutional buy. NAND/HBM tailwind and earnings 8/13  short-term momentum trade.", entry:"$2228", stop:"$12", target:"$50", size:"QUARTER" },
-  { id:"UW-004", ticker:"AMD", type:"CALL", strike:"$410", expiry:"May 15", dte:7, cost:"$8.5010.00",
-    score:72, confidence:"MEDIUM", confColor:"#b8860b", flags:["= $438K","ATM","CAUTION: BID-SIDE"],
-    why:"<strong>Largest 7-DTE premium ($438K) but bid-heavy.</strong> Near-ATM call with 5040 vol vs 1484 OI (3.4x). AMD spot $408.19 (-2.19%). Bid-side fill suggests it could be call-write/closing  size accordingly. Trade direction-confirming move only.", entry:"$8.5010.00", stop:"$5.50", target:"$15.00", size:"QUARTER" }
+  { id:"UW-011", ticker:"NVDA",  type:"CALL", strike:"$210", expiry:"May 15", dte:9,  cost:"$4–7",  score:93, confidence:"HIGH",   confColor:"#2e8b57", flags:["🐋 $859K FLOW","EARNINGS 5/21"], why:"<strong>$859K UW sweep on NVDA $210C May 15</strong> — pre-earnings accumulation by institutions. NVDA at $207.12 (+5.4%), strike is 1.4% OTM with 9 DTE. Blackwell ramp accelerating, NVDA reports May 21. Smart money loading calls 2 weeks out. Any dip to $205 is a buy. Stop below $199.", entry:"$206–208", stop:"$199", target:"$217", size:"FULL" },
+  { id:"UW-012", ticker:"QQQ",   type:"CALL", strike:"$697", expiry:"May 9",  dte:3,  cost:"$3–6",  score:89, confidence:"HIGH",   confColor:"#2e8b57", flags:["🐋 $2.6M+ FLOW","MOMENTUM"], why:"<strong>$2.6M institutional block in QQQ near-ATM calls</strong> — part of the $7.2M+ QQQ $700C whale cluster. QQQ at $695.43 (+2.04%), up strong on China trade optimism. Near-ATM 3-day call benefits from continued tech momentum. Stop on QQQ close below $691.", entry:"$694–696", stop:"$689", target:"$703", size:"HALF" },
+  { id:"UW-013", ticker:"AMD",   type:"CALL", strike:"$425", expiry:"May 9",  dte:3,  cost:"$2–5",  score:84, confidence:"HIGH",   confColor:"#2e8b57", flags:["EARNINGS FOLLOW","AI SEMI"], why:"<strong>AMD post-earnings continuation</strong>. AMD at $420.97 (+18.53% today), earnings gap plays often extend 2–3 sessions. $425C gives 1% further upside with 3 DTE. Momentum into AI semiconductor tailwinds. Keep at quarter size — short DTE, tight stop at $416.", entry:"$420–422", stop:"$416", target:"$429", size:"QUARTER" },
 ];
 
 const SWINGS = [
-  { id:"UW-101", ticker:"QQQ", type:"CALL", strike:"$710", expiry:"Jun 5", dte:28, cost:"$1214",
-    score:90, confidence:"HIGH", confColor:"#2e8b57", flags:["= $995K","VOL 3.5K","ASK 100%"],
-    why:"<strong>Heaviest single-leg call premium of the day on QQQ.</strong> $995K printed at $710C 6/5 with 3,532 contracts and 12.3K OI. Spot $700.18 (+0.48%); strike is ~$10 OTM. Institutional bull bet on tech megacap continuation through May/early June.", entry:"$1214", stop:"$7", target:"$24", size:"FULL" },
-  { id:"UW-102", ticker:"NVDA", type:"CALL", strike:"$230", expiry:"Jun 18", dte:41, cost:"$8.009.50",
-    score:88, confidence:"HIGH", confColor:"#2e8b57", flags:["= $589K","VOL 26.8K","EARN 5/20"],
-    why:"<strong>Massive volume into June expiry covering NVDA earnings.</strong> 26.8K contracts vs 46.3K OI on $230 strike  spot $213.45 (+2.49%), ~8% OTM. Premium $589K and ASK 40% (mixed). Treat as earnings-window position with 5/20 catalyst already in the window.", entry:"$8.009.50", stop:"$4.50", target:"$18", size:"FULL" },
-  { id:"UW-103", ticker:"GOOGL", type:"CALL", strike:"$410", expiry:"Jun 18", dte:41, cost:"$810",
-    score:82, confidence:"HIGH", confColor:"#2e8b57", flags:["= $280K","ASK 100%","CLOUD/AI"],
-    why:"<strong>Clean ASK-side call buy on GOOGL.</strong> $280K at $410 strike, spot $397.53 (-0.63%)  ~3% OTM. 763 vol vs 2.6K OI. Strategic 41-DTE position into Q2 cloud/AI narrative; earnings 7/22 outside the window so direction-only setup.", entry:"$810", stop:"$5", target:"$18", size:"FULL" },
-  { id:"UW-104", ticker:"IWM", type:"CALL", strike:"$285", expiry:"May 22", dte:14, cost:"$3.204.00",
-    score:79, confidence:"MEDIUM", confColor:"#b8860b", flags:["= $282K","ATM","SMALL-CAP ROT."],
-    why:"<strong>Bullish small-cap rotation play.</strong> $282K at $285 strike, spot $284.64 (-1.01%)  exactly ATM. 4,719 vol vs 5,023 OI (~1:1). Short-dated 14 DTE  clean breakout-confirmation trade if IWM clears $287.", entry:"$3.204.00", stop:"$1.80", target:"$7.50", size:"HALF" },
-  { id:"UW-105", ticker:"CRWV", type:"CALL", strike:"$140", expiry:"Jun 18", dte:41, cost:"$5.507.00",
-    score:76, confidence:"MEDIUM", confColor:"#b8860b", flags:["= $215K","ASK 100%","AI INFRA"],
-    why:"<strong>AI-infra leveraged bet on CoreWeave.</strong> $215K printed ASK-side at $140 strike, spot $128.11  ~9% OTM. 3,219 vol vs 5,299 OI. Earnings just released 5/7 (clean window). High beta  size discipline required.", entry:"$5.507.00", stop:"$3.20", target:"$15", size:"QUARTER" },
-  { id:"UW-106", ticker:"SPY", type:"PUT", strike:"$695", expiry:"Jun 18", dte:41, cost:"$5.506.50",
-    score:81, confidence:"HIGH", confColor:"#2e8b57", flags:["= $867K","VOL 16.7K","HEDGE"],
-    why:"<strong>Largest single-leg put premium of the day  defensive hedge.</strong> $867K at $695P, spot $734.65 (-0.06%)  ~5% OTM downside. 16.7K vol vs 16K OI. Treat as portfolio insurance into June; pair-trade against the long-side calls above.", entry:"$5.506.50", stop:"$3.20", target:"$13", size:"HALF" }
+  { id:"UW-015", ticker:"QQQ",  type:"CALL", strike:"$700", expiry:"Jul 17", dte:72, cost:"$12–18", score:96, confidence:"HIGH",   confColor:"#2e8b57", flags:["🐋 $7.2M WHALE","#1 FLOW TODAY"], why:"<strong>The dominant flow of the week — $7.2M+ in QQQ $700C Jul 17</strong>. Multiple institutional blocks: $2.9M, $2.6M, $1.7M and more all on the same strike/expiry. QQQ at $695.43, only 0.65% from strike. Institutions chose 72 DTE — not the weekly — signaling a macro long position. Target: QQQ 700 breakout toward 720+. This is the highest-conviction play on the board.", entry:"$693–697", stop:"$679", target:"$722", size:"FULL" },
+  { id:"UW-007", ticker:"NVDA",  type:"CALL", strike:"$215", expiry:"May 22", dte:16, cost:"$7–11", score:92, confidence:"HIGH",   confColor:"#2e8b57", flags:["🐋 $859K+","EARNINGS 5/21"], why:"<strong>Earnings May 21 — the biggest single-stock catalyst remaining</strong>. NVDA at $207.12 (+5.4%), $215 strike is 3.8% OTM. $859K May 15 flow + $461K Jul 17 flow confirms multi-leg accumulation. Blackwell ramp + $575B hyperscaler capex = bull thesis. Strategy: take 50% off if up 80%+ pre-earnings; hold rest through for binary upside.", entry:"$206–209", stop:"$197", target:"$224", size:"FULL" },
+  { id:"UW-010", ticker:"GOOGL", type:"CALL", strike:"$400", expiry:"Jun 20", dte:45, cost:"$8–12", score:88, confidence:"HIGH",   confColor:"#2e8b57", flags:["AI","GOOGLE I/O 5/19-20"], why:"<strong>GOOGL nearly touching the strike — $397.69 vs $400C</strong>. Google I/O May 19-20 is a major AI catalyst just 13 days away. Cloud +63%, $460B backlog. PE only 15 vs peer avg 35. 45 DTE gives room for the I/O event and continued momentum. Best risk/reward in the swing book right now.", entry:"$396–399", stop:"$384", target:"$416", size:"FULL" },
+  { id:"UW-016", ticker:"AAPL",  type:"CALL", strike:"$292.5", expiry:"May 15", dte:9, cost:"$3–6", score:79, confidence:"MEDIUM", confColor:"#b8860b", flags:["🐳 $246K","POST-EARNINGS"], why:"$246K in AAPL $292.5C May 15 — 9,800 contracts. AAPL at $287.46, strike is 1.8% OTM with 9 DTE. Post-earnings momentum play. Services revenue acceleration and India manufacturing diversification are tailwinds. Quarter size — needs AAPL to continue rally from earnings beat.", entry:"$286–289", stop:"$282", target:"$295", size:"QUARTER" },
+  { id:"UW-006", ticker:"TSLA",  type:"CALL", strike:"$400", expiry:"Jun 18", dte:43, cost:"$18–24", score:82, confidence:"HIGH",   confColor:"#2e8b57", flags:["🐋 $591K FLOW","FSD CATALYST"], why:"<strong>$591K institutional sweep on June $400 calls</strong>. TSLA at $397.25, $400 is the key breakout level. Bearish flow (TSLA $412.5P May 15: $315K) is a short-term hedge — the June call is the directional bet. FSD expansion + Robotaxi launch gives catalyst runway for 43 DTE. Loss of $384 invalidates.", entry:"$394–398", stop:"$382", target:"$422", size:"HALF" },
+  { id:"UW-009", ticker:"AMZN",  type:"CALL", strike:"$375", expiry:"Mar 2027", dte:300, cost:"$25–35", score:85, confidence:"HIGH", confColor:"#2e8b57", flags:["INSTITUTIONAL","300 DTE"], why:"<strong>$492K long-dated institutional call</strong> — 523 contracts on March 2027 $375 strike. Institutions buying 10-month calls for strategic positioning, not trades. AWS +28%, Anthropic $100B deal, Pentagon AI contract. AMZN at $275 is 27% below strike — this is a long-term thesis play.", entry:"$272–276", stop:"$258", target:"$312", size:"HALF" },
 ];
 
 const FUTURES = [
-  { contract:"/ES", name:"S&P 500 E-Mini", bias:"LONG", entry:"7,3307,360", stop:"7,260", target:"7,520", confidence:"HIGH", confColor:"#2e8b57",
-    why:"SPY at $734.22 (+1.45%) puts S&P ~7,342. China trade deal optimism + AMD +18.5% earnings gap driving broad market. $7.2M QQQ whale flow confirms institutions are positioned for continuation. Support at 7,260 (May 5 close). Swing long  next target 7,500+.", size:"FULL", note:"Swing" },
-  { contract:"/NQ", name:"Nasdaq-100 E-Mini", bias:"LONG", entry:"27,80028,000", stop:"27,200", target:"29,200", confidence:"HIGH", confColor:"#2e8b57",
-    why:"QQQ at $695.43 (+2.04%) = NQ ~27,820. AI semiconductor supercycle: AMD +18.5% earnings, NVDA +5.4%, SOXL +14%. $7.2M in QQQ $700C Jul 17 is the clearest institutional signal on the board. NVDA reports May 21  next major catalyst. Loss of 27,200 = reduce to half.", size:"FULL", note:"Swing" },
-  { contract:"/GC", name:"Gold Futures", bias:"LONG", entry:"3,3603,410", stop:"3,290", target:"3,560", confidence:"HIGH", confColor:"#2e8b57",
+  { contract:"/ES", name:"S&P 500 E-Mini", bias:"LONG", entry:"7,330–7,360", stop:"7,260", target:"7,520", confidence:"HIGH", confColor:"#2e8b57",
+    why:"SPY at $734.22 (+1.45%) puts S&P ~7,342. China trade deal optimism + AMD +18.5% earnings gap driving broad market. $7.2M QQQ whale flow confirms institutions are positioned for continuation. Support at 7,260 (May 5 close). Swing long — next target 7,500+.", size:"FULL", note:"Swing" },
+  { contract:"/NQ", name:"Nasdaq-100 E-Mini", bias:"LONG", entry:"27,800–28,000", stop:"27,200", target:"29,200", confidence:"HIGH", confColor:"#2e8b57",
+    why:"QQQ at $695.43 (+2.04%) = NQ ~27,820. AI semiconductor supercycle: AMD +18.5% earnings, NVDA +5.4%, SOXL +14%. $7.2M in QQQ $700C Jul 17 is the clearest institutional signal on the board. NVDA reports May 21 — next major catalyst. Loss of 27,200 = reduce to half.", size:"FULL", note:"Swing" },
+  { contract:"/GC", name:"Gold Futures", bias:"LONG", entry:"3,360–3,410", stop:"3,290", target:"3,560", confidence:"HIGH", confColor:"#2e8b57",
     why:"GLD at $430.70 (+3.02%) = Gold ~$3,400. Dollar weakening on China trade optimism while physical demand from central banks remains elevated. Trump-Xi summit May 14-15 = binary event; gold historically spikes on uncertainty. Hold until post-summit clarity.", size:"HALF", note:"Swing" },
-  { contract:"/CL", name:"Crude Oil (WTI)", bias:"NEUTRAL", entry:"", stop:"", target:"", confidence:"LOW", confColor:"#c0392b",
-    why:"OPEC+ production uncertainty vs demand concerns from China trade tensions. Range-bound $97104. No clear directional bias  wait for a break above $104 or below $97 before establishing a position.", size:"WAIT", note:"Watch" },
+  { contract:"/CL", name:"Crude Oil (WTI)", bias:"NEUTRAL", entry:"—", stop:"—", target:"—", confidence:"LOW", confColor:"#c0392b",
+    why:"OPEC+ production uncertainty vs demand concerns from China trade tensions. Range-bound $97–104. No clear directional bias — wait for a break above $104 or below $97 before establishing a position.", size:"WAIT", note:"Watch" },
   { contract:"/ZN", name:"10-Yr Treasury Note", bias:"SHORT", entry:"108-16", stop:"109-08", target:"106-16", confidence:"MEDIUM", confColor:"#b8860b",
-    why:"Fed holding at 3.53.75% with no cut signal. Strong jobs data + AI capex driving growth expectations. TLT breakdown confirmed. Short bond = long rates thesis still intact. Risk-off event could temporarily reverse  watch VIX.", size:"HALF", note:"Swing" },
-  { contract:"/RTY", name:"Russell 2000 E-Mini", bias:"NEUTRAL", entry:"", stop:"", target:"", confidence:"LOW", confColor:"#c0392b",
-    why:"Small caps lagging mega-cap AI names significantly. Rate sensitivity and credit concerns cap upside. Not the play in this environment  capital is concentrating in large-cap tech. Monitor for breakout above 2,200 before considering.", size:"WAIT", note:"Watch" },
-  { contract:"/BTC", name:"Micro Bitcoin Futures", bias:"LONG", entry:"95,00098,000", stop:"88,000", target:"112,000", confidence:"HIGH", confColor:"#2e8b57",
+    why:"Fed holding at 3.5–3.75% with no cut signal. Strong jobs data + AI capex driving growth expectations. TLT breakdown confirmed. Short bond = long rates thesis still intact. Risk-off event could temporarily reverse — watch VIX.", size:"HALF", note:"Swing" },
+  { contract:"/RTY", name:"Russell 2000 E-Mini", bias:"NEUTRAL", entry:"—", stop:"—", target:"—", confidence:"LOW", confColor:"#c0392b",
+    why:"Small caps lagging mega-cap AI names significantly. Rate sensitivity and credit concerns cap upside. Not the play in this environment — capital is concentrating in large-cap tech. Monitor for breakout above 2,200 before considering.", size:"WAIT", note:"Watch" },
+  { contract:"/BTC", name:"Micro Bitcoin Futures", bias:"LONG", entry:"95,000–98,000", stop:"88,000", target:"112,000", confidence:"HIGH", confColor:"#2e8b57",
     why:"Bitcoin holding key support in risk-on environment. Institutional ETF inflows accelerating. COIN proxy confirms crypto bull cycle intact. AMD earnings-driven risk appetite benefits BTC. Use micro contracts (1/10th size) to manage position.", size:"HALF", note:"Swing" },
 ];
 
 const RISKS = [
   {
     color:"#2e8b57", level:"WIN",
-    title:"UW-001 AMD +77%, UW-003 TQQQ +40%, UW-004 NVDA +27%  Closed",
+    title:"UW-001 AMD +77%, UW-003 TQQQ +40%, UW-004 NVDA +27% — Closed",
     body:"May 8 expirations closed profitably. AMD $420C exited at $7.95 (+77%), TQQQ $69C at $3.91 (+40%), NVDA $205C at $6.61 (+27%). TSLA $395C closed at -33%.",
-    digest:"The UW flow strategy delivered a 3-for-4 win rate on the May 6 scalp plays. AMD was the star  the $2M institutional sweep on $420C calls was a signal that paid off as AMD held above $420 at expiry. TQQQ (leveraged QQQ) delivered 40% as tech rallied on China trade optimism. NVDA $205C (5 DTE) is closed with modest gains as NVDA moved from $204.97 to $207.12. TSLA $395C was the loser: theta decay ate the position even though TSLA ended slightly ITM  the $6.20 entry was too expensive for a position that moved only $2. Lesson: on ATM weeklies, cost matters. The new SCALPS (UW-011, UW-012, UW-013) are sized more conservatively with better entry points.",
-    action:"-> Monitor UW-008 TSLA $410C  TSLA at $397.25 needs $12.75 move in 9 DTE"
+    digest:"The UW flow strategy delivered a 3-for-4 win rate on the May 6 scalp plays. AMD was the star — the $2M institutional sweep on $420C calls was a signal that paid off as AMD held above $420 at expiry. TQQQ (leveraged QQQ) delivered 40% as tech rallied on China trade optimism. NVDA $205C (5 DTE) is closed with modest gains as NVDA moved from $204.97 to $207.12. TSLA $395C was the loser: theta decay ate the position even though TSLA ended slightly ITM — the $6.20 entry was too expensive for a position that moved only $2. Lesson: on ATM weeklies, cost matters. The new SCALPS (UW-011, UW-012, UW-013) are sized more conservatively with better entry points.",
+    action:"-> Monitor UW-008 TSLA $410C — TSLA at $397.25 needs $12.75 move in 9 DTE"
   },
   {
     color:"#c0392b", level:"HIGH",
-    title:"Trump-Xi Summit  May 1415 Beijing",
+    title:"Trump-Xi Summit — May 14–15 Beijing",
     body:"50% additional China tariffs threatened. AMD, AAPL, and TSLA all heavily exposed to China supply chain.",
-    digest:"The summit is 8 days away and is the most significant binary risk event on the calendar. If the summit goes well (trade deal, tariff pause), expect a 35% tech gap up that would make every call on the dashboard profitable. If tariffs escalate, AAPL (China manufacturing), AMD (chip supply chain), and any company with significant China revenue could drop 1020% in a single session. Strategy: take profits on the short-dated weeklies (AMD 420C, TSLA 395C) before the weekend of May 10. Reduce any swing positions from full to half by May 9. Hold NVDA 215C and GOOGL 400C through the summit  these have less China exposure.",
-    action:": May 8 positions are closed. Cut any remaining swings to half if summit fails"
+    digest:"The summit is 8 days away and is the most significant binary risk event on the calendar. If the summit goes well (trade deal, tariff pause), expect a 3–5% tech gap up that would make every call on the dashboard profitable. If tariffs escalate, AAPL (China manufacturing), AMD (chip supply chain), and any company with significant China revenue could drop 10–20% in a single session. Strategy: take profits on the short-dated weeklies (AMD 420C, TSLA 395C) before the weekend of May 10. Reduce any swing positions from full to half by May 9. Hold NVDA 215C and GOOGL 400C through the summit — these have less China exposure.",
+    action:"→ May 8 positions are closed. Cut any remaining swings to half if summit fails"
   },
   {
     color:"#b8860b", level:"MEDIUM",
-    title:"NVDA Earnings May 21  Hold vs Close Dilemma",
+    title:"NVDA Earnings May 21 — Hold vs Close Dilemma",
     body:"UW-007 (NVDA $215C May 22) expires just 1 day after NVDA reports earnings.",
-    digest:"NVIDIA earnings on May 21 is the biggest single-stock event remaining this season. The May 22 call expires the day after  meaning if NVDA gaps down on earnings, there's virtually no time to recover. The bull case is strong: $575B in hyperscaler capex, Blackwell ramp accelerating, data center demand insatiable. But export restrictions to China or any guidance miss will be punished violently. Approach: if NVDA is up 5%+ by May 19 (Monday), consider closing UW-007 for profit and rolling to June 20 expiry. If it's flat, hold through earnings with the understanding that this is a binary event with a defined risk of full loss.",
-    action:": Close UW-007 if profitable by May 19 : Roll to June 20 or accept binary risk"
+    digest:"NVIDIA earnings on May 21 is the biggest single-stock event remaining this season. The May 22 call expires the day after — meaning if NVDA gaps down on earnings, there's virtually no time to recover. The bull case is strong: $575B in hyperscaler capex, Blackwell ramp accelerating, data center demand insatiable. But export restrictions to China or any guidance miss will be punished violently. Approach: if NVDA is up 5%+ by May 19 (Monday), consider closing UW-007 for profit and rolling to June 20 expiry. If it's flat, hold through earnings with the understanding that this is a binary event with a defined risk of full loss.",
+    action:"→ Close UW-007 if profitable by May 19 · Roll to June 20 or accept binary risk"
   },
   {
     color:"#4a7fa5", level:"INFO",
-    title:"Uw Flow Is 90% Calls  Market Is Positioned Long",
+    title:"UW Flow Is 90% Calls — Market Is Positioned Long",
     body:"Today's Unusual Whales data shows overwhelming call dominance. Crowded positioning = snapback risk.",
-    digest:"When the entire market is positioned the same way (long calls), the risk is a short squeeze reversal. Every bullish signal you see today  AMD 420C, TSLA 395C, TQQQ 69C  means there are a lot of people who need to exit if the market turns. A flash crash or macro shock (China tariff news, hot CPI print, Fed surprise) would trigger a cascade of call unwinds and panic selling. The solution isn't to avoid the calls  the flow is real and the bias is valid  but to keep position sizes manageable and have a clear exit plan. If QQQ drops below $685 on any single day, take that as a signal to reduce all call exposure by 50%.",
-    action:": Keep positions sized for 50% loss tolerance : QQQ $685 = reduce all calls"
+    digest:"When the entire market is positioned the same way (long calls), the risk is a short squeeze reversal. Every bullish signal you see today — AMD 420C, TSLA 395C, TQQQ 69C — means there are a lot of people who need to exit if the market turns. A flash crash or macro shock (China tariff news, hot CPI print, Fed surprise) would trigger a cascade of call unwinds and panic selling. The solution isn't to avoid the calls — the flow is real and the bias is valid — but to keep position sizes manageable and have a clear exit plan. If QQQ drops below $685 on any single day, take that as a signal to reduce all call exposure by 50%.",
+    action:"→ Keep positions sized for 50% loss tolerance · QQQ $685 = reduce all calls"
   },
   {
     color:"#b8860b", level:"MEDIUM",
-    title:"Fed Chair Warsh Transition  May 15",
+    title:"Fed Chair Warsh Transition — May 15",
     body:"Powell exits May 15. Warsh signals cutting bias but transition creates uncertainty.",
-    digest:"Market transitions are inherently volatile. Even if Warsh is dovish (cutting bias = good for stocks), the first few weeks of a new Fed Chair bring policy uncertainty. Bonds, gold, and the dollar could all spike in the days around May 15 as traders position for the new regime. If you're holding options through May 15, make sure those positions have enough premium to survive a 23% broad market pullback. Short-dated calls expiring the week of May 15 are particularly vulnerable to this volatility.",
-    action:": Use June/July expiries around May 15 : Avoid weeklies that week"
+    digest:"Market transitions are inherently volatile. Even if Warsh is dovish (cutting bias = good for stocks), the first few weeks of a new Fed Chair bring policy uncertainty. Bonds, gold, and the dollar could all spike in the days around May 15 as traders position for the new regime. If you're holding options through May 15, make sure those positions have enough premium to survive a 2–3% broad market pullback. Short-dated calls expiring the week of May 15 are particularly vulnerable to this volatility.",
+    action:"→ Use June/July expiries around May 15 · Avoid weeklies that week"
   },
 ];
 
 const PLAYS_LOG = [
-  //    Fresh Plays  May 6, 2026 (today's UW flow)                               
-  { id:"UW-011", ticker:"NVDA",  type:"CALL", contract:"$210C 05-15", entry:5.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $859K" },
-  { id:"UW-012", ticker:"QQQ",   type:"CALL", contract:"$697C 05-09", entry:4.20,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $2.6M" },
-  { id:"UW-013", ticker:"AMD",   type:"CALL", contract:"$425C 05-09", entry:3.10,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW flow" },
-  { id:"UW-015", ticker:"QQQ",   type:"CALL", contract:"$700C 07-17", entry:14.50, exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $7.2M WHALE" },
-  { id:"UW-016", ticker:"AAPL",  type:"CALL", contract:"$292.5C 05-15", entry:4.10, exit:null, pnl:null,  grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $246K" },
-  //    Expired May 8  Graded on exit price                                      
-  { id:"UW-001", ticker:"AMD",   type:"CALL", contract:"$420C 05-08", entry:4.50,  exit:7.95, pnl:+76.7, grade:"A", status:"CLOSED",  date:"2026-05-06", source:"UW $2.0M", note:"AMD $420.97 at expiry  ITM, closed at +77%" },
-  { id:"UW-002", ticker:"TSLA",  type:"CALL", contract:"$395C 05-08", entry:6.20,  exit:4.15, pnl:-33.1, grade:"C", status:"CLOSED",  date:"2026-05-06", source:"UW $1.4M", note:"TSLA $397.25  barely ITM, theta drag, -33%" },
-  { id:"UW-003", ticker:"TQQQ",  type:"CALL", contract:"$69C 05-08",  entry:2.80,  exit:3.91, pnl:+39.6, grade:"A", status:"CLOSED",  date:"2026-05-06", source:"UW $1.3M", note:"TQQQ $71.53  ITM by $2.53, closed +40%" },
-  { id:"UW-004", ticker:"NVDA",  type:"CALL", contract:"$205C 05-11", entry:5.20,  exit:6.61, pnl:+27.1, grade:"B", status:"CLOSED",  date:"2026-05-06", source:"UW $255K", note:"NVDA $207.12  ITM by $2.12, +27%" },
-  //    Still active swings                                                        
-  { id:"UW-005", ticker:"QQQ",   type:"CALL", contract:"$692C 05-15", entry:6.80,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $890K" },
-  { id:"UW-006", ticker:"TSLA",  type:"CALL", contract:"$400C 06-18", entry:20.50, exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $591K" },
-  { id:"UW-007", ticker:"NVDA",  type:"CALL", contract:"$215C 05-22", entry:8.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW flow" },
-  { id:"UW-008", ticker:"TSLA",  type:"CALL", contract:"$410C 05-15", entry:14.00, exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $253K", note:"At risk  TSLA $397.25 vs $410 strike, 9 DTE" },
-  { id:"UW-009", ticker:"AMZN",  type:"CALL", contract:"$375C 03-27", entry:29.00, exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW $492K" },
-  { id:"UW-010", ticker:"GOOGL", type:"CALL", contract:"$400C 06-20", entry:9.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-06", source:"UW flow", note:"GOOGL $397.69  nearly ATM, winning" },
-  //    AMD Earnings Gap Plays  Closed with big gains                            
+  // ── Fresh Plays — May 6, 2026 (today's UW flow) ──────────────────────────────
+  { id:"UW-011", ticker:"NVDA",  type:"CALL", contract:"$210C 05-15", entry:5.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $859K" },
+  { id:"UW-012", ticker:"QQQ",   type:"CALL", contract:"$697C 05-09", entry:4.20,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $2.6M" },
+  { id:"UW-013", ticker:"AMD",   type:"CALL", contract:"$425C 05-09", entry:3.10,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW flow" },
+  { id:"UW-015", ticker:"QQQ",   type:"CALL", contract:"$700C 07-17", entry:14.50, exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $7.2M WHALE" },
+  { id:"UW-016", ticker:"AAPL",  type:"CALL", contract:"$292.5C 05-15", entry:4.10, exit:null, pnl:null,  grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $246K" },
+  // ── Expired May 8 — Graded on exit price ─────────────────────────────────────
+  { id:"UW-001", ticker:"AMD",   type:"CALL", contract:"$420C 05-08", entry:4.50,  exit:7.95, pnl:+76.7, grade:"A", status:"CLOSED",  date:"2026-05-06", source:"UW $2.0M", note:"AMD $420.97 at expiry — ITM, closed at +77%" },
+  { id:"UW-002", ticker:"TSLA",  type:"CALL", contract:"$395C 05-08", entry:6.20,  exit:4.15, pnl:-33.1, grade:"C", status:"CLOSED",  date:"2026-05-06", source:"UW $1.4M", note:"TSLA $397.25 — barely ITM, theta drag, -33%" },
+  { id:"UW-003", ticker:"TQQQ",  type:"CALL", contract:"$69C 05-08",  entry:2.80,  exit:3.91, pnl:+39.6, grade:"A", status:"CLOSED",  date:"2026-05-06", source:"UW $1.3M", note:"TQQQ $71.53 — ITM by $2.53, closed +40%" },
+  { id:"UW-004", ticker:"NVDA",  type:"CALL", contract:"$205C 05-11", entry:5.20,  exit:6.61, pnl:+27.1, grade:"B", status:"CLOSED",  date:"2026-05-06", source:"UW $255K", note:"NVDA $207.12 — ITM by $2.12, +27%" },
+  // ── Still active swings ───────────────────────────────────────────────────────
+  { id:"UW-005", ticker:"QQQ",   type:"CALL", contract:"$692C 05-15", entry:6.80,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $890K" },
+  { id:"UW-006", ticker:"TSLA",  type:"CALL", contract:"$400C 06-18", entry:20.50, exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $591K" },
+  { id:"UW-007", ticker:"NVDA",  type:"CALL", contract:"$215C 05-22", entry:8.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW flow" },
+  { id:"UW-008", ticker:"TSLA",  type:"CALL", contract:"$410C 05-15", entry:14.00, exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $253K", note:"At risk — TSLA $397.25 vs $410 strike, 9 DTE" },
+  { id:"UW-009", ticker:"AMZN",  type:"CALL", contract:"$375C 03-27", entry:29.00, exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW $492K" },
+  { id:"UW-010", ticker:"GOOGL", type:"CALL", contract:"$400C 06-20", entry:9.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-06", source:"UW flow", note:"GOOGL $397.69 — nearly ATM, winning" },
+  // ── AMD Earnings Gap Plays — Closed with big gains ───────────────────────────
   { id:"OPT-018", ticker:"AMD",  type:"CALL", contract:"$205C 05-29", entry:4.00,  exit:209.00,pnl:+5125.0,grade:"A+",status:"CLOSED", date:"2026-05-02", note:"AMD +100% earnings gap" },
   { id:"OPT-009", ticker:"AMD",  type:"CALL", contract:"$355C 05-15", entry:12.00, exit:59.97, pnl:+399.8, grade:"A+",status:"CLOSED", date:"2026-04-30", note:"AMD earnings beat" },
   { id:"OPT-001", ticker:"AMD",  type:"CALL", contract:"$360C 05-15", entry:14.57, exit:54.50, pnl:+274.0, grade:"A+",status:"CLOSED", date:"2026-04-27", note:"AMD earnings beat" },
-  //    Closed plays  various outcomes                                          
+  // ── Closed plays — various outcomes ─────────────────────────────────────────
   { id:"OPT-006", ticker:"GOOGL",type:"CALL", contract:"$355C 04-30", entry:7.00,  exit:19.52, pnl:+178.9, grade:"A", status:"CLOSED", date:"2026-04-27" },
   { id:"OPT-005", ticker:"AMZN", type:"CALL", contract:"$265C 05-01", entry:6.67,  exit:9.50,  pnl:+42.4,  grade:"B", status:"CLOSED", date:"2026-04-27" },
   { id:"OPT-010", ticker:"AAPL", type:"CALL", contract:"$275C 05-01", entry:4.50,  exit:5.11,  pnl:+13.6,  grade:"C", status:"CLOSED", date:"2026-04-30" },
@@ -1725,17 +1773,17 @@ const PLAYS_LOG = [
   { id:"OPT-003", ticker:"MSFT", type:"CALL", contract:"$440C 04-30", entry:9.00,  exit:0.10,  pnl:-98.9,  grade:"F", status:"CLOSED", date:"2026-04-27", note:"Expired OTM" },
   { id:"OPT-004", ticker:"META", type:"CALL", contract:"$690C 04-30", entry:15.00, exit:0.05,  pnl:-99.7,  grade:"F", status:"CLOSED", date:"2026-04-27", note:"Expired OTM" },
   { id:"OPT-007", ticker:"XLE",  type:"CALL", contract:"$58C 05-08",  entry:1.20,  exit:0.80,  pnl:-33.3,  grade:"D", status:"CLOSED", date:"2026-04-27", note:"Energy sideways" },
-  //    Still open (not yet expired)                                             
-  { id:"OPT-002", ticker:"NVDA", type:"CALL", contract:"$215C 05-15", entry:6.00,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-04-27" },
-  { id:"OPT-008", ticker:"AMZN", type:"CALL", contract:"$275C 05-15", entry:7.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-04-30" },
-  { id:"OPT-011", ticker:"XLE",  type:"CALL", contract:"$60C 05-08",  entry:1.40,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-04-30" },
-  { id:"OPT-013", ticker:"GOOGL",type:"CALL", contract:"$395C 05-22", entry:7.00,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-014", ticker:"NVDA", type:"CALL", contract:"$220C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-015", ticker:"PLTR", type:"CALL", contract:"$145C 05-22", entry:5.00,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-016", ticker:"AMZN", type:"CALL", contract:"$270C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-017", ticker:"MU",   type:"CALL", contract:"$205C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-019", ticker:"AAPL", type:"CALL", contract:"$285C 05-29", entry:3.50,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
-  { id:"OPT-020", ticker:"MSFT", type:"CALL", contract:"$505C 05-29", entry:6.00,  exit:null, pnl:null,   grade:"", status:"OPEN",   date:"2026-05-02" },
+  // ── Still open (not yet expired) ────────────────────────────────────────────
+  { id:"OPT-002", ticker:"NVDA", type:"CALL", contract:"$215C 05-15", entry:6.00,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-04-27" },
+  { id:"OPT-008", ticker:"AMZN", type:"CALL", contract:"$275C 05-15", entry:7.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-04-30" },
+  { id:"OPT-011", ticker:"XLE",  type:"CALL", contract:"$60C 05-08",  entry:1.40,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-04-30" },
+  { id:"OPT-013", ticker:"GOOGL",type:"CALL", contract:"$395C 05-22", entry:7.00,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-014", ticker:"NVDA", type:"CALL", contract:"$220C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-015", ticker:"PLTR", type:"CALL", contract:"$145C 05-22", entry:5.00,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-016", ticker:"AMZN", type:"CALL", contract:"$270C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-017", ticker:"MU",   type:"CALL", contract:"$205C 05-22", entry:4.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-019", ticker:"AAPL", type:"CALL", contract:"$285C 05-29", entry:3.50,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
+  { id:"OPT-020", ticker:"MSFT", type:"CALL", contract:"$505C 05-29", entry:6.00,  exit:null, pnl:null,   grade:"—", status:"OPEN",   date:"2026-05-02" },
 ];
 
 // ── RENDER HELPERS ───────────────────────────────────────────────────────────
@@ -1794,7 +1842,7 @@ function renderPlay(p) {
       <span class="play-id">${p.id}</span>
     </div>
     <div class="play-instrument">
-      <span>${p.ticker} ${p.strike} ${p.type} � ${p.expiry}</span>
+      <span>${p.ticker} ${p.strike} ${p.type} · ${p.expiry}</span>
       <span class="play-cost">${p.cost} / contract</span>
     </div>
     <div class="play-why">${p.why}</div>
@@ -1805,7 +1853,7 @@ function renderPlay(p) {
       ${ivChip}${oiChip}
       <div style="display:flex;flex-direction:column;gap:1px;align-items:center">
         <span style="font-size:8px;color:#aaa;letter-spacing:.12em;text-transform:uppercase">Expires</span>
-        <span style="font-family:'Courier New',monospace;font-size:11px;color:${dteColor};font-weight:700">${p.dte}d � ${p.expiry}</span>
+        <span style="font-family:'Courier New',monospace;font-size:11px;color:${dteColor};font-weight:700">${p.dte}d · ${p.expiry}</span>
       </div>
     </div>` : ''}
 
@@ -1839,13 +1887,9 @@ function renderPlay(p) {
       <div class="play-score-track"><div class="play-score-fill" style="width:${p.score}%;background:${scoreColor(p.score)}"></div></div>
     </div>
 
-    <!-- Tradier live chain data (populated when TRADIER_TOKEN is set) -->
-    <div class="tradier-live-row">
-      ${TRADIER_TOKEN
-        ? '<span style="color:#888;font-size:11px;font-style:italic">Fetching live data...</span>'
-        : `<span class="tradier-badge offline">⬤ Tradier not connected</span>
-           <span style="font-size:10px;color:#aaa;margin-left:6px">Set TRADIER_TOKEN in the JS to see live bid/ask, IV, Greeks</span>`
-      }
+    <!-- Live options data row (shown when available) -->
+    <div class="tradier-live-row" id="live-chain-${play.id}" style="${TRADIER_TOKEN ? '' : 'display:none'}">
+      ${TRADIER_TOKEN ? '<span style="color:#888;font-size:11px;font-style:italic">Fetching live data...</span>' : ''}
     </div>
   </div>`;
 }
@@ -2042,7 +2086,7 @@ function buildOverview(scanData, newsData) {
         const bear = tickers.filter(t=>t.direction==='BEARISH').length;
         const tot  = tickers.length || 1;
         const bullPct = Math.round(bull/tot*100);
-        return `<div style="font-size:11px;color:#555">${bull} Bullish � ${bear} Bearish � ${tot-bull-bear} Neutral</div>
+        return `<div style="font-size:11px;color:#555">${bull} Bullish · ${bear} Bearish · ${tot-bull-bear} Neutral</div>
         <div style="height:4px;background:#f0f0f0;margin-top:6px;border-radius:2px">
           <div style="height:100%;width:${bullPct}%;background:#2e8b57;border-radius:2px"></div>
         </div>
@@ -2090,7 +2134,7 @@ function buildOverview(scanData, newsData) {
       const entry  = t.entry  || t.entry_zone || '';
       const target = t.target || t.price_target || '';
       const stop   = t.stop   || t.invalidation || '';
-      const reason = (t.signals||[]).join(' � ') || t.reason || '';
+      const reason = (t.signals||[]).join(' · ') || t.reason || '';
       return `
       <div class="setup-card" onclick="openStockDetail('${t.ticker}')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
@@ -2153,21 +2197,44 @@ function buildOverview(scanData, newsData) {
     </div>`;
   }
 
-  // BASANI Score quick card (4th column)
+  // ── BASANI Score quick card (4th column) ──
   const scoreCard = (() => {
     try {
       const loc = computeLocalGrades();
-      const wr = loc.winRate != null ? (loc.winRate*100).toFixed(0)+'%' : '';
+      const wr = loc.winRate != null ? (loc.winRate*100).toFixed(0)+'%' : '—';
       const wrClr = loc.winRate == null ? '#888' : loc.winRate >= 0.65 ? '#2e8b57' : loc.winRate >= 0.5 ? '#b8860b' : '#c0392b';
-      const avg = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '';
+      const avg = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '—';
       const uwWr = loc.uwWinRate != null ? (loc.uwWinRate*100).toFixed(0)+'%' : 'N/A';
       const gradeColors = { 'A+':'#2e8b57','A':'#3a9e6e','B':'#b8860b','C':'#c07a0a','D':'#c0392b','F':'#8b0000' };
       const gradeBar = Object.entries(loc.gradeDist).map(([g,cnt]) => {
         const max = Math.max(1,...Object.values(loc.gradeDist));
-        const hh = Math.round((cnt/max)*28);
-        return '<div style="display:flex;flex-direction:column;align-items:center;gap:1px"><div style="font-size:7px;color:'+(gradeColors[g]||'#888')+'">'+cnt+'</div><div style="width:14px;height:'+Math.max(hh,cnt>0?2:0)+'px;background:'+(gradeColors[g]||'#888')+'"></div><div style="font-size:7px;color:#aaa">'+g+'</div></div>';
+        const h = Math.round((cnt/max)*28);
+        return `<div style="display:flex;flex-direction:column;align-items:center;gap:1px">
+          <div style="font-size:7px;color:${gradeColors[g]||'#888'}">${cnt}</div>
+          <div style="width:14px;height:${Math.max(h,cnt>0?2:0)}px;background:${gradeColors[g]||'#888'}"></div>
+          <div style="font-size:7px;color:#aaa">${g}</div>
+        </div>`;
       }).join('');
-      return '<div class="briefing-card" style="background:#0a0a0a;color:#fff"><div class="bc-header" style="color:#fff;border-bottom-color:#222">BASANI Score</div><div style="display:flex;justify-content:space-between;margin-bottom:10px"><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Win Rate</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+wrClr+'">'+wr+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Avg Return</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:'+(loc.avgPnl>=0?'#2e8b57':'#c0392b')+'">'+avg+'</div></div><div><div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">UW Win%</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:#3a9e6e">'+uwWr+'</div></div></div><div style="display:flex;align-items:flex-end;gap:5px;height:38px;margin-bottom:8px">'+gradeBar+'</div><div style="font-size:9px;color:#444">'+loc.closed.length+' closed : '+loc.open.length+' open</div><div style="font-size:8px;color:#2e8b57;margin-top:4px;cursor:pointer" onclick="switchTab(\'log\')">View full backtest :</div></div>';
+      return `<div class="briefing-card" style="background:#0a0a0a;color:#fff">
+        <div class="bc-header" style="color:#fff;border-bottom-color:#222">BASANI Score</div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Win Rate</div>
+            <div style="font-family:'Courier New',monospace;font-size:20px;font-weight:700;color:${wrClr}">${wr}</div>
+          </div>
+          <div>
+            <div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">Avg Return</div>
+            <div style="font-family:'Courier New',monospace;font-size:20px;font-weight:700;color:${loc.avgPnl>=0?'#2e8b57':'#c0392b'}">${avg}</div>
+          </div>
+          <div>
+            <div style="font-size:7px;color:#444;letter-spacing:.1em;text-transform:uppercase">UW Win%</div>
+            <div style="font-family:'Courier New',monospace;font-size:20px;font-weight:700;color:#3a9e6e">${uwWr}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:5px;height:38px;margin-bottom:8px">${gradeBar}</div>
+        <div style="font-size:9px;color:#444">${loc.closed.length} closed · ${loc.open.length} open</div>
+        <div style="font-size:8px;color:#2e8b57;margin-top:4px;cursor:pointer" onclick="switchTab('log')">View full backtest →</div>
+      </div>`;
     } catch(e) { return '<div class="briefing-card"></div>'; }
   })();
 
@@ -2234,7 +2301,7 @@ function buildLiveFeed(newsData) {
   const absTime = (ts) => {
     if (!ts) return '';
     const d = new Date(ts);
-    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' � ' +
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' · ' +
            d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   };
 
@@ -2284,7 +2351,7 @@ function buildLiveFeed(newsData) {
     const breaking  = isBreaking(item);
     const headline  = (item.title || '').trim();
     const summary   = (item.body || item.description || '').trim();
-    const link      = item.url ? ` � <a href="${item.url}" target="_blank" style="color:var(--gold,#e8b84b)">Read ↗</a>` : '';
+    const link      = item.url ? ` · <a href="${item.url}" target="_blank" style="color:var(--gold,#e8b84b)">Read ↗</a>` : '';
     const impact    = impactCls(item.impact_level);
     const tickers   = tickerTags(item.tickers || []);
     const ts        = item.timestamp || item.time || '';
@@ -2301,7 +2368,7 @@ function buildLiveFeed(newsData) {
           <a href="${item.url||'#'}" target="_blank" style="color:inherit;text-decoration:none">${headline}</a>
         </div>` : ''}
         ${summary ? `<div class="news-text" style="margin-top:4px">${summary}</div>` : ''}
-        <div class="news-time"><span>${relTime(ts)}</span> &nbsp;�&nbsp; <span style="opacity:.6">${absTime(item._ts)}</span>${link}</div>
+        <div class="news-time"><span>${relTime(ts)}</span> &nbsp;·&nbsp; <span style="opacity:.6">${absTime(item._ts)}</span>${link}</div>
       </div>
     </div>`;
   }).join('');
@@ -2377,7 +2444,7 @@ function buildCalendar(newsData) {
     const info = EVENT_KB[ev.event] || null;
     const evTime = new Date(ev.time || 0);
     const timeStr = !isNaN(evTime)
-      ? evTime.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) + ' � ' +
+      ? evTime.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) + ' · ' +
         evTime.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})
       : ev.time || '';
 
@@ -2559,9 +2626,9 @@ function buildMarketIntel(newsData) {
     <div style="padding:10px 16px 8px;border-bottom:1px solid var(--border,#e5e5e5);background:var(--bg2,#f5f5f5)">
       <div style="font-size:8px;letter-spacing:0.2em;color:var(--text3,#aaa);text-transform:uppercase;margin-bottom:6px">
         Signal Layer — ${socialItems.length} posts
-        ${xApiCount ? `&nbsp;�&nbsp; <span style="color:#fff;background:#000;padding:1px 6px;border-radius:2px;font-size:8px">X: ${xApiCount}</span>` : ''}
-        ${stCount   ? `&nbsp;�&nbsp; <span style="color:#fff;background:#1d9bf0;padding:1px 6px;border-radius:2px;font-size:8px">ST: ${stCount}</span>` : ''}
-        ${trumpCount? `&nbsp;�&nbsp; <span style="color:#fff;background:#c0392b;padding:1px 6px;border-radius:2px;font-size:8px">TRUMP: ${trumpCount}</span>` : ''}
+        ${xApiCount ? `&nbsp;·&nbsp; <span style="color:#fff;background:#000;padding:1px 6px;border-radius:2px;font-size:8px">X: ${xApiCount}</span>` : ''}
+        ${stCount   ? `&nbsp;·&nbsp; <span style="color:#fff;background:#1d9bf0;padding:1px 6px;border-radius:2px;font-size:8px">ST: ${stCount}</span>` : ''}
+        ${trumpCount? `&nbsp;·&nbsp; <span style="color:#fff;background:#c0392b;padding:1px 6px;border-radius:2px;font-size:8px">TRUMP: ${trumpCount}</span>` : ''}
       </div>
       <div style="display:flex;gap:5px;flex-wrap:wrap">
         ${trumpCount ? `<span style="font-family:'Courier New',monospace;font-size:10px;background:#c0392b;color:#fff;padding:2px 8px">@realDonaldTrump <span style="opacity:.75">${trumpCount}</span></span>` : ''}
@@ -2740,22 +2807,35 @@ if (!IS_COWORK) {
   if (logPanel) logPanel.style.display = 'none';
 }
 
-// ── BLUBBER FEED: UW Options Flow + Economic/Earnings Calendar ────────────────
+// ── BLUBBER FEED: News + Calendar (left) | UW Flow Individual Trades (right) ──
 function buildBlubberFeed(uwData, calData) {
   var feedEl   = document.getElementById('blubberFeed');
   var statusEl = document.getElementById('blubberStatus');
   if (!feedEl) return;
 
-  var html = [];
-  var now  = Date.now();
+  // Cache for Refresh button
+  window._lastUwData  = uwData;
+  window._lastCalData = calData;
 
+  var now = Date.now();
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
   function parsePrem(s) {
     if (typeof s === 'number') return s;
     if (!s) return 0;
-    var v = String(s).replace(/[$,\s]/g, '');
-    if (v.slice(-1).toUpperCase() === 'M') return parseFloat(v) * 1e6;
-    if (v.slice(-1).toUpperCase() === 'K') return parseFloat(v) * 1e3;
+    var v = String(s).replace(/[$,\s\u{1F311}\u{1F40B}✔️❌⚡]/gu, '').trim();
+    if (!v) return 0;
+    var last = v.slice(-1).toUpperCase();
+    if (last === 'M') return parseFloat(v) * 1e6;
+    if (last === 'K') return parseFloat(v) * 1e3;
     return parseFloat(v) || 0;
+  }
+
+  function fmtPrem(num, raw) {
+    if (num >= 1e6) return '$' + (num/1e6).toFixed(1) + 'M';
+    if (num >= 1e3) return '$' + (num/1e3).toFixed(0) + 'K';
+    if (num > 0)    return '$' + num.toFixed(0);
+    return raw || '—';
   }
 
   function fmtDT(d, t) {
@@ -2770,89 +2850,247 @@ function buildBlubberFeed(uwData, calData) {
     return base + ' at ' + t + ' ET';
   }
 
-  var events   = (calData && calData.events) ? calData.events : [];
-  var econEvts = events.filter(function(e) { return e.type !== 'earnings'; });
-  var earnEvts = events.filter(function(e) { return e.type === 'earnings'; });
-
-  if (econEvts.length) {
-    html.push('<div class="bl-section-header">ECONOMIC EVENTS — THIS WEEK</div>');
-    econEvts.sort(function(a, b) {
-      var da = a.date || '', db = b.date || '';
-      if (da !== db) return da < db ? -1 : 1;
-      return (b.importance || 0) - (a.importance || 0);
-    });
-    econEvts.forEach(function(ev) {
-      var imp     = ev.importance || 0;
-      var impLbl  = imp >= 3 ? 'HIGH' : imp === 2 ? 'MEDIUM' : 'LOW';
-      var impCls  = imp >= 3 ? 'bl-tag-high' : imp === 2 ? 'bl-tag-med' : 'bl-tag-low';
-      var bdrCls  = imp >= 3 ? 'blubber-high' : imp === 2 ? 'blubber-med' : '';
-      var cur     = ev.currency || 'USD';
-      var name    = ev.name || 'Event';
-      var dtStr   = fmtDT(ev.date, ev.time);
-      var actual  = ev.actual  || '';
-      var fcast   = ev.forecast || '';
-      var prev    = ev.previous || '';
-      var watchTx = imp >= 3
-        ? 'High impact — consider stepping aside or hedging before this release.'
-        : imp === 2
-        ? 'Medium impact — expect brief volatility near release. Tighten stops.'
-        : 'Low impact — informational. Monitor for context only.';
-      var metaRow = '';
-      if (actual) metaRow = 'Actual: <strong>' + actual + '</strong>' + (prev ? '  |  Prev: ' + prev : '');
-      else if (fcast || prev) metaRow = (fcast ? 'Forecast: ' + fcast : '') + (fcast && prev ? '  |  ' : '') + (prev ? 'Prev: ' + prev : '');
-      html.push('<div class="blubber-item ' + bdrCls + '"><div class="bl-row-top"><span class="bl-cur-tag">' + cur + '</span><span class="bl-event-name">' + name + '</span><span class="' + impCls + '">' + impLbl + '</span></div>' + (dtStr ? '<div class="bl-meta">' + dtStr + '</div>' : '') + (metaRow ? '<div class="bl-meta">' + metaRow + '</div>' : '') + '<div class="bl-watch">' + watchTx + '</div></div>');
-    });
+  function relTime(ts) {
+    if (!ts) return '';
+    var d = new Date(ts); if (isNaN(d)) return '';
+    var m = Math.round((now - d.getTime()) / 60000);
+    if (m < 1) return 'just now';
+    if (m < 60) return m + 'm ago';
+    if (m < 1440) return Math.round(m/60) + 'h ago';
+    return Math.round(m/1440) + 'd ago';
   }
 
-  if (earnEvts.length) {
-    html.push('<div class="bl-section-header" style="margin-top:18px">EARNINGS THIS WEEK</div>');
-    earnEvts.forEach(function(ev) {
-      var ticker = ev.ticker || '';
-      var name   = ev.name || ticker;
-      var dtStr  = fmtDT(ev.date, ev.time);
-      var eps    = ev.eps_est || ev.eps_estimate || '';
-      var rev    = ev.rev_est || ev.rev_estimate || '';
-      html.push('<div class="blubber-item"><div class="bl-row-top">' + (ticker ? '<span class="uw-tag">' + ticker + '</span>' : '') + '<span class="bl-event-name">' + name + '</span><span class="bl-tag-earn">EARNINGS</span></div>' + (dtStr ? '<div class="bl-meta">' + dtStr + '</div>' : '') + ((eps || rev) ? '<div class="bl-meta">EPS est: ' + (eps || '—') + ' &nbsp;|&nbsp; Rev est: ' + (rev || '—') + '</div>' : '') + '<div class="bl-watch">Watch for gap on open — reduce size before the print.</div></div>');
-    });
+  function safeText(s) {
+    return String(s || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
+  // ── News data ──────────────────────────────────────────────────────────────
+  var newsRaw = window.LAST_NEWS_DATA || window.newsData || null;
+  var newsArr = [];
+  if (newsRaw) {
+    if (Array.isArray(newsRaw)) newsArr = newsRaw;
+    else if (newsRaw.articles) newsArr = newsRaw.articles;
+    else if (newsRaw.news)     newsArr = newsRaw.news;
+    else if (newsRaw.items)    newsArr = newsRaw.items;
+  }
+
+  // UW data
   var uwArr = Array.isArray(uwData) ? uwData : ((uwData && uwData.items) ? uwData.items : []);
-  if (uwArr.length) {
-    html.push('<div class="bl-section-header" style="margin-top:18px">UNUSUAL WHALES — ACTIVE FLOW</div>');
-    var byTicker = {};
-    uwArr.forEach(function(t) {
-      var sym = (t.ticker || t.ticker_symbol || t.symbol || '').toUpperCase().replace(/[^A-Z]/g, '');
-      if (!sym || sym.length > 6) return;
-      if (!byTicker[sym]) byTicker[sym] = { calls: 0, puts: 0, neutral: 0, premNum: 0, premStr: '', count: 0 };
-      var side = (t.side || t.put_call || t.direction || '').toLowerCase();
-      if (side === 'call' || side === 'calls' || side === 'bullish') byTicker[sym].calls++;
-      else if (side === 'put' || side === 'puts' || side === 'bearish') byTicker[sym].puts++;
-      else byTicker[sym].neutral++;
-      var pn = parsePrem(t.premium || t.total_premium || 0);
-      byTicker[sym].premNum += pn;
-      if (!byTicker[sym].premStr && t.premium) byTicker[sym].premStr = t.premium;
-      byTicker[sym].count++;
-    });
-    Object.entries(byTicker).sort(function(a, b) { return b[1].premNum - a[1].premNum; }).slice(0, 15).forEach(function(entry) {
-      var sym = entry[0], d = entry[1];
-      var bias    = d.calls > d.puts ? 'BULLISH' : d.puts > d.calls ? 'BEARISH' : 'MIXED';
-      var biasClr = bias === 'BULLISH' ? '#2e8b57' : bias === 'BEARISH' ? '#c0392b' : '#888';
-      var premFmt = d.premNum >= 1e6 ? '$' + (d.premNum/1e6).toFixed(1) + 'M' : d.premNum >= 1e3 ? '$' + (d.premNum/1e3).toFixed(0) + 'K' : d.premNum > 0 ? '$' + d.premNum.toFixed(0) : (d.premStr || '—');
-      var ratio   = (d.calls || d.puts) ? d.calls + 'C / ' + d.puts + 'P' : d.neutral + ' neutral';
-      var watchTx = bias === 'BULLISH' ? 'Call flow dominant — smart money leaning long. Watch for momentum continuation.' : bias === 'BEARISH' ? 'Put flow dominant — hedging or directional short. Watch key support levels.' : 'Mixed flow — no clear directional edge yet. Wait for confirmation.';
-      html.push('<div class="blubber-item blubber-whale"><div class="bl-row-top"><span class="uw-tag">' + sym + '</span><span style="font-size:11px;font-weight:700;color:' + biasClr + '">' + bias + '</span><span class="bl-prem">' + premFmt + ' &nbsp;� ' + ratio + '</span></div><div class="bl-watch">' + watchTx + '</div></div>');
+
+  // Set of UW tickers for cross-reference
+  var uwTickers = {};
+  uwArr.forEach(function(t) {
+    var sym = (t.ticker || '').toUpperCase();
+    if (sym) uwTickers[sym] = true;
+  });
+
+  // ── LEFT COLUMN: News + Calendar ───────────────────────────────────────────
+  var leftHtml = [];
+
+  // Section A: Market News
+  if (newsArr.length) {
+    var sorted = newsArr.slice().sort(function(a,b) { return (b.impact_score||0)-(a.impact_score||0); });
+    var topNews = sorted.slice(0, 30);
+    leftHtml.push('<div class="bl-section-header">MARKET NEWS <span class="bl-section-count">' + topNews.length + '</span></div>');
+
+    topNews.forEach(function(item) {
+      var title = safeText(item.title || item.text || '');
+      if (!title) return;
+      var url  = item.url || '';
+      var src  = (item.source || '').toUpperCase();
+      var imp  = (item.impact_level || '').toUpperCase();
+      var sent = (item.sentiment || '').toLowerCase();
+      var ts   = relTime(item.timestamp || item.time);
+      var tickers = Array.isArray(item.tickers) ? item.tickers : [];
+      var isUw = tickers.some(function(t){ return uwTickers[t.toUpperCase()]; });
+
+      var bdr = isUw ? 'blubber-whale' : imp === 'HIGH' ? 'blubber-news-high' : imp === 'MEDIUM' ? 'blubber-news-med' : '';
+      var tags = '';
+      if (isUw)            tags += '<span class="bl-tag-uw">UW</span> ';
+      if (imp === 'HIGH')  tags += '<span class="bl-tag-high">HIGH</span> ';
+      else if (imp === 'MEDIUM') tags += '<span class="bl-tag-med">MED</span> ';
+      if (sent === 'bullish') tags += '<span style="font-size:8px;color:#2e8b57;font-weight:700">BULL</span> ';
+      else if (sent === 'bearish') tags += '<span style="font-size:8px;color:#c0392b;font-weight:700">BEAR</span> ';
+      var tickTags = tickers.slice(0,3).map(function(t){ return '<span class="bl-cur-tag">'+safeText(t)+'</span>'; }).join(' ');
+
+      leftHtml.push(
+        '<div class="blubber-item ' + bdr + '">' +
+          '<div class="bl-news-title">' + (url ? '<a href="' + url + '" target="_blank" rel="noopener">' + title + '</a>' : title) + '</div>' +
+          '<div class="bl-row-top" style="margin-top:4px">' +
+            (tickTags ? tickTags + ' ' : '') + tags +
+            '<span style="font-size:9px;color:#bbb;font-family:\'Courier New\',monospace;margin-left:auto">' + src + (ts ? ' · ' + ts : '') + '</span>' +
+          '</div>' +
+        '</div>'
+      );
     });
   }
 
-  if (!html.length) {
-    feedEl.innerHTML = '<div class="blubber-empty">No live signals — scanner will populate on next run.</div>';
-    if (statusEl) statusEl.textContent = 'Awaiting data';
-    return;
+  // Section B: Economic Events (clickable, inline expand)
+  var events   = (calData && calData.events) ? calData.events : (typeof CAL_EVENTS !== 'undefined' ? CAL_EVENTS : []);
+  var econEvts = events.filter(function(e){ return e.type !== 'earnings'; });
+  if (econEvts.length) {
+    econEvts.sort(function(a,b){
+      var da=a.date||'',db=b.date||'';
+      if(da!==db) return da<db?-1:1;
+      return (b.importance||0)-(a.importance||0);
+    });
+    var todayStr = new Date().toISOString().slice(0,10);
+    var wkAgo   = new Date(now - 7*86400000).toISOString().slice(0,10);
+    var wkAhead = new Date(now + 7*86400000).toISOString().slice(0,10);
+    var rel = econEvts.filter(function(e){ return (!e.date || (e.date >= wkAgo && e.date <= wkAhead)); });
+
+    if (rel.length) {
+      leftHtml.push('<div class="bl-section-header" style="margin-top:16px">ECONOMIC EVENTS <span class="bl-section-count">' + rel.length + '</span></div>');
+      rel.forEach(function(ev, idx) {
+        var imp    = ev.importance || 0;
+        var impLbl = imp>=3?'HIGH':imp===2?'MEDIUM':'LOW';
+        var impCls = imp>=3?'bl-tag-high':imp===2?'bl-tag-med':'bl-tag-low';
+        var bdrCls = imp>=3?'blubber-high':imp===2?'blubber-med':'';
+        var cur    = safeText(ev.currency || 'USD');
+        var name   = safeText(ev.name || 'Event');
+        var dtStr  = fmtDT(ev.date, ev.time);
+        var actual = ev.actual  || '';
+        var fcast  = ev.forecast || '';
+        var prev   = ev.previous || '';
+
+        var hasPassed = ev.date ? ev.date <= todayStr : false;
+        var beatMiss  = '';
+        if (actual && fcast) {
+          var an = parseFloat(actual.replace(/[^0-9.-]/g,'')), fn = parseFloat(fcast.replace(/[^0-9.-]/g,''));
+          if (!isNaN(an) && !isNaN(fn)) beatMiss = an>fn?'BEAT':an<fn?'MISS':'IN LINE';
+        }
+
+        var statsHtml = '';
+        if (actual) statsHtml += '<div class="bl-stat"><div class="bl-stat-val '+(beatMiss==='BEAT'?'bl-beat':beatMiss==='MISS'?'bl-miss':'')+'">' + safeText(actual) + '</div><div class="bl-stat-lbl">Actual</div></div>';
+        if (fcast)  statsHtml += '<div class="bl-stat"><div class="bl-stat-val">' + safeText(fcast) + '</div><div class="bl-stat-lbl">Forecast</div></div>';
+        if (prev)   statsHtml += '<div class="bl-stat"><div class="bl-stat-val">' + safeText(prev)  + '</div><div class="bl-stat-lbl">Previous</div></div>';
+        if (beatMiss) statsHtml += '<div class="bl-stat"><div class="bl-stat-val '+(beatMiss==='BEAT'?'bl-beat':beatMiss==='MISS'?'bl-miss':'')+'">' + beatMiss + '</div><div class="bl-stat-lbl">Result</div></div>';
+
+        var impl = '';
+        if (hasPassed && actual) {
+          if (beatMiss==='BEAT') impl = 'Data beat expectations. Risk-on sentiment may strengthen. Watch USD and yields for follow-through.';
+          else if (beatMiss==='MISS') impl = 'Data missed expectations. Potential risk-off. Monitor safe-haven flows and any policy shift.';
+          else impl = 'Data in line with expectations. Limited volatility expected. Markets likely to continue current trend.';
+        } else {
+          impl = imp>=3 ? 'High impact — reduce exposure around the release window. Gap risk is real.' : imp===2 ? 'Medium impact — tighten stops approaching release time.' : 'Low impact — informational context only.';
+        }
+
+        var detailHtml = (statsHtml ? '<div class="bl-stat-row">' + statsHtml + '</div>' : '') + '<div class="bl-watch">' + impl + '</div>';
+
+        leftHtml.push(
+          '<div class="blubber-item ' + bdrCls + ' bl-clickable" onclick="this.classList.toggle(\'bl-expanded\')">' +
+            '<div class="bl-row-top">' +
+              '<span class="bl-cur-tag">' + cur + '</span>' +
+              '<span class="bl-event-name">' + name + '</span>' +
+              '<span class="' + impCls + '">' + impLbl + '</span>' +
+              (hasPassed && beatMiss ? '<span class="'+(beatMiss==='BEAT'?'bl-tag-high':beatMiss==='MISS'?'bl-tag-med':'bl-tag-low')+'">' + beatMiss + '</span>' : '') +
+              '<span class="bl-expand-icon">&#9662;</span>' +
+            '</div>' +
+            (dtStr ? '<div class="bl-meta">' + dtStr + '</div>' : '') +
+            '<div class="bl-detail">' + detailHtml + '</div>' +
+          '</div>'
+        );
+      });
+    }
   }
-  feedEl.innerHTML = html.join('');
-  var sig = feedEl.querySelectorAll('.blubber-item').length;
+
+  // Section C: Earnings this week (with related news)
+  var earnEvts = events.filter(function(e){ return e.type==='earnings'; });
+  if (earnEvts.length) {
+    var eWkAgo   = new Date(now - 2*86400000).toISOString().slice(0,10);
+    var eWkAhead = new Date(now + 7*86400000).toISOString().slice(0,10);
+    var relEarn  = earnEvts.filter(function(e){ return e.date && e.date >= eWkAgo && e.date <= eWkAhead; });
+    if (relEarn.length) {
+      leftHtml.push('<div class="bl-section-header" style="margin-top:16px">EARNINGS THIS WEEK <span class="bl-section-count">' + relEarn.length + '</span></div>');
+      relEarn.forEach(function(ev) {
+        var ticker = safeText(ev.ticker || '');
+        var name   = safeText(ev.name || ticker);
+        var dtStr  = fmtDT(ev.date, ev.time);
+        var eps    = ev.eps_est || ev.eps_estimate || '';
+        var rev    = ev.rev_est || ev.rev_estimate || '';
+
+        // Related news for this ticker
+        var relNews = newsArr.filter(function(n){
+          var t = Array.isArray(n.tickers) ? n.tickers : [];
+          return t.some(function(nt){ return nt.toUpperCase() === (ev.ticker||'').toUpperCase(); });
+        }).slice(0,2);
+
+        var newsLinks = relNews.map(function(n){
+          var t = safeText(n.title || n.text || ''); var u = n.url||''; var ts = relTime(n.timestamp||n.time);
+          return '<div class="bl-meta" style="color:#555;margin-top:5px">' + (u?'<a href="'+u+'" target="_blank" style="color:#555;text-decoration:none">'+t+'</a>':t) + (ts?' <span style="color:#ccc">· '+ts+'</span>':'') + '</div>';
+        }).join('');
+
+        leftHtml.push(
+          '<div class="blubber-item blubber-earn">' +
+            '<div class="bl-row-top">' +
+              (ticker?'<span class="uw-tag">'+ticker+'</span>':'') +
+              '<span class="bl-event-name">' + name + '</span>' +
+              '<span class="bl-tag-earn">EARNINGS</span>' +
+            '</div>' +
+            (dtStr ? '<div class="bl-meta">' + dtStr + '</div>' : '') +
+            ((eps||rev) ? '<div class="bl-meta">EPS est: '+(eps||'—')+' &nbsp;|&nbsp; Rev est: '+(rev||'—')+'</div>' : '') +
+            newsLinks +
+          '</div>'
+        );
+      });
+    }
+  }
+
+  // ── RIGHT COLUMN: Individual UW Trades ────────────────────────────────────
+  var rightHtml = [];
+  if (uwArr.length) {
+    var sortedTrades = uwArr.slice().sort(function(a,b){ return parsePrem(b.premium)-parsePrem(a.premium); });
+    rightHtml.push('<div class="bl-section-header">UW FLOW — INDIVIDUAL TRADES <span class="bl-section-count">' + sortedTrades.length + '</span></div>');
+
+    sortedTrades.forEach(function(t) {
+      var ticker = safeText((t.ticker||'').toUpperCase());
+      var premNum = parsePrem(t.premium);
+      var premFmt = fmtPrem(premNum, t.premium);
+      var side    = (t.side||'').toLowerCase();
+      var type    = (t.type||t.channel||'').toLowerCase().replace(/_/g,' ');
+      var strike  = safeText(t.strike||'');
+      var expiry  = safeText(t.expiry||'');
+      var ts      = relTime(t.timestamp);
+      var raw     = safeText((t.raw||'').replace(/[\u{1F300}-\u{1FFFF}]/gu,'').trim());
+      var isDark  = type.includes('dark') || side.includes('dark');
+      var isCall  = side.includes('call') || side.includes('bull');
+      var isPut   = side.includes('put')  || side.includes('bear');
+
+      var bdrCls = isDark ? 'blubber-dp' : isCall ? 'blubber-whale' : isPut ? 'blubber-high' : '';
+      var sideColor = isCall ? '#2e8b57' : isPut ? '#c0392b' : '#777';
+
+      var metaParts = [];
+      if (strike) metaParts.push('Strike: ' + strike);
+      if (expiry) metaParts.push('Exp: ' + expiry);
+      if (ts)     metaParts.push(ts);
+
+      rightHtml.push(
+        '<div class="blubber-item ' + bdrCls + '">' +
+          '<div class="bl-row-top">' +
+            (ticker ? '<span class="uw-tag">' + ticker + '</span>' : '') +
+            (isDark ? '<span class="bl-tag-dp">DARK POOL</span>' : '') +
+            (!isDark && (isCall||isPut) ? '<span style="font-size:9px;font-weight:700;color:'+sideColor+'">' + side.toUpperCase() + '</span>' : '') +
+            '<span class="bl-prem">' + premFmt + '</span>' +
+          '</div>' +
+          (metaParts.length ? '<div class="bl-meta">' + metaParts.join(' · ') + '</div>' : '') +
+          (raw ? '<div class="bl-raw">' + raw + '</div>' : '') +
+        '</div>'
+      );
+    });
+  } else {
+    rightHtml.push('<div class="blubber-empty">No flow data — scanner runs every 5m.</div>');
+  }
+
+  // ── Assemble two-column layout ─────────────────────────────────────────────
+  feedEl.innerHTML =
+    '<div class="bl-two-col">' +
+      '<div class="bl-left">' + (leftHtml.length ? leftHtml.join('') : '<div class="blubber-empty">No data yet.</div>') + '</div>' +
+      '<div class="bl-right">' + rightHtml.join('') + '</div>' +
+    '</div>';
+
+  var total = feedEl.querySelectorAll('.blubber-item').length;
   var ago = (calData && calData.generated) ? Math.round((now - new Date(calData.generated).getTime()) / 60000) + 'm ago' : '';
-  if (statusEl) statusEl.textContent = (ago ? ago + ' � ' : '') + sig + ' signals';
+  if (statusEl) statusEl.textContent = (ago ? ago + ' · ' : '') + total + ' signals · auto-refreshes';
 }
 
 function applyBadge(regime) {
@@ -2943,7 +3181,7 @@ function applyScanJson(data) {
       rsi: t.rsi, sma20: t.sma20, sma50: t.sma50,
       stop: t.stop, consTarget: t.cons_target, aggTarget: t.agg_target,
       signals: t.signals || [],
-      reason: t.signals.slice(0, 3).join(' � ') + (t.rsi ? ` � RSI ${t.rsi}` : '')
+      reason: t.signals.slice(0, 3).join(' · ') + (t.rsi ? ` · RSI ${t.rsi}` : '')
     });
   });
 
@@ -3158,7 +3396,7 @@ function showCalDay(dateStr) {
       const impDots = e.importance >= 5 ? '🔴🔴🔴' : e.importance >= 4 ? '🔴🔴' : e.importance >= 3 ? '🟡' : '';
 
       return `<div class="cal-detail-event" style="border-color:${e.color||'#888'}">
-        <div class="cal-detail-label">${typeLabel} � ${e.source||''} ${impDots}</div>
+        <div class="cal-detail-label">${typeLabel} · ${e.source||''} ${impDots}</div>
         <div class="cal-detail-name">${e.ticker ? '<span style="font-size:16px;color:'+e.color+'">'+e.ticker+'</span> — ' : ''}${e.name||''}</div>
         <div class="cal-detail-meta">${meta.map(m=>`<span>${m}</span>`).join('')}</div>
       </div>`;
@@ -3288,6 +3526,29 @@ function parsePremium(s) {
 
 function renderUWAlerts(alerts) {
   UW_ALL = alerts || [];
+
+  // ── Harvest underlying_price from UW alerts into live price store ──────────
+  if (UW_ALL.length) {
+    if (!window._liveSnaps) window._liveSnaps = {};
+    const priceMap = {};
+    UW_ALL.forEach(function(a) {
+      const sym = (a.ticker || '').toUpperCase();
+      const p   = parseFloat(a.underlying_price || a.stock_price || 0);
+      if (sym && p > 0) {
+        // Keep the most recent price per ticker
+        if (!priceMap[sym] || (a.timestamp > (priceMap[sym]._ts || ''))) {
+          priceMap[sym] = { latestTrade: { p: p }, _ts: a.timestamp || '' };
+        }
+      }
+    });
+    // Merge into shared live snaps — Alpaca is primary, UW fills gaps
+    Object.entries(priceMap).forEach(function([sym, snap]) {
+      if (!window._liveSnaps[sym]) window._liveSnaps[sym] = snap;
+    });
+    // Update ticker bar with any new data
+    if (typeof window._updateTicker === 'function') window._updateTicker(window._liveSnaps);
+  }
+
   const btn = document.getElementById('tab-btn-whales');
   if (!UW_ALL.length) {
     document.getElementById('uwAlertsContent').innerHTML =
@@ -3447,7 +3708,7 @@ function uwRender() {
 
   document.getElementById('uwAlertsContent').innerHTML = `
     <div style="padding:8px 16px;background:#f0fff4;border-bottom:1px solid #c3e6cb;font-size:12px;color:#1a7f3c;font-weight:600;display:flex;justify-content:space-between">
-      <span>Showing ${filtered.length} of ${sorted.length} alerts${UW_TICKER ? ' � ' + UW_TICKER + ' only <a href="#" onclick="uwTickerFilter(null);return false" style="color:#888;font-size:11px">[clear]</a>' : ''}</span>
+      <span>Showing ${filtered.length} of ${sorted.length} alerts${UW_TICKER ? ' · ' + UW_TICKER + ' only <a href="#" onclick="uwTickerFilter(null);return false" style="color:#888;font-size:11px">[clear]</a>' : ''}</span>
       <span style="color:#aaa;font-weight:400" id="uwRefreshLabel">auto-refreshes</span>
     </div>
     ${header}${rows}
@@ -3490,7 +3751,7 @@ async function loadAll() {
       buildCalendar(_cachedNewsData);
       buildMarketIntel(_cachedNewsData);
       const badge = document.getElementById('lastScanTime');
-      if (badge) { badge.textContent = '⚠ Using latest saved scan � live data unavailable'; badge.style.color = '#b8860b'; }
+      if (badge) { badge.textContent = '⚠ Using latest saved scan · live data unavailable'; badge.style.color = '#b8860b'; }
     } else if (!hasExistingData) {
       oc.innerHTML = '<div class="loading" style="color:var(--red)">⚠ Could not reach data source — check connection</div>';
     }
@@ -3545,30 +3806,29 @@ async function loadAll() {
         const isMarketHours = etDay>=1 && etDay<=5 && (etHour>9||(etHour===9&&etMin>=30)) && etHour<16;
         const isPreMarket   = etDay>=1 && etDay<=5 && etHour>=8 && (etHour<9||(etHour===9&&etMin<30));
         const marketStatus  = isMarketHours ? '🟢 Market Open' : isPreMarket ? '🟡 Pre-Market' : '🔴 Market Closed';
-        const scanAge = !isNaN(dt) ? Math.round((now - dt) / 60000) : null;
-        const ageStr  = scanAge !== null ? (scanAge < 2 ? ' � just now' : ` � ${scanAge}m ago`) : '';
-        const source  = USE_SUPABASE ? ' � Supabase' : ' � GitHub';
-        // Use ET timestamp from scanner if available, otherwise compute from UTC
-        const lastScanLabel = tsEt ? `Last scan: ${tsEt}` : (tsEt || (scanAge !== null ? `Last scan: ${scanAge}m ago` : 'Last scan: unknown'));
-        // Staleness colour — amber if >10 min during market hours, red if >20 min
-        const badge = document.getElementById("lastScanTime");
-        if (badge) {
-          badge.textContent = marketStatus + ageStr + source + ' � ' + lastScanLabel + (isMarketHours ? '' : ' � next scan 9:30am ET');
-          if (isMarketHours && scanAge !== null) {
-            badge.style.color = scanAge > 20 ? '#c0392b' : scanAge > 10 ? '#b8860b' : '#999';
-          } else {
-            badge.style.color = '#999';
-          }
-        }
+        // Store scan timestamp for the continuous ticker
+        window._lastScanEpoch = !isNaN(dt) ? dt.getTime() : null;
+        window._scanMarketStatus = marketStatus;
+        window._scanIsMarketHours = isMarketHours;
+        window._scanSource = USE_SUPABASE ? 'Supabase' : 'GitHub';
+
+        // Human-readable scan time in ET
+        const scanTimeET = !isNaN(dt)
+          ? dt.toLocaleTimeString('en-US', {timeZone:'America/New_York', hour:'numeric', minute:'2-digit', hour12:true}) + ' ET'
+          : (tsEt || null);
+        window._scanTimeET = scanTimeET;
+
+        // Initial render — updateScanBadge() will keep ticking it every 30s
+        updateScanBadge();
       }
       document.getElementById('stocksGrid').innerHTML = STOCKS.map(renderStock).join('');
       renderStocksLivePanel();
     }
     if (playsVal) applyPlaysJson(playsVal);
-    if (newsVal)  { newsData = newsVal; LAST_NEWS_DATA = newsVal; buildLiveFeed(newsVal); buildMarketIntel(newsVal); try { buildCalendar(newsVal); } catch(e) {} }
+    if (newsVal)  { newsData = newsVal; LAST_NEWS_DATA = newsVal; window.LAST_NEWS_DATA = newsVal; buildLiveFeed(newsVal); buildMarketIntel(newsVal); try { buildCalendar(newsVal); } catch(e) {} }
+    initCalendar(calVal || null);
     if (typeof buildBlubberFeed === 'function') try { buildBlubberFeed(uwVal, calVal || null); } catch(e) {}
     if (uwVal)    renderUWAlerts(Array.isArray(uwVal) ? uwVal : (uwVal.items || []));
-    initCalendar(calVal || null);
   }
 
   // ── Primary: Supabase ─────────────────────────────────────────────────────
@@ -3624,7 +3884,7 @@ async function loadAll() {
         applyAll({ scan: _cachedScanData, plays: null, news: _cachedNewsData, whales: null, calendar: null });
         loaded = true;
         const badge = document.getElementById('lastScanTime');
-        if (badge) { badge.textContent = '⚠ Using latest saved scan � live sources unavailable'; badge.style.color = '#b8860b'; }
+        if (badge) { badge.textContent = '⚠ Using latest saved scan · live sources unavailable'; badge.style.color = '#b8860b'; }
       }
     } catch(e) {
       console.warn('GitHub fallback failed:', e);
@@ -3796,12 +4056,14 @@ function toggleRiskDigest(i) {
 
 // ── BASANI SCORE LOADER ───────────────────────────────────────────────────────
 function computeLocalGrades() {
-  const closed = PLAYS_LOG.filter(p => p.status === 'CLOSED' && p.grade && p.grade !== '');
+  // Build stats entirely from PLAYS_LOG (always available, no network needed)
+  const closed = PLAYS_LOG.filter(p => p.status === 'CLOSED' && p.grade && p.grade !== '—');
   const open   = PLAYS_LOG.filter(p => p.status === 'OPEN');
   const gradeDist = { 'A+':0, 'A':0, 'B':0, 'C':0, 'D':0, 'F':0 };
   let wins = 0, totalPnl = 0, bestPnl = -Infinity, worstPnl = Infinity;
   let bestPlay = null, worstPlay = null;
-  const uwClosed = [];
+  const uwClosed = [], allClosed = [];
+
   closed.forEach(p => {
     if (gradeDist[p.grade] !== undefined) gradeDist[p.grade]++;
     const pct = p.pnl != null ? p.pnl : null;
@@ -3811,12 +4073,16 @@ function computeLocalGrades() {
       if (pct < worstPnl) { worstPnl = pct; worstPlay = p; }
     }
     if (p.grade === 'A+' || p.grade === 'A' || p.grade === 'B') wins++;
+    allClosed.push(p);
     if (p.source && p.source.startsWith('UW')) uwClosed.push(p);
   });
+
   const winRate = closed.length ? (wins / closed.length) : null;
   const avgPnl  = closed.length ? (totalPnl / closed.length) : null;
   const uwWins  = uwClosed.filter(p => p.grade === 'A+' || p.grade === 'A' || p.grade === 'B').length;
   const uwWinRate = uwClosed.length ? (uwWins / uwClosed.length) : null;
+
+  // Group by date for sparkline
   const byDate = {};
   closed.forEach(p => {
     const d = p.date || 'unknown';
@@ -3825,43 +4091,108 @@ function computeLocalGrades() {
     if (p.grade === 'A+' || p.grade === 'A' || p.grade === 'B') byDate[d].wins++;
   });
   const dailySorted = Object.entries(byDate).sort((a,b) => a[0].localeCompare(b[0])).slice(-7);
+
   return { closed, open, gradeDist, wins, winRate, avgPnl, bestPlay, worstPlay, uwClosed, uwWinRate, dailySorted, totalPnl };
 }
 
 async function loadBasaniScore() {
   const el = document.getElementById('basaniScore');
   if (!el) return;
+
+  // Always compute from local PLAYS_LOG first — instant, no network
   const loc = computeLocalGrades();
+
+  // Try to merge grades.json from GitHub for richer historical data
   let meta = {}, extTrades = 0;
   try {
-    const data = await fetch('https://raw.githubusercontent.com/sumedhbasani/Basani/main/grades.json').then(r => r.ok ? r.json() : null);
+    const data = await fetch('https://raw.githubusercontent.com/sumedhbasani/Basani/main/grades.json')
+      .then(r => r.ok ? r.json() : null);
     if (data && data._meta) { meta = data._meta; extTrades = meta.total_graded_trades || 0; }
-  } catch(e) {}
+  } catch(e) { /* offline — use local only */ }
+
   const totalGraded = Math.max(loc.closed.length, extTrades);
-  const wr = loc.winRate != null ? (loc.winRate * 100).toFixed(0) : '';
+  const wr = loc.winRate != null ? (loc.winRate * 100).toFixed(0) : '—';
   const wrColor = loc.winRate == null ? '#888' : loc.winRate >= 0.65 ? '#2e8b57' : loc.winRate >= 0.50 ? '#b8860b' : '#c0392b';
-  const avgStr  = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '';
+  const avgStr  = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '—';
   const avgClr  = loc.avgPnl == null ? '#888' : loc.avgPnl >= 0 ? '#2e8b57' : '#c0392b';
-  const uwWrStr = loc.uwWinRate != null ? (loc.uwWinRate * 100).toFixed(0) + '%' : '';
+  const uwWrStr = loc.uwWinRate != null ? (loc.uwWinRate * 100).toFixed(0) + '%' : '—';
   const uwWrClr = loc.uwWinRate == null ? '#888' : loc.uwWinRate >= 0.65 ? '#2e8b57' : loc.uwWinRate >= 0.5 ? '#b8860b' : '#c0392b';
+
+  // Grade distribution bars
   const gradeColors = { 'A+':'#2e8b57','A':'#3a9e6e','B':'#b8860b','C':'#c07a0a','D':'#c0392b','F':'#8b0000' };
   const gradeMax = Math.max(1, ...Object.values(loc.gradeDist));
   const gradeBar = Object.entries(loc.gradeDist).map(([g, cnt]) => {
     const pct = Math.round((cnt / gradeMax) * 100);
     const clr = gradeColors[g] || '#888';
-    return '<div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:28px"><div style="font-family:monospace;font-size:9px;color:'+clr+';font-weight:700">'+cnt+'</div><div style="width:22px;background:#111;position:relative;height:40px;display:flex;align-items:flex-end"><div style="width:100%;height:'+pct+'%;background:'+clr+';min-height:'+(cnt>0?2:0)+'px"></div></div><div style="font-size:9px;color:'+clr+'">'+g+'</div></div>';
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:28px">
+      <div style="font-family:'Courier New',monospace;font-size:9px;color:${clr};font-weight:700">${cnt}</div>
+      <div style="width:22px;background:#111;position:relative;height:40px;display:flex;align-items:flex-end">
+        <div style="width:100%;height:${pct}%;background:${clr};min-height:${cnt>0?2:0}px;transition:height .4s"></div>
+      </div>
+      <div style="font-size:9px;color:${clr};letter-spacing:.05em">${g}</div>
+    </div>`;
   }).join('');
+
+  // Daily win-rate sparkline
   const sparkHTML = loc.dailySorted.length ? loc.dailySorted.map(([date, d]) => {
     const pct = d.total ? Math.round((d.wins/d.total)*100) : 0;
-    const clr = pct >= 65 ? '#2e8b57' : pct >= 50 ? '#b8860b' : '#c0392b';
+    const clr  = pct >= 65 ? '#2e8b57' : pct >= 50 ? '#b8860b' : '#c0392b';
     const short = date.replace('2026-','').replace(/-/g,'/');
-    return '<div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:38px"><div style="font-family:monospace;font-size:11px;color:'+clr+';font-weight:700">'+pct+'%</div><div style="width:30px;height:'+Math.max(4,Math.round(pct*0.36))+'px;background:'+clr+'"></div><div style="font-size:8px;color:#666">'+short+'</div><div style="font-size:8px;color:#555">'+d.wins+'/'+d.total+'</div></div>';
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:38px">
+      <div style="font-family:'Courier New',monospace;font-size:11px;color:${clr};font-weight:700">${pct}%</div>
+      <div style="width:30px;height:${Math.max(4,Math.round(pct*0.36))}px;background:${clr};transition:height .4s"></div>
+      <div style="font-size:8px;color:#666">${short}</div>
+      <div style="font-size:8px;color:#555">${d.wins}/${d.total}</div>
+    </div>`;
   }).join('') : '<div style="color:#555;font-size:11px;padding:8px">No closed trades yet</div>';
-  const bestStr  = loc.bestPlay  ? loc.bestPlay.ticker+' '+loc.bestPlay.type+' '+(loc.bestPlay.contract||'')+' '+(loc.bestPlay.pnl!=null?(loc.bestPlay.pnl>0?'+':'')+loc.bestPlay.pnl.toFixed(1)+'%':'') : '';
-  const worstStr = loc.worstPlay ? loc.worstPlay.ticker+' '+loc.worstPlay.type+' '+(loc.worstPlay.contract||'')+' '+(loc.worstPlay.pnl!=null?(loc.worstPlay.pnl>0?'+':'')+loc.worstPlay.pnl.toFixed(1)+'%':'') : '';
-  el.innerHTML = '<div style="background:#0a0a0a;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #1a1a1a"><div style="font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:#444">BASANI Score Engine : Self-Grading Backtest</div><div style="margin-left:auto;font-size:8px;color:#444">'+totalGraded+' trades graded : '+loc.open.length+' open</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:#1a1a1a;border-bottom:1px solid #1a1a1a"><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+wrColor+'">'+wr+'%</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.closed.length+' closed plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Avg Return</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+avgClr+'">'+avgStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">per closed trade</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">UW Flow Win Rate</div><div style="font-family:monospace;font-size:22px;font-weight:700;color:'+uwWrClr+'">'+uwWrStr+'</div><div style="font-size:8px;color:#555;margin-top:2px">'+loc.uwClosed.length+' UW-sourced plays</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Best Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#2e8b57;line-height:1.4">'+bestStr+'</div></div><div style="background:#0d0d0d;padding:12px 14px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Worst Trade</div><div style="font-family:monospace;font-size:10px;font-weight:700;color:#c0392b;line-height:1.4">'+worstStr+'</div></div></div><div style="display:grid;grid-template-columns:auto 1fr;gap:1px;background:#1a1a1a"><div style="background:#0d0d0d;padding:14px 18px"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Grade Distribution</div><div style="display:flex;align-items:flex-end;gap:6px;height:60px">'+gradeBar+'</div></div><div style="background:#0d0d0d;padding:14px 18px;overflow-x:auto"><div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Daily Win Rate (last 7)</div><div style="display:flex;align-items:flex-end;gap:8px;height:60px">'+sparkHTML+'</div></div></div>';
+
+  // Best / worst
+  const bestStr  = loc.bestPlay  ? `${loc.bestPlay.ticker} ${loc.bestPlay.type} ${loc.bestPlay.contract||''} ${loc.bestPlay.pnl!=null?(loc.bestPlay.pnl>0?'+':'')+loc.bestPlay.pnl.toFixed(1)+'%':''}` : '—';
+  const worstStr = loc.worstPlay ? `${loc.worstPlay.ticker} ${loc.worstPlay.type} ${loc.worstPlay.contract||''} ${loc.worstPlay.pnl!=null?(loc.worstPlay.pnl>0?'+':'')+loc.worstPlay.pnl.toFixed(1)+'%':''}` : '—';
+
+  el.innerHTML = `
+  <div style="background:#0a0a0a;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #1a1a1a">
+    <div style="font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:#444">BASANI Score Engine · Self-Grading Backtest</div>
+    <div style="margin-left:auto;font-size:8px;color:#444">${totalGraded} trades graded · ${loc.open.length} open</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:#1a1a1a;border-bottom:1px solid #1a1a1a">
+    <div style="background:#0d0d0d;padding:12px 14px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Win Rate</div>
+      <div style="font-family:'Courier New',monospace;font-size:22px;font-weight:700;color:${wrColor}">${wr}%</div>
+      <div style="font-size:8px;color:#555;margin-top:2px">${loc.closed.length} closed plays</div>
+    </div>
+    <div style="background:#0d0d0d;padding:12px 14px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Avg Return</div>
+      <div style="font-family:'Courier New',monospace;font-size:22px;font-weight:700;color:${avgClr}">${avgStr}</div>
+      <div style="font-size:8px;color:#555;margin-top:2px">per closed trade</div>
+    </div>
+    <div style="background:#0d0d0d;padding:12px 14px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">UW Flow Win Rate</div>
+      <div style="font-family:'Courier New',monospace;font-size:22px;font-weight:700;color:${uwWrClr}">${uwWrStr}</div>
+      <div style="font-size:8px;color:#555;margin-top:2px">${loc.uwClosed.length} UW-sourced plays</div>
+    </div>
+    <div style="background:#0d0d0d;padding:12px 14px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Best Trade</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;color:#2e8b57;line-height:1.4">${bestStr}</div>
+    </div>
+    <div style="background:#0d0d0d;padding:12px 14px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Worst Trade</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;color:#c0392b;line-height:1.4">${worstStr}</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:1px;background:#1a1a1a">
+    <div style="background:#0d0d0d;padding:14px 18px">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Grade Distribution</div>
+      <div style="display:flex;align-items:flex-end;gap:6px;height:60px">${gradeBar}</div>
+    </div>
+    <div style="background:#0d0d0d;padding:14px 18px;overflow-x:auto">
+      <div style="font-size:7px;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px">Daily Win Rate (last 7 sessions)</div>
+      <div style="display:flex;align-items:flex-end;gap:8px;height:60px">${sparkHTML}</div>
+    </div>
+  </div>`;
 }
 
+// ── STOCKS LIVE PANEL ────────────────────────────────────────────────────────
 function renderStocksLivePanel() {
   const el = document.getElementById('stocksLivePanel');
   if (!el || !STOCKS.length) return;
@@ -3956,56 +4287,62 @@ function renderAll() {
 
   // Options
   document.getElementById('scalpsCol').innerHTML = `
-    <div class="plays-col-header">⚡ Scalp Plays <span class="col-sub">0–10 DTE � Earnings plays</span></div>
+    <div class="plays-col-header">⚡ Scalp Plays <span class="col-sub">0–10 DTE · Earnings plays</span></div>
     ${SCALPS.map(renderPlay).join('')}`;
   document.getElementById('swingsCol').innerHTML = `
-    <div class="plays-col-header">📈 Swing Plays <span class="col-sub">14–30 DTE � Catalyst driven</span></div>
+    <div class="plays-col-header">📈 Swing Plays <span class="col-sub">14–30 DTE · Catalyst driven</span></div>
     ${SWINGS.map(renderPlay).join('')}`;
 
-
-  // Populate plays metrics bar
+  // Populate plays metrics bar from PLAYS_LOG
   (function() {
-    try {
-      const loc = computeLocalGrades();
-      const el = (id, val, clr) => { const e = document.getElementById(id); if (e) { e.textContent = val; if (clr) e.style.color = clr; } };
-      const wr = loc.winRate != null ? (loc.winRate*100).toFixed(0)+'%' : '--';
-      const wrClr = loc.winRate == null ? '#888' : loc.winRate >= 0.65 ? '#2e8b57' : loc.winRate >= 0.5 ? '#b8860b' : '#c0392b';
-      const avg = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '--';
-      const avgClr = loc.avgPnl == null ? '#888' : loc.avgPnl >= 0 ? '#2e8b57' : '#c0392b';
-      const uwWr = loc.uwWinRate != null ? (loc.uwWinRate*100).toFixed(0)+'%' : '--';
-      const best = loc.bestPlay ? loc.bestPlay.ticker+' '+(loc.bestPlay.pnl!=null?(loc.bestPlay.pnl>0?'+':'')+loc.bestPlay.pnl.toFixed(0)+'%':'') : '--';
-      el('pmTotalPlays', SCALPS.length + SWINGS.length + ' active');
-      el('pmWinRate', wr, wrClr);
-      el('pmAvgReturn', avg, avgClr);
-      el('pmOpenPositions', loc.open.length + ' open');
-      el('pmUwWinRate', uwWr, loc.uwWinRate == null ? '#888' : loc.uwWinRate >= 0.65 ? '#2e8b57' : '#b8860b');
-      el('pmBestTrade', best, '#2e8b57');
-    } catch(e) {}
+    const loc = typeof computeLocalGrades === 'function' ? computeLocalGrades() : null;
+    if (!loc) return;
+    const el = (id, val, clr) => { const e = document.getElementById(id); if (e) { e.textContent = val; if (clr) e.style.color = clr; } };
+    const wr = loc.winRate != null ? (loc.winRate*100).toFixed(0)+'%' : '—';
+    const wrClr = loc.winRate == null ? '#888' : loc.winRate >= 0.65 ? '#2e8b57' : loc.winRate >= 0.5 ? '#b8860b' : '#c0392b';
+    const avg = loc.avgPnl != null ? (loc.avgPnl >= 0 ? '+' : '') + loc.avgPnl.toFixed(1) + '%' : '—';
+    const avgClr = loc.avgPnl == null ? '#888' : loc.avgPnl >= 0 ? '#2e8b57' : '#c0392b';
+    const uwWr = loc.uwWinRate != null ? (loc.uwWinRate*100).toFixed(0)+'%' : '—';
+    const best = loc.bestPlay ? `${loc.bestPlay.ticker} ${loc.bestPlay.pnl!=null?(loc.bestPlay.pnl>0?'+':'')+loc.bestPlay.pnl.toFixed(0)+'%':''}` : '—';
+    el('pmTotalPlays', SCALPS.length + SWINGS.length + ' active');
+    el('pmWinRate', wr, wrClr);
+    el('pmAvgReturn', avg, avgClr);
+    el('pmOpenPositions', loc.open.length + ' open');
+    el('pmUwWinRate', uwWr, loc.uwWinRate == null ? '#888' : loc.uwWinRate >= 0.65 ? '#2e8b57' : '#b8860b');
+    el('pmBestTrade', best, '#2e8b57');
   })();
 
   // Sidebar: Futures snapshot + top UW flow
   (function() {
     const sb = document.getElementById('playsSidebarContent');
     if (!sb) return;
-    const futRows = FUTURES.filter(f => f.bias !== 'NEUTRAL').slice(0,3).map(f =>
-      '<div style="padding:9px 12px;border-bottom:1px solid #f0f0f0;background:#fff">' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">' +
-      '<span style="font-family:monospace;font-size:12px;font-weight:700;color:#000">'+f.contract+'</span>' +
-      '<span style="font-size:8px;letter-spacing:.12em;color:'+(f.bias==='LONG'?'#2e8b57':f.bias==='SHORT'?'#c0392b':'#888')+';border:1px solid '+(f.bias==='LONG'?'#c8e6d6':f.bias==='SHORT'?'#f0b8b8':'#ddd')+';padding:1px 5px">'+f.bias+'</span>' +
-      '</div><div style="font-size:9px;color:#555">Entry <span style="font-family:monospace;color:#000;font-size:10px">'+f.entry+'</span></div>' +
-      '<div style="font-size:9px;color:#555">Target <span style="font-family:monospace;color:#2e8b57">'+f.target+'</span> : Stop <span style="font-family:monospace;color:#c0392b">'+f.stop+'</span></div></div>'
-    ).join('');
-    const uwRows = SCALPS.filter(p=>p.flags&&p.flags.some(f=>f.includes('=')||f.includes('SWEEP'))).slice(0,4).map(p =>
-      '<div style="padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;display:flex;gap:8px;align-items:center">' +
-      '<div style="flex:1"><span style="font-family:monospace;font-size:11px;font-weight:700;color:#000">'+p.ticker+'</span>' +
-      '<span style="font-size:8px;color:'+(p.type==='CALL'?'#2e8b57':'#c0392b')+';margin-left:5px">'+p.type+'</span>' +
-      '<div style="font-size:9px;color:#888;margin-top:1px">'+(p.flags||[]).filter(f=>f.includes('$')||f.includes('SWEEP')).join(' ')+'</div></div>' +
-      '<div style="font-family:monospace;font-size:11px;font-weight:700;color:#333">'+p.strike+' '+(p.expiry||'')+'</div></div>'
-    ).join('');
-    sb.innerHTML = '<div style="padding:8px 12px;background:#f5f5f5;border-bottom:1px solid #e8e8e8"><div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#888">Futures Bias</div></div>' +
-      (futRows || '<div style="padding:10px 12px;color:#aaa;font-size:11px">No futures data</div>') +
-      '<div style="padding:8px 12px;background:#f5f5f5;border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8"><div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#888">UW Whale Alerts</div></div>' +
-      (uwRows || '<div style="padding:10px 12px;color:#aaa;font-size:11px">No whale alerts</div>');
+    const futRows = FUTURES.filter(f => f.bias !== 'NEUTRAL').slice(0,3).map(f => `
+      <div style="padding:9px 12px;border-bottom:1px solid #f0f0f0;background:#fff">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+          <span style="font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:#000">${f.contract}</span>
+          <span style="font-size:8px;letter-spacing:.12em;color:${f.bias==='LONG'?'#2e8b57':f.bias==='SHORT'?'#c0392b':'#888'};border:1px solid ${f.bias==='LONG'?'#c8e6d6':f.bias==='SHORT'?'#f0b8b8':'#ddd'};padding:1px 5px;font-family:Georgia,serif">${f.bias}</span>
+        </div>
+        <div style="font-size:9px;color:#555">Entry <span style="font-family:'Courier New',monospace;color:#000;font-size:10px">${f.entry}</span></div>
+        <div style="font-size:9px;color:#555">Target <span style="font-family:'Courier New',monospace;color:#2e8b57">${f.target}</span> · Stop <span style="font-family:'Courier New',monospace;color:#c0392b">${f.stop}</span></div>
+      </div>`).join('');
+    const uwRows = SCALPS.filter(p=>p.flags&&p.flags.some(f=>f.includes('🐋')||f.includes('SWEEP'))).slice(0,4).map(p => `
+      <div style="padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;display:flex;gap:8px;align-items:center">
+        <div style="flex:1">
+          <span style="font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:#000">${p.ticker}</span>
+          <span style="font-size:8px;color:${p.type==='CALL'?'#2e8b57':'#c0392b'};margin-left:5px;letter-spacing:.1em">${p.type}</span>
+          <div style="font-size:9px;color:#888;margin-top:1px">${(p.flags||[]).filter(f=>f.includes('🐋')||f.includes('SWEEP')||f.includes('$')).join(' ')}</div>
+        </div>
+        <div style="font-family:'Courier New',monospace;font-size:11px;font-weight:700;color:#333">${p.strike} ${p.expiry||''}</div>
+      </div>`).join('');
+    sb.innerHTML = `
+      <div style="padding:8px 12px;background:#f5f5f5;border-bottom:1px solid #e8e8e8">
+        <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#888">Futures Bias</div>
+      </div>
+      ${futRows || '<div style="padding:10px 12px;color:#aaa;font-size:11px">No futures data</div>'}
+      <div style="padding:8px 12px;background:#f5f5f5;border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8">
+        <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#888">UW Whale Alerts</div>
+      </div>
+      ${uwRows || '<div style="padding:10px 12px;color:#aaa;font-size:11px">No whale alerts</div>'}`;
   })();
 
   // Futures
@@ -4097,7 +4434,7 @@ function initTVStocks(ticker) {
   renderTVWidget('tv-stocks-chart', tvSym(ticker), ['RSI@tv-basicstudies']);
   updateStockPills(ticker);
   const lbl = document.getElementById('tvStockLabel');
-  if (lbl) lbl.textContent = ticker + '  �  5-min live';
+  if (lbl) lbl.textContent = ticker + '  ·  5-min live';
 }
 
 function updateStockPills(activeTicker) {
@@ -4176,7 +4513,7 @@ renderAll();
 loadAll();
 
 // ── SMART AUTO-REFRESH — market-hours aware, keep-alive, staleness detection ──
-const RENDER_BACKEND = 'https://basani-scanner.onrender.com';
+const RENDER_BACKEND = '';  // Render backend disabled — scanner runs via GitHub Actions
 
 function getMarketState() {
   const now  = new Date();
@@ -4230,16 +4567,7 @@ scheduleNextRefresh();
   setInterval(update, 1000);
 })();
 
-// Keep-alive ping to Render backend every 4 minutes
-// This prevents free-tier sleep and ensures scans keep running
-(function keepAlive() {
-  const ping = () => {
-    fetch(RENDER_BACKEND + '/health', {mode:'no-cors', cache:'no-cache'})
-      .catch(() => {}); // silent — just keeping the server awake
-  };
-  ping(); // immediate ping on load
-  setInterval(ping, 4 * 60 * 1000);
-})();
+// Keep-alive disabled — scanner runs via GitHub Actions cron (no Render backend needed)
 
 // Staleness detector — warn if scan data is old during market hours
 function checkDataFreshness() {
@@ -4261,6 +4589,201 @@ function checkDataFreshness() {
   }
 }
 setInterval(checkDataFreshness, 30 * 1000);
+
+// ── LIVE SCAN BADGE — ticks every 30s, no re-fetch needed ────────────────────
+function updateScanBadge() {
+  const badge = document.getElementById('lastScanTime');
+  if (!badge) return;
+
+  const status = window._scanMarketStatus || '🔴 Market Closed';
+  const isOpen = window._scanIsMarketHours || false;
+  const source = window._scanSource ? ` · ${window._scanSource}` : '';
+  const timeET = window._scanTimeET || null;
+  const epoch  = window._lastScanEpoch || null;
+
+  let ageStr = '';
+  let color  = '#999';
+
+  if (epoch) {
+    const ageMs  = Date.now() - epoch;
+    const ageMin = Math.round(ageMs / 60000);
+    if (ageMs < 0) {
+      // Clock skew — timestamp slightly in future, just show "just now"
+      ageStr = ' · just now';
+    } else if (ageMin < 2) {
+      ageStr = ' · just now';
+    } else if (ageMin < 60) {
+      ageStr = ` · ${ageMin}m ago`;
+    } else if (ageMin < 1440) {
+      const h = Math.floor(ageMin / 60), m = ageMin % 60;
+      ageStr = ` · ${h}h ${m}m ago`;
+    } else {
+      ageStr = ` · ${Math.floor(ageMin / 1440)}d ago`;
+    }
+
+    if (isOpen) {
+      color = ageMin > 20 ? '#c0392b' : ageMin > 10 ? '#b8860b' : '#3a9e6e';
+    }
+  }
+
+  const scanLabel = timeET
+    ? `Last scan: ${timeET}${ageStr}`
+    : (epoch ? `Last scan${ageStr}` : 'Last scan: pending');
+
+  const suffix = isOpen ? '' : ' · next scan 9:30am ET';
+  badge.textContent = `${status}${source} · ${scanLabel}${suffix}`;
+  badge.style.color = color;
+}
+setInterval(updateScanBadge, 30 * 1000);
+
+// ── ALPACA + UW LIVE AUTO-UPDATE ─────────────────────────────────────────────
+(function() {
+  var AK = 'PKVAR7JKCKGN63MV7OCMRQOSCO';
+  var AS = '2zauQm6Ddh6sq1hPn9BuMW6T3A8uRJ8d2yeJQ9mLBkai';
+  var ADU = 'https://data.alpaca.markets';
+  var UWT = '6c2959a5-ebef-4945-9c2b-5be1c81e0d57';
+  var LTICKERS = ['SPY','QQQ','NVDA','AMD','TSLA','AAPL','MSFT','META','AMZN','GOOGL','PLTR','COIN','MU','AVGO','GLD','XLE','XLF','TLT'];
+
+  function mkt() {
+    var et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+    var m = et.getHours()*60 + et.getMinutes(), d = et.getDay();
+    return d >= 1 && d <= 5 && m >= 570 && m <= 960;
+  }
+
+  function fmt2(n) { return n != null ? n.toFixed(2) : '0.00'; }
+  function sign(c) { return c >= 0 ? '+' : ''; }
+  function chgStr(c) { return sign(c) + fmt2(c) + '%'; }
+
+  function aFetch(path, params) {
+    var url = ADU + path;
+    if (params) {
+      var q = Object.keys(params).map(function(k) { return k + '=' + encodeURIComponent(params[k]); }).join('&');
+      url = url + '?' + q;
+    }
+    return fetch(url, {headers: {'APCA-API-KEY-ID': AK, 'APCA-API-SECRET-KEY': AS}})
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+  }
+
+  function updateTicker(snaps) {
+    window._updateTicker = updateTicker;
+    var track = document.getElementById('vipTickerTrack') || document.querySelector('.vip-ticker-track');
+    if (!track) return;
+    var items = [];
+    LTICKERS.forEach(function(sym) {
+      var s = snaps[sym]; if (!s) return;
+      var p = s.latestTrade ? s.latestTrade.p : (s.dailyBar ? s.dailyBar.c : null);
+      var prev = s.prevDailyBar ? s.prevDailyBar.c : null;
+      if (!p || !prev) return;
+      var chg = (p - prev) / prev * 100;
+      var cls = chg >= 0 ? 'up' : 'dn';
+      items.push('<span class="vip-ticker-item ' + cls + '">' + sym + ' ' + chgStr(chg) + '</span>');
+    });
+    track.innerHTML = items.join('') + items.join('');
+  }
+
+  function updatePrices(snaps) {
+    if (window.STOCKS) {
+      window.STOCKS.forEach(function(s) {
+        var snap = snaps[s.ticker]; if (!snap) return;
+        var p = snap.latestTrade ? snap.latestTrade.p : (snap.dailyBar ? snap.dailyBar.c : null);
+        var prev = snap.prevDailyBar ? snap.prevDailyBar.c : null;
+        if (p) s.price = parseFloat(fmt2(p));
+        if (p && prev) s.chg = parseFloat(fmt2((p - prev) / prev * 100));
+      });
+    }
+    Object.keys(snaps).forEach(function(sym) {
+      var snap = snaps[sym];
+      var p = snap.latestTrade ? snap.latestTrade.p : (snap.dailyBar ? snap.dailyBar.c : null);
+      var prev = snap.prevDailyBar ? snap.prevDailyBar.c : null;
+      if (!p) return;
+      document.querySelectorAll('[data-live-price="' + sym + '"]').forEach(function(el) {
+        el.textContent = '$' + fmt2(p);
+      });
+      if (prev) {
+        var chg = (p - prev) / prev * 100;
+        document.querySelectorAll('[data-live-chg="' + sym + '"]').forEach(function(el) {
+          el.textContent = chgStr(chg);
+          el.style.color = chg >= 0 ? '#2e8b57' : '#c0392b';
+        });
+      }
+    });
+  }
+
+  function fetchPrices() {
+    return aFetch('/v2/stocks/snapshots', {symbols: LTICKERS.join(','), feed: 'iex'}).then(function(data) {
+      if (!data) return;
+      window._liveSnaps = data;
+      updateTicker(data);
+      updatePrices(data);
+    });
+  }
+
+  function fetchNews() {
+    return aFetch('/v1beta1/news', {
+      symbols: 'NVDA,AAPL,MSFT,META,AMZN,GOOGL,TSLA,AMD,PLTR,COIN,SPY',
+      limit: 30, sort: 'desc'
+    }).then(function(data) {
+      if (!data || !data.news) return;
+      window.LAST_NEWS_DATA = data.news.map(function(n) {
+        return {
+          title: n.headline, url: n.url, source: n.source,
+          tickers: n.symbols || [], timestamp: n.created_at,
+          sentiment: n.sentiment,
+          impact_level: (n.symbols||[]).length >= 3 ? 'HIGH' : 'MEDIUM',
+          impact_score: (n.symbols||[]).length
+        };
+      });
+      var bp = document.getElementById('tab-blubber');
+      if (bp && bp.classList.contains('active') && typeof buildBlubberFeed === 'function') {
+        buildBlubberFeed(window._lastUwData || [], window._lastCalData || null);
+      }
+    });
+  }
+
+  function fetchUWFlow() {
+    return fetch('https://api.unusualwhales.com/api/option-trades/flow-alerts?limit=200', {
+      headers: {'Authorization': 'Bearer ' + UWT, 'Accept': 'application/json'}
+    }).then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) {
+        if (!d) return;
+        var alerts = d.data || d || [];
+        if (!alerts.length) return;
+        window._lastUwData = alerts;
+        if (!window._liveSnaps) window._liveSnaps = {};
+        var seen = {};
+        alerts.forEach(function(a) {
+          var sym = (a.ticker || '').toUpperCase();
+          var p = parseFloat(a.underlying_price || 0);
+          if (sym && p > 0 && !seen[sym] && !window._liveSnaps[sym]) {
+            seen[sym] = true;
+            window._liveSnaps[sym] = {latestTrade: {p: p}};
+          }
+        });
+        if (window._updateTicker) window._updateTicker(window._liveSnaps);
+        var wp = document.getElementById('tab-whales');
+        if (wp && wp.classList.contains('active') && typeof renderUWAlerts === 'function') {
+          renderUWAlerts(alerts);
+        }
+        // Also refresh Blubber feed with the latest live UW data
+        if (typeof buildBlubberFeed === 'function') {
+          buildBlubberFeed(alerts, window._lastCalData || null);
+        }
+      }).catch(function() {});
+  }
+
+  function start() {
+    fetchPrices();
+    fetchNews();
+    fetchUWFlow();
+    setInterval(fetchPrices, mkt() ? 30000 : 300000);
+    setInterval(fetchNews, 300000);
+    setInterval(fetchUWFlow, mkt() ? 300000 : 900000);
+  }
+
+  if (document.readyState === 'complete') { start(); }
+  else { window.addEventListener('load', start); }
+})();
 
 // Restore last active tab
 const savedTab = localStorage.getItem('basani_tab');
