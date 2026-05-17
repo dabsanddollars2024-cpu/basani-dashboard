@@ -3855,7 +3855,7 @@ async function loadAll() {
           _cachedScanData = scanData;
           _cachedNewsData = newsData;
         } else {
-          console.log('Supabase scan empty — trying GitHub');
+          console.log('Supabase scan empty or stale — will use cache if available');
         }
       }
     } catch(e) {
@@ -3863,34 +3863,19 @@ async function loadAll() {
     }
   }
 
-  // ── Fallback: GitHub contents API (not raw CDN — avoids stale cache) ──────
+  // ── Fallback: in-memory cache (GitHub repo is private — unauthenticated fetch returns 404) ──
   if (!loaded) {
-    try {
-      // Use GitHub contents API with cache-busting to get live data
-      const ghFetch = (file) => fetchWithTimeout(
-        `https://api.github.com/repos/sumedhbasani/Basani/contents/${file}?ref=main&_=${Date.now()}`,
-        8000
-      ).then(d => d && d.content ? JSON.parse(atob(d.content.replace(/\n/g,''))) : null).catch(() => null);
-
-      const [scanVal, playsVal, newsVal, uwVal, calVal] = await Promise.all([
-        ghFetch('data.json'), ghFetch('plays.json'), ghFetch('news.json'),
-        ghFetch('unusual_whales.json'), ghFetch('calendar.json')
-      ]);
-      // Only apply if at least scan data is valid
-      if (scanVal && (scanVal.regime || (Array.isArray(scanVal.tickers) && scanVal.tickers.length > 0))) {
-        applyAll({ scan: scanVal, plays: playsVal, news: newsVal, whales: uwVal, calendar: calVal });
-        loaded = true;
-        _cachedScanData = scanData;
-        _cachedNewsData = newsData;
-      } else if (_cachedScanData) {
-        // GitHub also empty — use in-memory cache
-        applyAll({ scan: _cachedScanData, plays: null, news: _cachedNewsData, whales: null, calendar: null });
-        loaded = true;
-        const badge = document.getElementById('lastScanTime');
-        if (badge) { badge.textContent = '⚠ Using latest saved scan · live sources unavailable'; badge.style.color = '#b8860b'; }
-      }
-    } catch(e) {
-      console.warn('GitHub fallback failed:', e);
+    if (_cachedScanData) {
+      applyAll({ scan: _cachedScanData, plays: null, news: _cachedNewsData, whales: null, calendar: null });
+      loaded = true;
+      const badge = document.getElementById('lastScanTime');
+      if (badge) { badge.textContent = '⚠ Using cached scan · Supabase temporarily unavailable'; badge.style.color = '#b8860b'; }
+    } else {
+      // Nothing available — show placeholder
+      initCalendar(null);
+      if (typeof buildBlubberFeed === 'function') buildBlubberFeed([], null);
+      const badge = document.getElementById('lastScanTime');
+      if (badge) { badge.textContent = '⚠ No data — scanner runs Mon–Fri 9am–4pm ET'; badge.style.color = '#c0392b'; }
     }
   }
 
