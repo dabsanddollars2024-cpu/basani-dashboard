@@ -1292,36 +1292,78 @@ body { background: var(--bg) !important; color: var(--text) !important; }
 </div>
 
 <!-- ── TRADINGVIEW TICKER TAPE ───────────────────────────────────────────── -->
-<div style="border-bottom:1px solid #e5e5e5;background:#fff">
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-      "symbols": [
-        {"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},
-        {"proName":"FOREXCOM:NSXUSD","title":"Nasdaq 100"},
-        {"description":"Russell 2000","proName":"INDEX:RUT"},
-        {"description":"VIX","proName":"INDEX:VIX"},
-        {"description":"DXY","proName":"INDEX:DXY"},
-        {"description":"10Y Yield","proName":"CRYPTOCAP:TWO"}}, // 10Y proxy — BITTREX:US10KB is unavailable, using T10YIE as yield proxy
-        {"description":"Gold","proName":"TVC:GOLD"},
-        {"description":"Oil WTI","proName":"TVC:USOIL"},
-        {"description":"BTC","proName":"BITSTAMP:BTCUSD"},
-        {"description":"NVDA","proName":"NASDAQ:NVDA"},
-        {"description":"AAPL","proName":"NASDAQ:AAPL"},
-        {"description":"GOOGL","proName":"NASDAQ:GOOGL"},
-        {"description":"TSLA","proName":"NASDAQ:TSLA"},
-        {"description":"AMZN","proName":"NASDAQ:AMZN"}
-      ],
-      "showSymbolLogo": false,
-      "isTransparent": false,
-      "displayMode": "adaptive",
-      "colorTheme": "light",
-      "locale": "en"
-    }
-    </script>
+<!-- Custom live ticker — powered by Alpaca API, updated every 30 sec. Shows all market instruments. -->
+<div style="border-bottom:1px solid #e5e5e5;background:#000;padding:7px 0;overflow:hidden">
+  <div id="marketTicker" style="white-space:nowrap;animation:ticker 60s linear infinite">
+    <span style="font-family:'Courier New',monospace;font-size:12px;color:#888;padding:0 16px">Loading live market data...</span>
   </div>
 </div>
+<script>
+(function() {
+  var AK = 'PKVAR7JKCKGN63MV7OCMRQOSCO';
+  var AS = '2zauQm6Ddh6sq1hPn9BuMW6T3A8uRJ8d2yeJQ9mLBkai';
+  var MTICKERS = ['SPY','QQQ','IWM','VIXY','UUP','NVDA','AMD','TSLA','AAPL','MSFT','META','AMZN','GOOGL','PLTR','COIN','MU','AVGO','GLD','XLE','XLF','TLT'];
+  var MLABELS = {
+    'IWM':'Russell 2000','VIXY':'VIX','UUP':'USD',
+    'SPY':'S&P 500','QQQ':'Nasdaq','NVDA':'NVDA','AMD':'AMD',
+    'TSLA':'TSLA','AAPL':'AAPL','MSFT':'MSFT','META':'META',
+    'AMZN':'AMZN','GOOGL':'GOOGL','PLTR':'PLTR','COIN':'COIN',
+    'MU':'MU','AVGO':'AVGO','GLD':'Gold','XLE':'Energy','XLF':'Financials','TLT':'Bonds'
+  };
+  var mData = {};
+
+  function fmt2(n) { return n != null ? n.toFixed(2) : '0.00'; }
+  function sign(c) { return c >= 0 ? '+' : ''; }
+
+  function mFetch(path, params) {
+    var url = 'https://data.alpaca.markets' + path;
+    if (params) {
+      var q = Object.keys(params).map(function(k) { return k + '=' + encodeURIComponent(params[k]); }).join('&');
+      url += '?' + q;
+    }
+    return fetch(url, {headers:{'APCA-API-KEY-ID':AK,'APCA-API-SECRET-KEY':AS}})
+      .then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; });
+  }
+
+  function updateMarketTicker() {
+    var el = document.getElementById('marketTicker');
+    if (!el) return;
+    var items = [];
+    MTICKERS.forEach(function(sym) {
+      var s = mData[sym];
+      if (!s) return;
+      var p = s.latestTrade ? s.latestTrade.p : (s.dailyBar ? s.dailyBar.c : null);
+      var prev = s.prevDailyBar ? s.prevDailyBar.c : null;
+      if (!p || !prev) return;
+      var chg = (p - prev) / prev * 100;
+      var cls = chg >= 0 ? 'rgba(46,160,67,0.7)' : 'rgba(218,54,51,0.7)';
+      var label = MLABELS[sym] || sym;
+      items.push('<span style="font-family:\'Courier New\',monospace;font-size:12px;color:' + cls + ';padding:0 18px">' + label + ' ' + fmt2(p) + ' (' + sign(chg) + fmt2(chg) + '%)</span>');
+    });
+    if (!items.length) {
+      items.push('<span style="font-family:\'Courier New\',monospace;font-size:12px;color:#888">Waiting for market data...</span>');
+    }
+    el.innerHTML = items.join('') + '&nbsp;&nbsp;&nbsp;&nbsp;' + items.join('');
+  }
+
+  function fetchMarketTicker() {
+    mFetch('/v2/stocks/snapshots', {symbols: MTICKERS.join(','), feed: 'iex'}).then(function(data) {
+      if (!data) return;
+      mData = data;
+      updateMarketTicker();
+    });
+  }
+
+  function mkt() {
+    var et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+    var m = et.getHours()*60 + et.getMinutes(), d = et.getDay();
+    return d >= 1 && d <= 5 && m >= 570 && m <= 960;
+  }
+
+  fetchMarketTicker();
+  setInterval(fetchMarketTicker, mkt() ? 30000 : 300000);
+})();
+</script>
 
 <div class="page">
 
@@ -4630,7 +4672,7 @@ setInterval(updateScanBadge, 30 * 1000);
   var AS = '2zauQm6Ddh6sq1hPn9BuMW6T3A8uRJ8d2yeJQ9mLBkai';
   var ADU = 'https://data.alpaca.markets';
   var UWT = '6c2959a5-ebef-4945-9c2b-5be1c81e0d57';
-  var LTICKERS = ['SPY','QQQ','NVDA','AMD','TSLA','AAPL','MSFT','META','AMZN','GOOGL','PLTR','COIN','MU','AVGO','GLD','XLE','XLF','TLT'];
+  var LTICKERS = ['SPY','QQQ','IWM','VIXY','UUP','NVDA','AMD','TSLA','AAPL','MSFT','META','AMZN','GOOGL','PLTR','COIN','MU','AVGO','GLD','XLE','XLF','TLT'];
 
   function mkt() {
     var et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
@@ -4653,6 +4695,14 @@ setInterval(updateScanBadge, 30 * 1000);
       .catch(function() { return null; });
   }
 
+  var TICKER_LABELS = {
+    'IWM': 'Russell 2000', 'VIXY': 'VIX', 'UUP': 'USD',
+    'SPY':'S&P 500','QQQ':'Nasdaq','NVDA':'NVDA','AMD':'AMD',
+    'TSLA':'TSLA','AAPL':'AAPL','MSFT':'MSFT','META':'META',
+    'AMZN':'AMZN','GOOGL':'GOOGL','PLTR':'PLTR','COIN':'COIN',
+    'MU':'MU','AVGO':'AVGO','GLD':'Gold','XLE':'Energy','XLF':'Financials','TLT':'Bonds'
+  };
+
   function updateTicker(snaps) {
     window._updateTicker = updateTicker;
     var track = document.getElementById('vipTickerTrack') || document.querySelector('.vip-ticker-track');
@@ -4665,7 +4715,8 @@ setInterval(updateScanBadge, 30 * 1000);
       if (!p || !prev) return;
       var chg = (p - prev) / prev * 100;
       var cls = chg >= 0 ? 'up' : 'dn';
-      items.push('<span class="vip-ticker-item ' + cls + '">' + sym + ' ' + chgStr(chg) + '</span>');
+      var label = TICKER_LABELS[sym] || sym;
+      items.push('<span class="vip-ticker-item ' + cls + '">' + label + ' ' + chgStr(chg) + '</span>');
     });
     track.innerHTML = items.join('') + items.join('');
   }
