@@ -3768,7 +3768,7 @@ async function loadAll() {
   // Supabase is faster, real-time, no rate limits.
   // GitHub is the fallback so the dashboard works even without a backend.
 
-  const GITHUB_RAW  = 'https://raw.githubusercontent.com/sumedhbasani/Basani/main/';
+  const GITHUB_RAW  = 'https://raw.githubusercontent.com/sumedhbasani/basani-data/main/';
   const USE_SUPABASE = !!(SUPABASE_URL && SUPABASE_ANON && !SUPABASE_URL.includes('YOUR_PROJECT'));
 
   const fetchWithTimeout = (url, ms = 8000, extraHeaders = {}) => {
@@ -4093,7 +4093,7 @@ async function loadBasaniScore() {
   // Try to merge grades.json from GitHub for richer historical data
   let meta = {}, extTrades = 0;
   try {
-    const data = await fetch('https://raw.githubusercontent.com/sumedhbasani/Basani/main/grades.json')
+    const data = await fetch('https://raw.githubusercontent.com/sumedhbasani/basani-data/main/grades.json')
       .then(r => r.ok ? r.json() : null);
     if (data && data._meta) { meta = data._meta; extTrades = meta.total_graded_trades || 0; }
   } catch(e) { /* offline — use local only */ }
