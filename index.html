@@ -1685,7 +1685,7 @@ body { background: var(--bg) !important; color: var(--text) !important; }
 // Get them from: https://app.supabase.com → your project → Settings → API
 // The ANON KEY is safe to put here — it's public by design.
 // ══════════════════════════════════════════════════════════════════════════════
-const SUPABASE_URL  = 'https://lsvbhlgxeddssgdpvwtq.supabase.co';
+const SUPABASE_URL  = 'https://lsvbhlgxedssgdpvwtq.supabase.co';
 const SUPABASE_ANON = ['sb','publishable','dy77qQrBEFQjC-fQLgHcyA_6iX3krzo'].join('_');
 // ══════════════════════════════════════════════════════════════════════════════
 
@@ -2922,13 +2922,16 @@ function buildGammaView(force) {
       renderGammaTable();
     })
     .catch(function () {
-      // Fallback: GitHub raw with cache-bust
-      var ghUrl = 'https://raw.githubusercontent.com/dabsanddollars2024-cpu/basani-data/main/gex_data.json?t=' + Date.now();
-      return fetch(ghUrl, { cache: 'no-store' });
+      // Fallback: GitHub Contents API (60s cache vs 5 min on raw) — bypasses CDN
+      return fetch('https://api.github.com/repos/dabsanddollars2024-cpu/basani-data/contents/gex_data.json', { cache: 'no-store' });
     })
     .then(function (r) {
       if (!r || !r.ok) throw new Error('GitHub ' + (r ? r.status : 'no-response'));
-      return r.json();
+      // If we got the API response (has 'content' field), decode base64
+      return r.json().then(function (j) {
+        if (j && j.content) return JSON.parse(atob(j.content.replace(/\n/g, '')));
+        return j;
+      });
     })
     .then(function (data) {
       _gammaData = data;
@@ -3052,12 +3055,16 @@ function openGammaDetail(ticker) {
   body.innerHTML = '<div style="padding:40px;text-align:center;color:#888">Loading deep-dive…</div>';
   modal.style.display = 'block';
 
-  // Pull detail JSON
-  var url = 'https://raw.githubusercontent.com/dabsanddollars2024-cpu/basani-data/main/gex_detail_' + ticker + '.json?t=' + Date.now();
+  // Pull detail JSON via GitHub Contents API (60s cache, not 5min)
+  var url = 'https://api.github.com/repos/dabsanddollars2024-cpu/basani-data/contents/gex_detail_' + ticker + '.json';
   fetch(url, { cache: 'no-store' })
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
+      return r.json().then(function (j) {
+        // API response wraps content in base64 — decode it
+        if (j && j.content) return JSON.parse(atob(j.content.replace(/\n/g, '')));
+        return j;
+      });
     })
     .then(function (data) {
       renderGammaDetail(ticker, data);
@@ -3574,6 +3581,59 @@ function applyPlaysJson(data) {
   // Rebuild chart
   const old = document.getElementById('plChart');
   if (old) { const clone = old.cloneNode(false); old.parentNode.replaceChild(clone, old); buildPlChart(); }
+
+  // ── ALSO populate SCALPS / SWINGS arrays used by the Options Plays tab ──
+  // Convert each live play into the shape renderPlay() expects
+  const fmtExpiry = (iso) => {
+    if (!iso) return '';
+    const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return iso;
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${months[parseInt(m[2])-1]} ${parseInt(m[3])}`;
+  };
+  const dte = (iso) => {
+    if (!iso) return 0;
+    const d = new Date(iso + 'T16:00:00Z');
+    return Math.max(0, Math.round((d - new Date()) / 86400000));
+  };
+  const livePlays = data.plays.map(p => {
+    const dDays = dte(p.expiry);
+    // Heuristic cost estimate: ~0.5% of strike for OTM <30 DTE
+    const optCost = p.est_option_mid || (p.strike * 0.005);
+    return {
+      id:        p.id,
+      ticker:    p.ticker,
+      type:      p.type,
+      strike:    '$' + p.strike,
+      expiry:    fmtExpiry(p.expiry),
+      dte:       dDays,
+      cost:      '$' + optCost.toFixed(2),
+      score:     0,  // not in live data; leave 0
+      confidence: p.confidence || 'MEDIUM',
+      confColor:  p.conf_color || '#b8860b',
+      flags:     ['AUTO-GENERATED'],
+      why:       `<strong>${p.ticker} ${p.type} $${p.strike} ${fmtExpiry(p.expiry)}</strong> — ${p.why || 'BASANI auto-play'}. Entry $${(p.entry||0).toFixed(2)}, Stop $${(p.stop||0).toFixed(2)}, Target $${(p.target||0).toFixed(2)}.`,
+      entry:     '$' + (p.entry || 0).toFixed(2),
+      stop:      '$' + (p.stop || 0).toFixed(2),
+      target:    '$' + (p.target || 0).toFixed(2),
+      size:      'HALF',  // default conservative size
+    };
+  });
+  // Split into scalps (<10 DTE) and swings (>=10 DTE)
+  const newScalps = livePlays.filter(p => p.dte < 10);
+  const newSwings = livePlays.filter(p => p.dte >= 10);
+  // Mutate the existing arrays in place (renderAll() iterates SCALPS / SWINGS)
+  SCALPS.length = 0; SCALPS.push(...newScalps);
+  SWINGS.length = 0; SWINGS.push(...newSwings);
+  // Re-render the columns
+  const sCol = document.getElementById('scalpsCol');
+  const wCol = document.getElementById('swingsCol');
+  if (sCol) sCol.innerHTML = `
+    <div class="plays-col-header">⚡ Scalp Plays <span class="col-sub">0–10 DTE · Earnings plays</span></div>
+    ${SCALPS.map(renderPlay).join('') || '<div style="padding:14px;color:#888;font-size:11px">No scalp plays right now</div>'}`;
+  if (wCol) wCol.innerHTML = `
+    <div class="plays-col-header">📈 Swing Plays <span class="col-sub">14–30 DTE · Catalyst driven</span></div>
+    ${SWINGS.map(renderPlay).join('') || '<div style="padding:14px;color:#888;font-size:11px">No swing plays right now</div>'}`;
 }
 
 // Parse scan_output.json / data.json — exact Alpaca format from scan.py
@@ -4213,7 +4273,21 @@ async function loadAll() {
   // Public data repo — no auth needed (separate from private code repo)
   // Direct raw URL is faster and more reliable than jsDelivr CDN (no cache layer)
   const GITHUB_RAW  = 'https://raw.githubusercontent.com/dabsanddollars2024-cpu/basani-data/main/';
+  // GitHub Contents API — 60s cache (vs 5 min on raw) + CORS-enabled for browser
+  const GH_API_BASE = 'https://api.github.com/repos/dabsanddollars2024-cpu/basani-data/contents/';
   const USE_SUPABASE = !!(SUPABASE_URL && SUPABASE_ANON && !SUPABASE_URL.includes('YOUR_PROJECT'));
+
+  // Fetch a single file's JSON via GitHub Contents API (no token, 60s CDN cache).
+  // Returns parsed JSON or null. Used for the gex/grades fallback paths.
+  const fetchViaGitHubAPI = (filename, ms = 8000) => {
+    const ctrl  = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), ms);
+    return fetch(GH_API_BASE + filename, { signal: ctrl.signal, cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null)
+      .then(meta => meta && meta.content ? JSON.parse(atob(meta.content.replace(/\n/g, ''))) : null)
+      .catch(() => null)
+      .finally(() => clearTimeout(timer));
+  };
 
   const fetchWithTimeout = (url, ms = 8000, extraHeaders = {}) => {
     const ctrl  = new AbortController();
@@ -4307,15 +4381,15 @@ async function loadAll() {
     }
   }
 
-  // ── Fallback: public data repo (sumedhbasani/basani-data — no auth needed) ──
+  // ── Fallback: GitHub Contents API (60s CDN cache, not 5 min) ──
   if (!loaded) {
     try {
       const [scanR, newsR, uwR, calR, playsR] = await Promise.all([
-        fetchWithTimeout(GITHUB_RAW + 'scan_output.json'),
-        fetchWithTimeout(GITHUB_RAW + 'news.json'),
-        fetchWithTimeout(GITHUB_RAW + 'unusual_whales.json'),
-        fetchWithTimeout(GITHUB_RAW + 'calendar.json'),
-        fetchWithTimeout(GITHUB_RAW + 'plays_log.json'),
+        fetchViaGitHubAPI('scan_output.json'),
+        fetchViaGitHubAPI('news.json'),
+        fetchViaGitHubAPI('unusual_whales.json'),
+        fetchViaGitHubAPI('calendar.json'),
+        fetchViaGitHubAPI('plays_log.json'),
       ]);
       if (scanR && scanR.tickers && scanR.tickers.length > 0) {
         applyAll({ scan: scanR, plays: playsR, news: newsR, whales: uwR, calendar: calR });
